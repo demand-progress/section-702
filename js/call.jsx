@@ -1,33 +1,10 @@
-// Config
-const config = {};
-config.akPage = 'block-trumps-cabinet-www';
-config.callCampaign = 'block-trumps-cabinet';
-config.callCampaignSessions = 'block-trumps-cabinet-stop-sessions';
-config.callCampaignMnuchin = 'block-trumps-cabinet-block-mnuchin';
-config.link = 'https://BlockTrumpsCabinet.com/';
-config.prettyCampaignName = 'Block Trump\'s Cabinet';
-config.prettyCampaignNameSessions = 'Block Trump\'s Cabinet - Stop Sessions';
-config.prettyCampaignNameMnuchin = 'Block Trump\'s Cabinet - Stop Mnuchin';
-
-
-// Modules
-const React = require('react');
-const ReactDOM = require('react-dom');
-
-// Checking for outdated browsers
-(() => {
-    const isIE = navigator.userAgent.match(/MSIE (\d+)\./);
-    if (isIE) {
-        const version = +isIE[1];
-        if (version < 10) {
-            alert('Unfortunately your browser, Internet Explorer ' + version + ', is not supported.\nPlease visit the site with a modern browser like Firefox or Chrome.\nThanks!');
-        }
-    }
-
-    if (/Android 2\.3/.test(navigator.userAgent)) {
-        alert('Unfortunately your browser, Android 2.3, is not supported.\nPlease visit the site with a modern browser like Firefox or Chrome.\nThanks!');
-    }
-})();
+import React from 'react'
+import ReactDOM from 'react-dom'
+import config from '../config/'
+import urls from '../config/urls'
+import ajax from '../utils/ajax'
+import iecheck from '../utils/iecheck'
+// iecheck()
 
 // Email
 let emailHref = "mailto:?subject=I%20just%20signed%20this%3A&body=Hi%20-%20I%20just%20took%20action%20against%20Donald%20Trump’s%20horrifying%20picks%20for%20cabinet-level%20roles%20in%20his%20administration.%0A%0ATrump’s%20nominees%20have%20promoted%20white%20nationalism%2C%20attacked%20climate%20science%20and%20used%20their%20power%20as%20Wall%20Street%20insiders%20to%20fleece%20working%20families.%0A%0AI%20just%20signed%20a%20petition%20urging%20the%20Senate%20to%20block%20and%20resist%20any%20Trump%20nominee%20embracing%20hatred%20and%20greed.%20Could%20you%20sign%20too%3F%0A%0Ahttps%3A%2F%2Fwww.BlockTrumpsCabinet.com%2F%3Fsource%3Demail-share";
@@ -38,50 +15,12 @@ try {
     emailHref = `mailto:?subject=${emailSubject}&body=${emailBody}`;
 } catch (err) { }
 
-// URLs
-const urls = {};
-urls.actionkit = 'https://act.demandprogress.org/act/';
-urls.count = 'https://act.demandprogress.org/progress/' + config.akPage + '?callback=onFetchSignatureCounts';
-urls.facebook = 'https://www.facebook.com/sharer.php?u=';
-urls.feedback = 'https://dp-feedback-tool.herokuapp.com/api/v1/feedback?';
-urls.twitter = 'https://twitter.com/intent/tweet?text=';
-
-
 // State
 const state = {};
 state.count = 0;
 state.isMobile = /mobile/i.test(navigator.userAgent);
 state.isIE = /trident/i.test(navigator.userAgent);
 state.query = getQueryVariables();
-
-// Setup shortcuts for AJAX.
-const ajax = {
-    get: function(url, callback) {
-        callback = callback || function() {};
-
-        const xhr = new XMLHttpRequest();
-        xhr.onreadystatechange = function() {
-            if (xhr.readyState === 4 && callback) {
-                callback(xhr.response);
-            }
-        };
-        xhr.open('get', url, true);
-        xhr.send();
-    },
-
-    post: function(url, formData, callback) {
-        callback = callback || function() {};
-
-        const xhr = new XMLHttpRequest();
-        xhr.onreadystatechange = function() {
-            if (xhr.readyState === 4 && callback) {
-                callback(xhr.response);
-            }
-        };
-        xhr.open('post', url, true);
-        xhr.send(formData);
-    },
-};
 
 function fetchSignatureCounts() {
     const script = document.createElement('script');
