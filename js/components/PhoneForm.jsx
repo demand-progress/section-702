@@ -1,41 +1,14 @@
 import React, { Component } from 'react'
+import config from '../config/campaign'
+import { paragraph1, phonelink, phone, phoneFormButtonText, paragraph2, paragraph3 } from '../store/campaign'
+import { getSource } from '../utils/'
 
-export default React.createClass({
-    render: function() {
-        return (
-            <div className="phone-form-wrapper">
-                <h2>Thanks for signing. <br/> Now, could you make a call?</h2>
-                <div className="paragraph">
-                    It’s the single most effective thing you can do.
-                </div>
 
-                <div className="phone-form">
-                    <form onSubmit={ this.onSubmit }>
-                        <input placeholder="Your Phone Number" id="field-phone" ref="field-phone" className="phone" name="phone" autoComplete="on" pattern="[\d\(\)\-\+ ]*" autoFocus />
-                        <button>
-                            CALL THE SENATE
-                            <img src="images/phone.svg" />
-                        </button>
-                    </form>
+// import { paragraph1, phonelink, phone, paragraph2, paragraph3 } from '../store/jeffSessions'
 
-                    <div className="privacy">
-                        This tool uses <a href="https://www.twilio.com/legal/privacy" target="_blank">Twilio</a>’s APIs.
-                        <br />
-                        Or dial <a href="tel:+12023350610">(202) 335-0610</a> to connect.
-                    </div>
-                </div>
+class PhoneForm extends Component {
 
-                <div className="paragraph">
-                    Just enter your number and click “call”
-                    <br/>
-                    <br/>
-                    We’ll connect you with your senators and key party leaders, and give you a script of what you can say.
-                </div>
-            </div>
-        );
-    },
-
-    onSubmit: function(e) {
+    _onSubmit(e) {
         e.preventDefault();
 
         const phoneField = this.refs['field-phone'];
@@ -61,11 +34,42 @@ export default React.createClass({
         request.send();
 
         this.props.changeForm('script');
-    },
+    }
 
-    onClickOptOut: function(e) {
+    _onClickOptOut(e) {
         e.preventDefault();
 
         this.props.changeForm('opt-out');
-    },
-});
+    }
+
+    render() {
+        return (
+            <div className="phone-form-wrapper">
+                
+                {paragraph1}
+
+                <div className="phone-form">
+                    <form onSubmit={ this.onSubmit }>
+                        <input placeholder="Your Phone Number" id="field-phone" ref="field-phone" className="phone" name="phone" autoComplete="on" pattern="[\d\(\)\-\+ ]*" autoFocus />
+                        <button>
+                            { phoneFormButtonText }
+                            <img src="images/phone.svg" />
+                        </button>
+                    </form>
+
+                    <div className="privacy">
+                        This tool uses <a href="https://www.twilio.com/legal/privacy" target="_blank">Twilio</a>’s APIs.
+                        <br />
+                        Or dial <a href={phonelink}>{phone}</a> to connect.
+                    </div>
+                </div>
+
+                <div className="paragraph">
+                    {paragraph2}
+                </div>
+                { paragraph3 && <div className="paragraph" >{paragraph3}</div> }
+
+            </div>
+        )
+    }
+};

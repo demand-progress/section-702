@@ -1,17 +1,15 @@
+import campaign from '../store/campaign'
 import React, { Component } from 'react'
+import { sendFormToActionKit } from '../utils/'
 
-export default React.createClass({
-    render: function() {
+
+class EmailForm extends Component {
+    
+    render() {
         return (
             <div className="email-form">
                 <div className="petition" id="petition">
-                    <h3>Petition to members of the U.S. Senate:</h3>
-
-                    Donald Trump’s first appointments to cabinet-level roles in his administration are horrifying. Trump’s nominees and rumored picks have promoted white nationalism, attacked climate science, and used their power as Wall Street insiders and corporate lobbyists to fleece working families.
-                    <div className="spacer" />
-
-                    As representatives of all Americans, you must stand up against hatred and greed. Fight to block and resist every Trump nominee who embraces racism, xenophobia, misogyny, homophobia, climate denial, and Wall Street greed.
-
+                    {emailHeading}
                     <form onSubmit={ this.onSubmit } ref="form">
                         <input className="name" name="name" placeholder="Your name" autoFocus="autoFocus" />
                         <input className="email" name="email" placeholder="Email" type="email" />
@@ -33,9 +31,9 @@ export default React.createClass({
 
             </div>
         );
-    },
+    }
 
-    onSubmit: function(e) {
+    onSubmit(e) {
         e.preventDefault();
 
         const form = this.refs.form;
@@ -89,5 +87,7 @@ export default React.createClass({
         sendFormToActionKit(fields);
 
         this.props.changeForm('phone');
-    },
-});
+    }
+}
+
+export default EmailForm

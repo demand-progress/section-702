@@ -1,6 +1,7 @@
-import config from '../utils/config'
+import config from '../config/campaign'
 import React, { Component } from 'react'
 import { getSource } from '../utils/'
+import emailHref from '../utils/emailHref'
 
 export default React.createClass({
 

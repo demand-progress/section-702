@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
-import Header from './Header'
-import Form from './Form'
-import Social from './Social'
-import Organizations from './Organizations'
-import Contact from './Contact'
-import CreativeCommons from './CreativeCommons'
+import Header from './Header.jsx'
+import Form from './Form.jsx'
+import Social from './Social.jsx'
+import Organizations from './Organizations.jsx'
+import Contact from './Contact.jsx'
+import CreativeCommons from './CreativeCommons.jsx'
 
 const CallPages = React.createClass({
     render: function() {
@@ -22,7 +22,7 @@ const CallPages = React.createClass({
 
                 <CreativeCommons />
             </div>
-        );
+        )
     },
 
     imagesToPreload: [

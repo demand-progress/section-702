@@ -91,7 +91,7 @@ a:hover {
 }
 
 #app {
-    background-image: url(../images/Trump-WH-header-collage.jpg);
+    background-image: url(../images/trump-surveillance-2.jpg);
     background-position: left top;
     background-repeat: no-repeat;
     background-size: contain;
@@ -256,11 +256,11 @@ a:hover {
     margin: 0 0 24px;
 }
 
-#app .phone-form-wrapper.stop-sessions {
+#app .phone-form-wrapper.stop {
     max-width: 640px;
 }
 
-#app .phone-form-wrapper.stop-sessions .paragraph {
+#app .phone-form-wrapper.stop .paragraph {
     text-align: left;
 }
 
@@ -268,20 +268,20 @@ a:hover {
     text-align: center;
 }
 
-#app .stop-sessions-wrapper > .paragraph {
+#app .stop-wrapper > .paragraph {
     max-width: 700px;
 }
 
-#app .stop-sessions-wrapper .paragraph ul {
+#app .stop-wrapper .paragraph ul {
     list-style: disc;
     margin: 0 42px;
 }
 
-#app .stop-sessions-wrapper .paragraph ul li {
+#app .stop-wrapper .paragraph ul li {
     margin-bottom: 12px;
 }
 
-#app .stop-sessions-wrapper a.call-the-senate {
+#app .stop-wrapper a.call-the-senate {
     background-color: #ffb406;
     box-shadow: 2px 2px 7px rgba(0, 0, 0, 0.216);
     color: #fff;
@@ -298,12 +298,12 @@ a:hover {
             transition: background-color 0.3s;
     width: 330px;
 }
-#app .stop-sessions-wrapper a.call-the-senate:hover {
+#app .stop-wrapper a.call-the-senate:hover {
     background-color: #ffa905;
     text-decoration: none;
 }
 
-#app .stop-sessions-wrapper a.call-the-senate img {
+#app .stop-wrapper a.call-the-senate img {
     height: 32px;
     line-height: 1;
     margin: 0px 0 0 12px;
@@ -316,7 +316,7 @@ a:hover {
             transform: translate3d(0, 0, 0) rotate(0);
 }
 
-#app .stop-sessions-wrapper a.call-the-senate:hover img{
+#app .stop-wrapper a.call-the-senate:hover img{
     -webkit-transform: translate3d(0, 0, 0) rotate(6deg);
             transform: translate3d(0, 0, 0) rotate(6deg);
 }

@@ -1,14 +1,9 @@
 import React, { Component } from 'react'
-import EmailForm from '../components/EmailForm'
-import PhoneForm from '../components/PhoneForm'
-import PhoneScript from '../components/PhoneScript'
-import StopSessionsPhoneForm from '../components/StopSessionsPhoneForm'
-import StopSessionsPhoneScript from '../components/StopSessionsPhoneScript'
-import BlockMnuchinPhoneForm from '../components/BlockMnuchinPhoneForm'
-import DemoPhoneForm from '../components/DemoPhoneForm'
-import DemoPhoneScript from '../components/DemoPhoneScript'
-import Thanks from '../components/Thanks'
-import OptOutForm from '../components/OptOutForm'
+import EmailForm from '../components/EmailForm.jsx'
+import PhoneForm from '../components/PhoneForm.jsx'
+import PhoneScript from '../components/PhoneScript.jsx'
+import Thanks from '../components/Thanks.jsx'
+import OptOutForm from '../components/OptOutForm.jsx'
 import { findPos, getSource } from '../utils/'
 
 
@@ -34,30 +29,6 @@ const Form = React.createClass({
 
             case 'script':
             form = <PhoneScript />;
-            break;
-
-            case 'stopsessions':
-            form = <StopSessionsPhoneForm changeForm={ this.changeForm } />;
-            break;
-
-            case 'scriptsessions':
-            form = <StopSessionsPhoneScript />;
-            break;
-
-            case 'blockmnuchin':
-            form = <BlockMnuchinPhoneForm changeForm={ this.changeForm } />;
-            break;
-
-            case 'scriptmnuchin':
-            form = <BlockMnuchinPhoneScript />;
-            break;
-
-            case 'demophone':
-            form = <DemoPhoneForm changeForm={ this.changeForm } />;
-            break;
-
-            case 'demoscript':
-            form = <DemoPhoneScript />;
             break;
 
             case 'thanks':

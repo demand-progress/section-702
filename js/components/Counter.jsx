@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { numberWithCommas } from '../utils/'
 
 export default function() {
     let className = 'counter';
