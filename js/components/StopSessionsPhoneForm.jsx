@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-export default const StopSessionsPhoneForm = React.createClass({
+const StopSessionsPhoneForm = React.createClass({
     render: function() {
         return (
             <div className="stop-sessions-wrapper">
@@ -94,3 +94,5 @@ export default const StopSessionsPhoneForm = React.createClass({
         this.props.changeForm('opt-out');
     },
 });
+
+export default StopSessionsPhoneForm
