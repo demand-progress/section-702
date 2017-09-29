@@ -177,10 +177,15 @@ function k() {}
 
 const Header = () => (
     <header>
+        <div className="fixed-trump"></div>
         <div className="title">
-            <span className="first-line">Tell the Senate:</span>
+            <span className="tell-congress">Tell Congress</span>
             <br/>
-            Block Trump’s Cabinet <span className="single-word">of</span> Hate <span className="single-word">and</span> Wall Street Greed
+            <span className="dont-give-trump-unc">Don’t give Trump unconstitutional spying powers!</span>
+            <br/>
+            <span className="congress-is-debating">
+                Congress is debating a bill to give Trump, the NSA, and the FBI the permanent power to spy on Americans – without a warrant.                <span className="embolden">&nbsp;It must be defeated.</span>
+            </span>
         </div>
     </header>
 );
@@ -190,25 +195,26 @@ const EmailForm = React.createClass({
         return (
             <div className="email-form">
                 <div className="petition" id="petition">
-                    <h3>Petition to members of the U.S. Senate:</h3>
+                    <h3><i className="sign icon"></i> Sign the petition</h3>
 
-                    Donald Trump’s first appointments to cabinet-level roles in his administration are horrifying. Trump’s nominees and rumored picks have promoted white nationalism, attacked climate science, and used their power as Wall Street insiders and corporate lobbyists to fleece working families.
-                    <div className="spacer" />
+                    <div className="form-container">
+                        <form onSubmit={ this.onSubmit } ref="form">
+                            <input className="name" name="name" placeholder="Your name" autoFocus="autoFocus" />
+                            <input className="email" name="email" placeholder="Email" type="email" />
+                            <input className="zip" name="zip" placeholder="Zip code" type="tel" />
+                            <button>Sign</button>
+                        </form>
+                    </div>
 
-                    As representatives of all Americans, you must stand up against hatred and greed. Fight to block and resist every Trump nominee who embraces racism, xenophobia, misogyny, homophobia, climate denial, and Wall Street greed.
+                    <div className="the-problem">
+                        <strong>Donald Trump’s first appointments to cabinet-level roles in his administration are horrifying.</strong> Trump’s nominees and rumored picks have promoted white nationalism, attacked climate science, and used their power as Wall Street insiders and corporate lobbyists to fleece working families.
+                        <div className="spacer" />
+                        As representatives of all Americans, you must stand up against hatred and greed. Fight to block and resist every Trump nominee who embraces racism, xenophobia, misogyny, homophobia, climate denial, and Wall Street greed.
 
-                    <form onSubmit={ this.onSubmit } ref="form">
-                        <input className="name" name="name" placeholder="Your name" autoFocus="autoFocus" />
-                        <input className="email" name="email" placeholder="Email" type="email" />
-                        <input className="zip" name="zip" placeholder="Zip code" type="tel" />
-                        <button>
-                            Sign the Petition
-                        </button>
-                    </form>
+                    </div>
 
                     <div className="disclaimer">
-                        One or more partner groups
-                        may send you updates on this and other important campaigns by email. If at any time you would like to unsubscribe from any of these email lists, you may do so.
+                        One or more partner groups may send you updates on this and other important campaigns
                     </div>
 
                     <Counter />
@@ -264,7 +270,7 @@ const EmailForm = React.createClass({
             'form_name': 'act-petition',
             'js': 1,
             'name': name.value.trim(),
-            // 'opt_in': 1,
+            'opt_in': 1,
             'page': config.akPage,
             'source': getSource(),
             'want_progress': 1,
@@ -1245,9 +1251,6 @@ const Social = React.createClass({
 
 const BodyCopy = () => (
     <div className="paragraph">
-        <hr />
-        Trump rose to power with a divisive campaign that showed he was willing to embrace every fringe ideology from xenophobia to sexism to flat-out racism in order to gain power.
-
         <h3>Trump’s Broken Promises</h3>
         Trump promised on election night to be “a president for all Americans.” But the parade of horribles that Trump has nominated to his administration show he is welcoming hate right into the White House.
         <div className="spacer" />
