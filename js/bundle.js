@@ -48,12 +48,12 @@
 
 	// Config
 	var config = {};
-	config.akPage = 'block-trumps-cabinet-www';
+	config.akPage = 'DontLetTrumpSpyOnUs-www';
 	config.callCampaign = 'block-trumps-cabinet';
 	config.callCampaignSessions = 'block-trumps-cabinet-stop-sessions';
 	config.callCampaignMnuchin = 'block-trumps-cabinet-block-mnuchin';
-	config.link = 'https://BlockTrumpsCabinet.com/';
-	config.prettyCampaignName = 'Block Trump\'s Cabinet';
+	config.link = 'https://DontLetTrumpSpyOnUs.com/';
+	config.prettyCampaignName = 'Don\'t Let Trump Spy On Us';
 	config.prettyCampaignNameSessions = 'Block Trump\'s Cabinet - Stop Sessions';
 	config.prettyCampaignNameMnuchin = 'Block Trump\'s Cabinet - Stop Mnuchin';
 
