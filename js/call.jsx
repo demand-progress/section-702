@@ -1,11 +1,21 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
-import { fetchSignatureCounts } from './utils/actionKit'
+// Modules
+const React = require('react');
+const ReactDOM = require('react-dom');
 import CallPages from './containers/CallPages.jsx'
-import iecheck from './utils/iecheck'
-iecheck()
+// Checking for outdated browsers
+(() => {
+    const isIE = navigator.userAgent.match(/MSIE (\d+)\./);
+    if (isIE) {
+        const version = +isIE[1];
+        if (version < 10) {
+            alert('Unfortunately your browser, Internet Explorer ' + version + ', is not supported.\nPlease visit the site with a modern browser like Firefox or Chrome.\nThanks!');
+        }
+    }
 
-window.onFetchSignatureCounts = onFetchSignatureCounts
+    if (/Android 2\.3/.test(navigator.userAgent)) {
+        alert('Unfortunately your browser, Android 2.3, is not supported.\nPlease visit the site with a modern browser like Firefox or Chrome.\nThanks!');
+    }
+})()
 
 function render() {
     ReactDOM.render(
@@ -14,8 +24,7 @@ function render() {
     );
 }
 
-render();
-fetchSignatureCounts();
+render()
 
 // Google Analytics
 (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

@@ -5,9 +5,16 @@ import Social from './Social.jsx'
 import Organizations from './Organizations.jsx'
 import Contact from './Contact.jsx'
 import CreativeCommons from './CreativeCommons.jsx'
+class CallPages extends Component {
 
-const CallPages = React.createClass({
-    render: function() {
+    componentDidMount() {
+        for (let i = 0; i < this.imagesToPreload.length; i++) {
+            const image = new Image();
+            image.src = this.imagesToPreload[i];
+        }
+    }
+
+    render() {
         return (
             <div className="wrapper">
                 <Header />
@@ -22,19 +29,14 @@ const CallPages = React.createClass({
 
                 <CreativeCommons />
             </div>
-        )
-    },
+        );
+    }
 
-    imagesToPreload: [
-        'images/phone.svg',
-    ],
+    imagesToPreload(){
+        return ['images/phone.svg']
+    }
 
-    componentDidMount: function() {
-        for (let i = 0; i < this.imagesToPreload.length; i++) {
-            const image = new Image();
-            image.src = this.imagesToPreload[i];
-        }
-    },
-});
 
-export default CallPages;
+}
+
+export default CallPages

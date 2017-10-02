@@ -1,14 +1,9 @@
 import React, { Component } from 'react'
 
-//class OptOutForm extends Component {
+const OptOutForm = React.createClass({
 
-class CallPages extends Component{
-
-    constructor(props) {
-        super(props)
-        numbers: {
-        // 'Call the Senate:': '202-335-0610'
-       // 'The Office of the Treasury Secretary': '202-622-1100',
+    numbers: {
+        // 'The Office of the Treasury Secretary': '202-622-1100',
         // 'The Office of the White House Chief of Staff': '202-456-3737',
         // 'SEC Chair Mary Jo White': '202-551-2100',
         // 'SEC Commissioner Luis Aguilar': '202-551-2500',
@@ -26,10 +21,10 @@ class CallPages extends Component{
         // 'The Office of Administration': '202-456-2861',
         // 'The Council of Economic Advisers': '202-395-5084',
         // 'Hillary Clinton\'s Campaign': '646-854-1432',
-        }
-    }
+        'Call the Senate:': '202-335-0610',
+    },
 
-    renderNumbers(){
+    renderNumbers: function() {
         const numbers = [];
 
         for (let name in this.numbers) {
@@ -49,9 +44,9 @@ class CallPages extends Component{
         }
 
         return numbers;
-    }
+    },
 
-    render() {
+    render: function() {
         return (
             <div className="opt-out-form">
                 <div className="script">
@@ -70,8 +65,8 @@ class CallPages extends Component{
                     { this.renderNumbers() }
                 </div>
             </div>
-        )
-    }
-}
+        );
+    },
+});
 
 export default OptOutForm

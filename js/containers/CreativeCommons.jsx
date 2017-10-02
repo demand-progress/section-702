@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-export default React.createClass({
+const CreativeCommons = React.createClass({
     render: function() {
         return (
             <div className="creative-commons">
@@ -17,3 +17,5 @@ export default React.createClass({
         );
     },
 });
+
+export default CreativeCommons
