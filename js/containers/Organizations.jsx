@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-export default () => (
+
+const Organizations = () => (
     <div className="organizations">
         <div className="clamp">
             <h4>Site created by</h4>
@@ -42,3 +43,5 @@ export default () => (
         </div>
     </div>
 );
+
+export default Organizations

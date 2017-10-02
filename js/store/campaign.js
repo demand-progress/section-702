@@ -1,53 +1,40 @@
-import config from '../config/campaign'
-const campaignName = {
-    title: 
-        <p>Tell congress: Don't give Trump unconstitutional spying powers.</p>,
-    emailHeading: 
-        <div>
-            <h3>Petition to members of the U.S. Senate:</h3>
-            <p>Donald Trump’s first appointments to cabinet-level roles in his administration are horrifying. Trump’s nominees and rumored picks have promoted white nationalism, attacked climate science, and used their power as Wall Street insiders and corporate lobbyists to fleece working families.<div className="spacer" />As representatives of all Americans, you must stand up against hatred and greed. Fight to block and resist every Trump nominee who embraces racism, xenophobia, misogyny, homophobia, climate denial, and Wall Street greed.</p>
-        </div>,    
-    emailParagraph1: 
-        <p>Congress is debating , a bill to give Trump, the NSA, and FBI the permanent power to spy on Americans - without a warrant. It must be defeated.</p>,
-    phoneParagraph1:
-        <div>
-            {/* It’s the single most effective thing you can do. */}
-            <h2>Thanks for signing. <br/> Now, could you call your member of Congress?</h2>
-            <p>It’s the single most effective thing you can do.</p>
-        </div>,
-    phoneParagraph2:
-        <div>
-            <h2>Call your member of Congress <br/> Tell them to stop unconstitutional spying on Americans</h2>
-            {/*
-                <p>Just enter your number and click “call”</p>
-                <br/>
-                <p>We’ll connect you with your senators and key party leaders, and give you a script of what you can say. 
-            */}
-        </div>,
-    phonelink: "tel:+18889999999", // telephone hyperlink
-    phone: "(888) 999-9999", // telephone text
-    phoneScript1: <em>We’re connecting you to your members of Congress now. Just tell them that we need the strongest possible reforms to Section 702 of the FISA Amendments Act, and that without them Section 702 should expire altogether. </em>,
-    phoneScript2: 
-        {/*
-            <p>Please publicly <strong>OPPOSE Jeff Sessions for Attorney General.</strong> His history is far too racist, sexist, and pro-corporate to trust him in charge of the Justice Department.</p>
+import React from 'react'
+
+const bodyText = () => {
+    return (
+        <div className="paragraph">
+            <h3>Trump’s Broken Promises</h3>
+            <p>Trump promised on election night to be “a president for all Americans.” But the parade of horribles that Trump has nominated to his administration show he is welcoming hate right into the White House.</p>
             <div className="spacer" />
-            <p>Additionally, please demand that Sessions answers <strong>tough questions</strong> during his hearing & insist on the <strong>full 30 hours of debate</strong> for his nomination.</p> 
-        */},
-    callScript: 
-        <div>
-            <p><strong>Here’s what you can say:</strong></p>
-            <p>“Hi, my name is [NAME] and I live in [TOWN]. I want my members of Congress to know that we need to rein in out-of-control surveillance by the NSA. </p>
-            <p>“Specifically, we need the strongest possible reforms to Section 702 of the FISA Amendments Act, to ensure that spy agencies can no longer search American's communications without a warrant. Without these reforms, you should let Section 702 expire altogether.”</p>
-        </div>,
-    url: "`https://dp-call-congress.herokuapp.com/create?db=cwd&campaignId=${config.callCampaign}&userPhone=${number}&source_id=${getSource()}`",
-    petitionBody: <h3>petition body/ direct link</h3>,
-    optOut: <div className="suggestion">
-                <p>“With his cabinet nominations, Donald Trump is breaking his promises to be a president for all Americans and to make the economy work for ordinary people, not just wealthy elites.</p>
-                <div className="spacer" />
-                <p>Please fight to block and resist every Trump nominee who embraces hatred and Wall Street greed.</p>
-                <div className="spacer" />
-                <p>In particular, please vote AGAINST enemy of civil rights <strong>Jeff Sessions</strong> for Attorney General, foreclosure king <strong>Steve Mnuchin</strong> (mi-NOO-chin) for Treasury Secretary, and Wall Street billionaire <strong>Wilbur Ross</strong> for Commerce Secretary. Thank you."</p>
+            <p>And his pledge during the campaign to “drain the swamp” and make Washington work for ordinary Americans instead of powerful elites? Forget about it. Trump’s cabinet is so pro-corporate it’s called “an investment banker’s dream.”</p>
+            <div className="spacer" />
+            <h3>Who the Trump Cabinet Really Works For</h3>
+            Wall Street bankers and Trump’s corporate cronies are cheering the Trump agenda. It’s a corporate wish list that would eliminate protections for working people and our environment, and eviscerate strong rules reining in Wall Street.
+            <div className="spacer" />
+            <p>The Trump administration is shaping up to benefit Donald Trump and his family’s business empire in a big way, with massive conflicts of interest posed by Trump’s continued stake in the Trump Organization.</p>
+            <div className="spacer" />
+            <h3>The Senate Must Block and Resist Trump's Cabinet</h3>
+            <p>The U.S. Senate has confirmation power over most of Trump's cabinet. Senators must use this power to block and resist Trump’s cabinet of hate and greed. Consider who we’re talking about:</p>
+            <div className="spacer" />
+
+            <div className="profiles">
+                <div className="profile">
+                    <img src="images/profiles/Jeff_Sessions.jpg" alt="Jeff Sessions photo" />
+                    <strong>Enemy of civil rights and women's rights Jeff Sessions (Attorney General)</strong> &mdash; The same Jeff Sessions who was deemed too racist to confirm to a federal judgeship by a Republican Judiciary Committee in 1986 would be in charge of the Department of Justice. If confirmed, he would be responsible for enforcing the country’s civil rights laws, despite <a href="http://www.cnn.com/2016/11/17/politics/jeff-sessions-racism-allegations/index.html" target="_blank">a history</a> of calling a black subordinate "boy," "joking" about supporting the Ku Klux Klan, and calling the ACLU and NAACP "un-American." His anti-woman record speaks for itself: He said <a href="http://www.weeklystandard.com/jeff-sessions-behavior-described-by-trump-in-grab-them-by-the-p-y-tape-isnt-sexual-assault/article/2004799?custom_click=rss" target="_blank"> "I don't characterize" grabbing women by the genitals "as sexual assault,"</a> voted <a href="https://www.govtrack.us/congress/votes/113-2013/s19" target="_blank">against reauthorizing the Violence Against Women Act</a> and <a href="http://www.senate.gov/legislative/LIS/roll_call_lists/roll_call_vote_cfm.cfm?congress=113&session=2&vote=00059" target="_blank">against bipartisan legislation to curb sexual assault</a> in the military <a href="http://www.senate.gov/legislative/LIS/roll_call_lists/roll_call_vote_cfm.cfm?congress=114&session=1&vote=00211">&ndash; twice.</a>
+                </div>
+                <div className="spacer clear" />
             </div>
+
+            <p>The Senate will be narrowly divided 52-48 between Republicans and Democrats in 2017 and many key Senate committees will be split 10-9 or 11-10. <strong>If Democrats stick together it could only take one or two principled Republican votes to block many of Trump’s nominees.</strong></p>
+            <div className="spacer" />
+
+            <p>Donald Trump may have won the Electoral College, but members of the U.S. Senate should not give any support to Trump appointees espousing racism, xenophobia, misogyny, homophobia, climate denial, and corporate greed.</p>
+            <div className="spacer" />
+
+            <a href="#petition" className="sign-the-petition">Sign the petition if you agree.</a>
+
+        </div>
+    )
 }
 
-export default campaignName
+export { bodyText }

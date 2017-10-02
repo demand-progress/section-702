@@ -1,7 +1,9 @@
 import React, { Component } from 'react'
-import { numberWithCommas } from '../utils/'
+import { fetchSignatureCounts, onFetchSignatureCounts, numberWithCommas } from '../utils/'
+import state from '../store/state'
+import { urls } from '../store/config'
 
-export default function() {
+const Counter = () => {
     let className = 'counter';
 
     if (state.count > 0) {
@@ -18,3 +20,5 @@ export default function() {
         </div>
     );
 }
+
+export default Counter

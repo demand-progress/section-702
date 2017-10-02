@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-export default React.createClass({
+const Contact = React.createClass({
     render: function() {
         return (
             <div className="contact">
@@ -10,4 +10,6 @@ export default React.createClass({
             </div>
         );
     },
-});
+})
+
+export default Contact

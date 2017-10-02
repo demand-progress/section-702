@@ -1,21 +1,13 @@
 import React, { Component } from 'react'
-import EmailForm from '../components/EmailForm.jsx'
-import PhoneForm from '../components/PhoneForm.jsx'
-import PhoneScript from '../components/PhoneScript.jsx'
-import Thanks from '../components/Thanks.jsx'
-import OptOutForm from '../components/OptOutForm.jsx'
 import { findPos, getSource } from '../utils/'
-
+import EmailForm from '../components/forms/EmailForm.jsx'
+import PhoneForm from '../components/forms/PhoneForm.jsx'
+import Thanks from '../components/forms/Thanks.jsx'
+import OptOutForm from '../components/forms/OptOutForm.jsx'
+import PhoneScript from '../components/PhoneScript.jsx'
+import state from '../store/state.js'
 
 const Form = React.createClass({
-    changeForm: function(form) {
-        this.setState({
-            form: form,
-        });
-
-        const pos = findPos(this);
-        scrollTo(0, pos - 16);
-    },
     render: function() {
         let form;
         switch (this.state.form) {
@@ -73,7 +65,17 @@ const Form = React.createClass({
         return {
             form: form,
         };
-    }
+    },
+
+    changeForm: function(form) {
+        this.setState({
+            form: form,
+        });
+
+        const pos = findPos(this);
+        scrollTo(0, pos - 16);
+    },
 });
 
-export default Form;
+export default Form
+

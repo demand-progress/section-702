@@ -1,6 +1,4 @@
-import React, { Component } from 'react'
-
-const Thanks = () => {
+const Thanks = function() {
     return (
         <div className="thanks">
             Thanks for making your voice heard!
@@ -8,4 +6,4 @@ const Thanks = () => {
     )
 }
 
-export default Thanks;
+export default Thanks
