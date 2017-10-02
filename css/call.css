@@ -63,7 +63,7 @@ input {
     border-radius: 0;
     border: none;
     margin: 0;
-    font-family: 'RobotoSlab', serif;
+    font-family: 'Roboto Slab', serif;
 }
 
 input[type=number]::-webkit-outer-spin-button,
@@ -93,7 +93,7 @@ a:hover {
 
 #app {
     color: #330904;
-    font-family: 'RobotoSlab', serif;
+    font-family: 'Roboto Slab', serif;
     line-height: 1.4;
     min-height: 100vh;
     z-index: -1;
