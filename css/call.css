@@ -61,7 +61,7 @@ input {
     border-radius: 0;
     border: none;
     margin: 0;
-    font-family: 'RobotoSlab', serif;
+    font-family: 'Roboto Slab', serif;
 }
 
 input[type=number]::-webkit-outer-spin-button,
@@ -91,7 +91,7 @@ a:hover {
 
 #app {
     color: #330904;
-    font-family: 'RobotoSlab', serif;
+    font-family: 'Roboto Slab', serif;
     line-height: 1.4;
     min-height: 100vh;
     z-index: -1;
@@ -104,7 +104,7 @@ a:hover {
     background-image: url(../images/trump-surveillance-2.jpg);
     background-position: left top;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: contain;
     background-attachment: fixed;
     width: 100%;
     height: 796px;
@@ -171,7 +171,7 @@ a:hover {
 }
 
 #app .paragraph {
-    font-family: Roboto;
+    font-family: 'Roboto Slab', serif;
     font-size: 18px;
     line-height: 1.56;
     text-align: left;
@@ -262,8 +262,9 @@ a:hover {
     margin: 0 auto 32px;
     max-width: 700px;
     padding: 32px;
-    background-image: linear-gradient(to bottom, #ffe500, #ffc500);
-    
+    background-image: -webkit-linear-gradient(top, #ffe500, #ffc500);
+    background-image: linear-gradient(to bottom, #ffe500, #ffc500);
+
     text-align: center;
     -webkit-transition: box-shadow 0.3s;
             transition: box-shadow 0.3s;
@@ -341,7 +342,7 @@ a:hover {
 }
 
 #app .phone-form form {
-    border: 5px solid #411;
+    border: 1px solid #a9a9a9;
     box-shadow: 2px 2px 7px rgba(0, 0, 0, 0.216);
     margin: 0 auto 16px;
     max-width: 440px;
@@ -390,7 +391,8 @@ a:hover {
 
 #app .phone-form form button {
     border-radius: 3px;
-    background-image: linear-gradient(to bottom, #f223a4, #e10f6a);
+    background-image: -webkit-linear-gradient(top, #f223a4, #e10f6a);
+    background-image: linear-gradient(to bottom, #f223a4, #e10f6a);
     color: #fff;
     cursor: pointer;
     font-size: 24px;
@@ -404,7 +406,7 @@ a:hover {
 }
 
 #app .phone-form form button:hover {
-    background-color: #ffc133;
+    background-color: #e10f6a;
 }
 
 #app .phone-form form button img {
@@ -484,7 +486,7 @@ a:hover {
     /* box-shadow: 2px 2px 7px rgba(0, 0, 0, 0.216); */
     margin: 32px auto 22px;
     max-width: 440px;
-    overflow: hidden;
+    /* overflow: hidden; */
 
     -webkit-transition: box-shadow 0.3s;
             transition: box-shadow 0.3s;
@@ -506,7 +508,7 @@ a:hover {
             transition: box-shadow 0.3s;
 
     height:80px;
-    font-family: 'Roboto';
+    font-family: 'Roboto Slab', serif;
     vertical-align: bottom;
 }
 
@@ -573,7 +575,7 @@ a:hover {
     z-index: 9;
 }
 #app .email-form .counter .number-of-signatures {
-    font-family: 'Roboto Slab';
+    font-family: 'Roboto Slab', serif;
     color: #ffb406;
     display: inline-block;
     font-size: 36px;
@@ -926,8 +928,11 @@ a:hover {
     margin: 0 auto;
 }
 #app .calling-wrapper form {
-    background-color: #45619d;
-    background-image: linear-gradient(#45619d, #09466f);
+    /* background-color: #45619d;
+    background-image: linear-gradient(#45619d, #09466f); */
+    background-color: #ffe500;
+    background-image: -webkit-linear-gradient(top, #ffe500, #ffc500);
+    background-image: linear-gradient(to bottom, #ffe500, #ffc500);
     color: white;
     border-radius: 5px;
     color: #eee;
@@ -955,7 +960,7 @@ a:hover {
 }
 #app .calling-wrapper form button {
     background: none;
-    background-color: #ffb406;
+    background-color: #f223a4;
     border-radius: 3px;
     border: none;
     color: #f0f4f5;
@@ -971,7 +976,7 @@ a:hover {
     width: 100%;
 }
 #app .calling-wrapper button:hover {
-    background-color: #ffa905;
+    background-color: #e10f6a;
 }
 #app .calling-wrapper #thanks {
     background: #0199ff;
@@ -1003,7 +1008,7 @@ a:hover {
 .tell-congress {
     width: 234px;
     height: 48px;
-    font-family: 'Roboto Slab';
+    font-family: 'Roboto Slab', serif;
     font-size: 36px;
     font-weight: bold;
     text-align: left;
@@ -1014,7 +1019,7 @@ a:hover {
 .dont-give-trump-unc {
     width: 960px;
     height: 140px;
-    font-family: 'Roboto Slab';
+    font-family: 'Roboto Slab', serif;
     font-size: 60px;
     font-weight: bold;
     line-height: 1.17;
@@ -1026,7 +1031,7 @@ a:hover {
 .congress-is-debating {
     width: 960px;
     height: 144px;
-    font-family: 'Roboto Slab';
+    font-family: 'Roboto Slab', serif;
     font-size: 36px;
     text-align: left;
     color: #ffc500;
@@ -1038,13 +1043,14 @@ a:hover {
 }
 
 .the-problem {
-    font-family: 'Roboto';
+    font-family: 'Roboto Slab', serif;
     font-size: 16px;
     font-style: italic;
     line-height: 1.5;
     text-align: left;
     color: #000000;
     border-radius: 3px;
+    background-image: -webkit-linear-gradient(top, #ffe500, #ffc500);
     background-image: linear-gradient(to bottom, #ffe500, #ffc500);
     padding: 54.8px 0 54.8px 0;
 }
@@ -1083,7 +1089,7 @@ button img svg {
 }
 
 #app #text {
-    grid-area: myText    
+    grid-area: myText;
 }
 
 #app .form {
@@ -1098,7 +1104,8 @@ button img svg {
 
 #app #form-grid {
     display: grid;
-    grid-template-columns: 160px 160px 160px 174px;    
+    grid-template-columns: 160px 160px 160px 174px;
+    grid-row-gap: 30px;    
     grid-template-areas: "myName myZip myEmail myButton" "myText myText myText myText";
 }
 
@@ -1136,6 +1143,13 @@ input{
     height: 96px;    
 }
  #text, label {
-    font-family: 'RobotoSlab', serif !important;
+    font-family: 'Roboto Slab', serif;
 }
 
+.title span.dont-give-trump-unc {
+    text-transform: capitalize;
+}
+
+#app .calling-wrapper form h4 {
+    color: black;
+}

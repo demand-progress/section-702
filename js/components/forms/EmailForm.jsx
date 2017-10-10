@@ -35,11 +35,11 @@ class EmailForm extends Component {
                                     <label htmlFor="email">address@domain.com</label><br />
                                     <input className="email" name="email" placeholder="Email" type="email" />
                                 </div>
-                                <div id="text" >
+                                <p id="text" >
                                     <strong>Donald Trump’s first appointments to cabinet-level roles in his administration are horrifying.</strong> Trump’s nominees and rumored picks have promoted white nationalism, attacked climate science, and used their power as Wall Street insiders and corporate lobbyists to fleece working families.
                                     <div className="spacer" />
                                     <p>As representatives of all Americans, you must stand up against hatred and greed. Fight to block and resist every Trump nominee who embraces racism, xenophobia, misogyny, homophobia, climate denial, and Wall Street greed.</p>
-                                </div>
+                                </p>
                                 <button id="submit" ><img src="./images/document-white.svg"/>Sign</button>
                             </form>
                         {/* </div> */}
