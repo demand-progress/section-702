@@ -7,9 +7,21 @@ class Header extends Component {
     // title and random article
     constructor(props) {
         super(props);
-        
-        var queryParams = JSON.parse('{"' + decodeURI(window.location.search.replace("?","").replace(/&/g, "\",\"").replace(/=/g,"\":\"")) + '"}');
+
+        var queryParams
+        if(window.location.search){
+            queryParams = JSON.parse('{"' + decodeURI(window.location.search.replace("?","").replace(/&/g, "\",\"").replace(/=/g,"\":\"")) + '"}');            
+        }
         console.log("queryParams", queryParams);
+        if (!queryParams){
+            location.replace(location.href + "?title=Heeeey")
+            
+            // this.state = {
+            //     title: 'Wowee!',
+            //     text: 'Ample sample'
+            // };
+            return;
+        }
         if (!queryParams['text']){
             location.replace(location.href + "&text=" + this._copyPicker(articles.length));
         } else {
