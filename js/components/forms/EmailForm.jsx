@@ -27,7 +27,7 @@ class EmailForm extends Component {
 
                     <div id="form-container" className="the-problem">
                         {/* <div className="form-container"> */}
-                            <form id="form-grid" className="form" onSubmit={ this.onSubmit } ref="form">
+                            <form id="form-grid" className="form" onSubmit={ this.onSubmit.bind(this) } ref="form">
                                 <div id="name" className="inputBox">
                                     <label htmlFor="name">Your Full name</label><br />
                                     <input  className="name" name="name" placeholder="Your name" autoFocus="autoFocus" />
