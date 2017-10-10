@@ -23,22 +23,31 @@ class EmailForm extends Component {
         return (
             <div className="email-form">
                 <div className="petition" id="petition">
-                    <h3><i className="sign icon"></i> Sign the petition</h3>
+                    <h3><img src="./images/document-pink.svg"/> Sign the petition</h3>
 
-                    <div className="form-container">
-                        <form onSubmit={ this.onSubmit.bind(this) }>
-                            <input className="name" name="name" placeholder="Your name" autoFocus="autoFocus" />
-                            <input className="email" name="email" placeholder="Email" type="email" />
-                            <input className="zip" name="zip" placeholder="Zip code" type="tel" />
-                            <button>Sign</button>
-                        </form>
-                    </div>
-
-                    <div className="the-problem">
-                        <strong>Donald Trump’s first appointments to cabinet-level roles in his administration are horrifying.</strong> Trump’s nominees and rumored picks have promoted white nationalism, attacked climate science, and used their power as Wall Street insiders and corporate lobbyists to fleece working families.
-                        <div className="spacer" />
-                        As representatives of all Americans, you must stand up against hatred and greed. Fight to block and resist every Trump nominee who embraces racism, xenophobia, misogyny, homophobia, climate denial, and Wall Street greed.
-
+                    <div id="form-container" className="the-problem">
+                        {/* <div className="form-container"> */}
+                            <form id="form-grid" className="form" onSubmit={ this.onSubmit } ref="form">
+                                <div id="name" className="inputBox">
+                                    <label htmlFor="name">Your Full name</label><br />
+                                    <input  className="name" name="name" placeholder="Your name" autoFocus="autoFocus" />
+                                </div>
+                                <div id="zip" className="inputBox">
+                                    <label htmlFor="zip">5-Digit Zip Code</label><br />
+                                    <input className="zip" name="zip" placeholder="Zip code" type="tel" />
+                                </div>
+                                <div id="email" className="inputBox">
+                                    <label htmlFor="email">address@domain.com</label><br />
+                                    <input className="email" name="email" placeholder="Email" type="email" />
+                                </div>
+                                <div id="text" >
+                                    <strong>Donald Trump’s first appointments to cabinet-level roles in his administration are horrifying.</strong> Trump’s nominees and rumored picks have promoted white nationalism, attacked climate science, and used their power as Wall Street insiders and corporate lobbyists to fleece working families.
+                                    <div className="spacer" />
+                                    <p>As representatives of all Americans, you must stand up against hatred and greed. Fight to block and resist every Trump nominee who embraces racism, xenophobia, misogyny, homophobia, climate denial, and Wall Street greed.</p>
+                                </div>
+                                <button id="submit" ><img src="./images/document-white.svg"/>Sign</button>
+                            </form>
+                        {/* </div> */}
                     </div>
 
                     <div className="disclaimer">
