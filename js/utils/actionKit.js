@@ -1,3 +1,5 @@
+import urls from '../config/urls'
+
 export function sendFormToActionKit(fields) {
     // iFrame
     const iframe = document.createElement('iframe');
