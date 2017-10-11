@@ -4791,8 +4791,20 @@
 
 	        var _this = _possibleConstructorReturn(this, (Header.__proto__ || Object.getPrototypeOf(Header)).call(this, props));
 
-	        var queryParams = JSON.parse('{"' + decodeURI(window.location.search.replace("?", "").replace(/&/g, "\",\"").replace(/=/g, "\":\"")) + '"}');
+	        var queryParams;
+	        if (window.location.search) {
+	            queryParams = JSON.parse('{"' + decodeURI(window.location.search.replace("?", "").replace(/&/g, "\",\"").replace(/=/g, "\":\"")) + '"}');
+	        }
 	        console.log("queryParams", queryParams);
+	        if (!queryParams) {
+	            location.replace(location.href + "?title=Heeeey");
+
+	            // this.state = {
+	            //     title: 'Wowee!',
+	            //     text: 'Ample sample'
+	            // };
+	            return _possibleConstructorReturn(_this);
+	        }
 	        if (!queryParams['text']) {
 	            location.replace(location.href + "&text=" + _this._copyPicker(_articles.articles.length));
 	        } else {
