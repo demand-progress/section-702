@@ -5626,6 +5626,8 @@
 
 	var _config = __webpack_require__(43);
 
+	var _index = __webpack_require__(41);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -5666,8 +5668,8 @@
 	                    { className: 'phone-form' },
 	                    _react2.default.createElement(
 	                        'form',
-	                        { onSubmit: this.onSubmit },
-	                        _react2.default.createElement('input', { placeholder: 'Your Phone Number', id: 'field-phone', ref: 'field-phone', className: 'phone', name: 'phone', autoComplete: 'on', pattern: '[\\d\\(\\)\\-\\+ ]*', autoFocus: true }),
+	                        { onSubmit: this.onSubmit.bind(this) },
+	                        _react2.default.createElement('input', { placeholder: 'Your Phone Number', id: 'fieldPhone', ref: 'field-phone', className: 'phone', name: 'phone', autoComplete: 'on', pattern: '[\\d\\(\\)\\-\\+ ]*', autoFocus: true }),
 	                        _react2.default.createElement(
 	                            'button',
 	                            null,
@@ -5710,7 +5712,7 @@
 	        value: function onSubmit(e) {
 	            e.preventDefault();
 
-	            var phoneField = this.refs['field-phone'];
+	            var phoneField = e.target.fieldPhone;
 	            var number = phoneField.value.replace(/[^\d]/g, '');
 
 	            if (number.length !== 10) {
@@ -5719,18 +5721,18 @@
 	            }
 
 	            var request = new XMLHttpRequest();
-	            var url = 'https://dp-call-congress.herokuapp.com/create?db=cwd&campaignId=' + _config.config.callCampaign + '&userPhone=' + number + '&source_id=' + getSource();
+	            var url = 'https://dp-call-congress.herokuapp.com/create?db=cwd&campaignId=' + _config.config.callCampaign + '&userPhone=' + number + '&source_id=' + (0, _index.getSource)();
 
 	            try {
 	                if ('zip' in sessionStorage) {
 	                    url += '&zipcode=' + sessionStorage.zip;
 	                }
-	            } catch (err) {
-	                // Oh well
-	            }
+	            } catch (err) {}
+	            // Oh well
 
-	            request.open('GET', url, true);
-	            request.send();
+
+	            // request.open('GET', url, true);
+	            // request.send();
 
 	            this.props.changeForm('script');
 	        }
