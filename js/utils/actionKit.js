@@ -1,5 +1,4 @@
 import { urls } from '../store/config'
-import urls from '../config/urls'
 
 export function sendFormToActionKit(fields) {
     // iFrame

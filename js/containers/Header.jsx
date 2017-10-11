@@ -8,18 +8,12 @@ class Header extends Component {
     constructor(props) {
         super(props);
 
-        var queryParams
+        var queryParams;
         if(window.location.search){
             queryParams = JSON.parse('{"' + decodeURI(window.location.search.replace("?","").replace(/&/g, "\",\"").replace(/=/g,"\":\"")) + '"}');            
         }
-        console.log("queryParams", queryParams);
-        if (!queryParams){
-            location.replace(location.href + "?title=Heeeey")
-            
-            // this.state = {
-            //     title: 'Wowee!',
-            //     text: 'Ample sample'
-            // };
+        if (!queryParams) {
+            location.replace(location.href + "?title=Tell Congress: ");
             return;
         }
         if (!queryParams['text']){
