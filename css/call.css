@@ -1117,7 +1117,7 @@ button img svg {
 @media screen and (max-width: 768px) {
     #form-container {
         display: grid;
-        grid-template-columns: 100%;    
+        grid-template-columns: inherit;    
         /* grid-template-areas: 
         "form"
         "text"
@@ -1152,4 +1152,28 @@ input{
 
 #app .calling-wrapper form h4 {
     color: black;
+}
+
+@media screen and (max-width:572px) {
+    #app .petition {
+        padding: 5px; 
+    }
+
+    #app .email-form form {
+        margin: 0 auto;
+    }
+
+    #app #form-grid {
+        width: 90%;
+        overflow: none;
+        margin-right: 7%;
+    }
+    #app #name {
+        width: 95%;
+    }
+
+    #app label {
+        font-size: 80%;
+    }
+
 }
