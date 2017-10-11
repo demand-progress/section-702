@@ -61,7 +61,7 @@ input {
     border-radius: 0;
     border: none;
     margin: 0;
-    font-family: 'RobotoSlab', serif;
+    font-family: 'Roboto Slab', serif;
 }
 
 input[type=number]::-webkit-outer-spin-button,
@@ -91,7 +91,7 @@ a:hover {
 
 #app {
     color: #330904;
-    font-family: 'RobotoSlab', serif;
+    font-family: 'Roboto Slab', serif;
     line-height: 1.4;
     min-height: 100vh;
     z-index: -1;
@@ -104,7 +104,7 @@ a:hover {
     background-image: url(../images/trump-surveillance-2.jpg);
     background-position: left top;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: contain;
     background-attachment: fixed;
     width: 100%;
     height: 796px;
@@ -171,7 +171,7 @@ a:hover {
 }
 
 #app .paragraph {
-    font-family: Roboto;
+    font-family: 'Roboto Slab', serif;
     font-size: 18px;
     line-height: 1.56;
     text-align: left;
@@ -180,7 +180,7 @@ a:hover {
     max-width: 1005px;
     padding: 1px 32px 32px;
     border-radius: 3px;
-    background-color: #ffffff;
+    /* background-color: #ffffff; */
 }
 
 #app .petition h3,
@@ -257,12 +257,14 @@ a:hover {
 }
 
 #app .phone-form-wrapper {
-    background-color: #f1f1f1;
-    border: 1px solid #a9a9a9;
+    /* border: 1px solid #a9a9a9; */
     box-shadow: 2px 2px 7px rgba(0, 0, 0, 0.216);
     margin: 0 auto 32px;
     max-width: 700px;
     padding: 32px;
+    background-image: -webkit-linear-gradient(top, #ffe500, #ffc500);
+    background-image: linear-gradient(to bottom, #ffe500, #ffc500);
+
     text-align: center;
     -webkit-transition: box-shadow 0.3s;
             transition: box-shadow 0.3s;
@@ -340,7 +342,7 @@ a:hover {
 }
 
 #app .phone-form form {
-    border: 5px solid #411;
+    border: 1px solid #a9a9a9;
     box-shadow: 2px 2px 7px rgba(0, 0, 0, 0.216);
     margin: 0 auto 16px;
     max-width: 440px;
@@ -388,7 +390,9 @@ a:hover {
 }
 
 #app .phone-form form button {
-    background-color: #ffb406;
+    border-radius: 3px;
+    background-image: -webkit-linear-gradient(top, #f223a4, #e10f6a);
+    background-image: linear-gradient(to bottom, #f223a4, #e10f6a);
     color: #fff;
     cursor: pointer;
     font-size: 24px;
@@ -402,7 +406,7 @@ a:hover {
 }
 
 #app .phone-form form button:hover {
-    background-color: #ffc133;
+    background-color: #e10f6a;
 }
 
 #app .phone-form form button img {
@@ -478,34 +482,37 @@ a:hover {
 }
 
 #app .email-form form {
-    border: 1px solid #bdbdbd;
-    box-shadow: 2px 2px 7px rgba(0, 0, 0, 0.216);
+    /* border: 1px solid #bdbdbd; */
+    /* box-shadow: 2px 2px 7px rgba(0, 0, 0, 0.216); */
     margin: 32px auto 22px;
     max-width: 440px;
-    overflow: hidden;
+    /* overflow: hidden; */
 
     -webkit-transition: box-shadow 0.3s;
             transition: box-shadow 0.3s;
 }
 
 #app .email-form form:hover {
-    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.216);
+    /* box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.216); */
 }
 
 #app .email-form form input {
     box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.076);
     color: #090909;
     font-size: 18px;
-    padding: 16px;
+    /* padding: 16px; */
     text-align: center;
-    width: 100%;
+    /* width: 25%; */
 
     -webkit-transition: box-shadow 0.3s;
             transition: box-shadow 0.3s;
 
     height:80px;
-    font-family: 'Roboto';
+    font-family: 'Roboto Slab', serif;
     vertical-align: bottom;
+}
+
+#fullName {
 }
 
 #app .email-form form input::-webkit-input-placeholder,
@@ -534,9 +541,12 @@ a:hover {
     font-size: 36px;
     font-weight: 700;
     padding: 16px;
-    width: 23%;
+    margin-top: 16px;
+    margin-left: 10px;
+    /* width: 250px; */
+    height: 86px;
     border-radius: 3px;
-    margin-left: 15px;
+    /* margin-left: calc(50% - 125px); */
     background-image: linear-gradient(to bottom, #f223a4, #e10f6a);
 
     -webkit-transition: background-color 0.3s;
@@ -565,7 +575,7 @@ a:hover {
     z-index: 9;
 }
 #app .email-form .counter .number-of-signatures {
-    font-family: 'Roboto Slab';
+    font-family: 'Roboto Slab', serif;
     color: #ffb406;
     display: inline-block;
     font-size: 36px;
@@ -627,7 +637,7 @@ a:hover {
     }
     #app .email-form form input {
         border: 1px solid #bdbdbd;
-        width: 25%;
+        /* width: 25%; */
     }
     #app .email-form form input.email {
         border-left: none;
@@ -918,8 +928,11 @@ a:hover {
     margin: 0 auto;
 }
 #app .calling-wrapper form {
-    background-color: #45619d;
-    background-image: linear-gradient(#45619d, #09466f);
+    /* background-color: #45619d;
+    background-image: linear-gradient(#45619d, #09466f); */
+    background-color: #ffe500;
+    background-image: -webkit-linear-gradient(top, #ffe500, #ffc500);
+    background-image: linear-gradient(to bottom, #ffe500, #ffc500);
     color: white;
     border-radius: 5px;
     color: #eee;
@@ -947,7 +960,7 @@ a:hover {
 }
 #app .calling-wrapper form button {
     background: none;
-    background-color: #ffb406;
+    background-color: #f223a4;
     border-radius: 3px;
     border: none;
     color: #f0f4f5;
@@ -963,7 +976,7 @@ a:hover {
     width: 100%;
 }
 #app .calling-wrapper button:hover {
-    background-color: #ffa905;
+    background-color: #e10f6a;
 }
 #app .calling-wrapper #thanks {
     background: #0199ff;
@@ -995,7 +1008,7 @@ a:hover {
 .tell-congress {
     width: 234px;
     height: 48px;
-    font-family: 'Roboto Slab';
+    font-family: 'Roboto Slab', serif;
     font-size: 36px;
     font-weight: bold;
     text-align: left;
@@ -1006,7 +1019,7 @@ a:hover {
 .dont-give-trump-unc {
     width: 960px;
     height: 140px;
-    font-family: 'Roboto Slab';
+    font-family: 'Roboto Slab', serif;
     font-size: 60px;
     font-weight: bold;
     line-height: 1.17;
@@ -1018,7 +1031,7 @@ a:hover {
 .congress-is-debating {
     width: 960px;
     height: 144px;
-    font-family: 'Roboto Slab';
+    font-family: 'Roboto Slab', serif;
     font-size: 36px;
     text-align: left;
     color: #ffc500;
@@ -1030,17 +1043,137 @@ a:hover {
 }
 
 .the-problem {
-    font-family: 'Roboto';
+    font-family: 'Roboto Slab', serif;
     font-size: 16px;
     font-style: italic;
     line-height: 1.5;
     text-align: left;
     color: #000000;
     border-radius: 3px;
+    background-image: -webkit-linear-gradient(top, #ffe500, #ffc500);
     background-image: linear-gradient(to bottom, #ffe500, #ffc500);
-    padding: 54.8px 27px 54.8px 42px;
+    padding: 54.8px 0 54.8px 0;
 }
 
 .form-container {
-    display: table;
+    display: grid;
+}
+
+@media screen and (max-width: 400) {
+    
+}
+
+button img {
+    margin-right: 2%;
+}
+
+button img svg {
+    fill: #fff;
+    display: none;
+}
+
+#app #name {
+    grid-area: myName
+  }
+
+#app #zip {
+    grid-area: myZip
+  }
+
+#app #email {
+    grid-area: myEmail
+  }
+
+#app #submit {
+    grid-area: myButton
+}
+
+#app #text {
+    grid-area: myText;
+}
+
+#app .form {
+    grid-area: myForm    
+}
+
+
+#app #form-container {
+    display: grid;
+    grid-template-areas: "myForm";
+}
+
+#app #form-grid {
+    display: grid;
+    grid-template-columns: 160px 160px 160px 174px;
+    grid-row-gap: 30px;    
+    grid-template-areas: "myName myZip myEmail myButton" "myText myText myText myText";
+}
+
+/* #app #form-grid, #petition h3 {
+    position: absolute;
+    top: -100px;
+} */
+
+@media screen and (max-width: 768px) {
+    #form-container {
+        display: grid;
+        grid-template-columns: inherit;    
+        /* grid-template-areas: 
+        "form"
+        "text"
+        "button" */
+    }
+
+    #app #form-grid {
+        grid-template-columns: 65% 40%;
+        grid-template-rows: auto;
+        grid-template-areas: "myName myZip" "myEmail myEmail"
+        "myText myText"
+        "myButton myButton";
+    }
+
+    #name input {
+        width: 95%;
+    }
+
+}
+
+input{
+    width:100%;
+    height: 96px;    
+}
+ #text, label {
+    font-family: 'Roboto Slab', serif;
+}
+
+.title span.dont-give-trump-unc {
+    text-transform: capitalize;
+}
+
+#app .calling-wrapper form h4 {
+    color: black;
+}
+
+@media screen and (max-width:572px) {
+    #app .petition {
+        padding: 5px; 
+    }
+
+    #app .email-form form {
+        margin: 0 auto;
+    }
+
+    #app #form-grid {
+        width: 90%;
+        overflow: none;
+        margin-right: 7%;
+    }
+    #app #name {
+        width: 95%;
+    }
+
+    #app label {
+        font-size: 80%;
+    }
+
 }

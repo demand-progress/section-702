@@ -1,3 +1,4 @@
+import React from 'react'
 const Thanks = function() {
     return (
         <div className="thanks">

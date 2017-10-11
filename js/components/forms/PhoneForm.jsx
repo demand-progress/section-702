@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import { config } from '../../store/config' 
+import { config } from '../../store/config'
+import { getSource } from '../../utils/index'
 
 class PhoneForm extends Component {
 
@@ -12,8 +13,8 @@ class PhoneForm extends Component {
                 </div>
 
                 <div className="phone-form">
-                    <form onSubmit={ this.onSubmit }>
-                        <input placeholder="Your Phone Number" id="field-phone" ref="field-phone" className="phone" name="phone" autoComplete="on" pattern="[\d\(\)\-\+ ]*" autoFocus />
+                    <form onSubmit={ this.onSubmit.bind(this) }>
+                        <input placeholder="Your Phone Number" id="fieldPhone" ref="field-phone" className="phone" name="phone" autoComplete="on" pattern="[\d\(\)\-\+ ]*" autoFocus />
                         <button>
                             CALL THE SENATE
                             <img src="images/phone.svg" />
@@ -40,7 +41,8 @@ class PhoneForm extends Component {
     onSubmit(e) {
         e.preventDefault();
 
-        const phoneField = this.refs['field-phone'];
+        const phoneField = e.target.fieldPhone;
+       
         const number = phoneField.value.replace(/[^\d]/g, '');
 
         if (number.length !== 10) {
@@ -59,8 +61,8 @@ class PhoneForm extends Component {
             // Oh well
         }
 
-        request.open('GET', url, true);
-        request.send();
+        // request.open('GET', url, true);
+        // request.send();
 
         this.props.changeForm('script');
     }
