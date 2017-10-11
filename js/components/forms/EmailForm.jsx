@@ -42,8 +42,8 @@ class EmailForm extends Component {
                                 </div>
                                 <p id="text" >
                                     <strong>Donald Trump’s first appointments to cabinet-level roles in his administration are horrifying.</strong> Trump’s nominees and rumored picks have promoted white nationalism, attacked climate science, and used their power as Wall Street insiders and corporate lobbyists to fleece working families.
-                                    <div className="spacer" />
-                                    <p>As representatives of all Americans, you must stand up against hatred and greed. Fight to block and resist every Trump nominee who embraces racism, xenophobia, misogyny, homophobia, climate denial, and Wall Street greed.</p>
+                                    <br/>
+                                    <span>As representatives of all Americans, you must stand up against hatred and greed. Fight to block and resist every Trump nominee who embraces racism, xenophobia, misogyny, homophobia, climate denial, and Wall Street greed.</span>
                                 </p>
                                 <button id="submit" ><img src="./images/document-white.svg"/>Sign</button>
                             </form>
