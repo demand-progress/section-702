@@ -1,3 +1,4 @@
+import config from './campaign';
 // URLs
 const urls = {}
 urls.actionkit = 'https://act.demandprogress.org/act/'

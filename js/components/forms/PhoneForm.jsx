@@ -42,6 +42,7 @@ class PhoneForm extends Component {
         e.preventDefault();
 
         const phoneField = e.target.fieldPhone;
+       
         const number = phoneField.value.replace(/[^\d]/g, '');
 
         if (number.length !== 10) {

@@ -4791,20 +4791,8 @@
 
 	        var _this = _possibleConstructorReturn(this, (Header.__proto__ || Object.getPrototypeOf(Header)).call(this, props));
 
-	        var queryParams;
-	        if (window.location.search) {
-	            queryParams = JSON.parse('{"' + decodeURI(window.location.search.replace("?", "").replace(/&/g, "\",\"").replace(/=/g, "\":\"")) + '"}');
-	        }
+	        var queryParams = JSON.parse('{"' + decodeURI(window.location.search.replace("?", "").replace(/&/g, "\",\"").replace(/=/g, "\":\"")) + '"}');
 	        console.log("queryParams", queryParams);
-	        if (!queryParams) {
-	            location.replace(location.href + "?title=Heeeey");
-
-	            // this.state = {
-	            //     title: 'Wowee!',
-	            //     text: 'Ample sample'
-	            // };
-	            return _possibleConstructorReturn(_this);
-	        }
 	        if (!queryParams['text']) {
 	            location.replace(location.href + "&text=" + _this._copyPicker(_articles.articles.length));
 	        } else {
@@ -5188,10 +5176,10 @@
 	var EmailForm = function (_Component) {
 	    _inherits(EmailForm, _Component);
 
-	    function EmailForm() {
+	    function EmailForm(props) {
 	        _classCallCheck(this, EmailForm);
 
-	        return _possibleConstructorReturn(this, (EmailForm.__proto__ || Object.getPrototypeOf(EmailForm)).apply(this, arguments));
+	        return _possibleConstructorReturn(this, (EmailForm.__proto__ || Object.getPrototypeOf(EmailForm)).call(this, props));
 	    }
 
 	    _createClass(EmailForm, [{
@@ -5249,7 +5237,7 @@
 	                                _react2.default.createElement('input', { className: 'email', name: 'email', placeholder: 'Email', type: 'email' })
 	                            ),
 	                            _react2.default.createElement(
-	                                'p',
+	                                'div',
 	                                { id: 'text' },
 	                                _react2.default.createElement(
 	                                    'strong',
@@ -5546,7 +5534,11 @@
 	exports.fetchSignatureCounts = fetchSignatureCounts;
 	exports.onFetchSignatureCounts = onFetchSignatureCounts;
 
-	var _config = __webpack_require__(43);
+	var _urls = __webpack_require__(48);
+
+	var _urls2 = _interopRequireDefault(_urls);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function sendFormToActionKit(fields) {
 	    // iFrame
@@ -5558,7 +5550,7 @@
 	    // Form
 	    var form = document.createElement('form');
 	    form.style.display = 'none';
-	    form.setAttribute('action', _config.urls.actionkit);
+	    form.setAttribute('action', _urls2.default.actionkit);
 	    form.setAttribute('method', 'post');
 	    form.setAttribute('target', 'actionkit-iframe');
 	    document.body.appendChild(form);
@@ -5577,7 +5569,7 @@
 	function fetchSignatureCounts() {
 	    var script = document.createElement('script');
 	    script.async = true;
-	    script.src = _config.urls.count;
+	    script.src = _urls2.default.count;
 	    document.body.appendChild(script);
 	}
 
@@ -5607,8 +5599,49 @@
 	};
 
 /***/ }),
-/* 48 */,
-/* 49 */,
+/* 48 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _campaign = __webpack_require__(49);
+
+	var _campaign2 = _interopRequireDefault(_campaign);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	// URLs
+	var urls = {};
+	urls.actionkit = 'https://act.demandprogress.org/act/';
+	urls.count = 'https://act.demandprogress.org/progress/' + _campaign2.default.akPage + '?callback=onFetchSignatureCounts';
+	urls.facebook = 'https://www.facebook.com/sharer.php?u=';
+	urls.feedback = 'https://dp-feedback-tool.herokuapp.com/api/v1/feedback?';
+	urls.twitter = 'https://twitter.com/intent/tweet?text=';
+
+	exports.default = urls;
+
+/***/ }),
+/* 49 */
+/***/ (function(module, exports) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	var config = {};
+	config.akPage = 'dont-let-trump-spy-on-us-www';
+	config.link = 'https://DontLetTrumpSpyonUs.com/';
+	config.prettyCampaignName = 'Don\'t Let Trump Spy on Us';
+	config.callCampaign = 'dont-let-trump-spy-on-us';
+
+	exports.default = config;
+
+/***/ }),
 /* 50 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -5669,7 +5702,7 @@
 	                    _react2.default.createElement(
 	                        'form',
 	                        { onSubmit: this.onSubmit.bind(this) },
-	                        _react2.default.createElement('input', { placeholder: 'Your Phone Number', id: 'fieldPhone', ref: 'field-phone', className: 'phone', name: 'phone', autoComplete: 'on', pattern: '[\\d\\(\\)\\-\\+ ]*', autoFocus: true }),
+	                        _react2.default.createElement('input', { placeholder: 'Your Phone Number', id: 'fieldPhone', className: 'phone', name: 'phone', autoComplete: 'on', pattern: '[\\d\\(\\)\\-\\+ ]*', autoFocus: true }),
 	                        _react2.default.createElement(
 	                            'button',
 	                            null,
@@ -5713,6 +5746,8 @@
 	            e.preventDefault();
 
 	            var phoneField = e.target.fieldPhone;
+	            console.log("form", e.target);
+	            console.log(e.target.fieldPhone);
 	            var number = phoneField.value.replace(/[^\d]/g, '');
 
 	            if (number.length !== 10) {
@@ -5752,22 +5787,15 @@
 
 /***/ }),
 /* 51 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, exports) {
 
 	"use strict";
 
 	Object.defineProperty(exports, "__esModule", {
 	    value: true
 	});
-
-	var _react = __webpack_require__(2);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
 	var Thanks = function Thanks() {
-	    return _react2.default.createElement(
+	    return React.createElement(
 	        "div",
 	        { className: "thanks" },
 	        "Thanks for making your voice heard!"
