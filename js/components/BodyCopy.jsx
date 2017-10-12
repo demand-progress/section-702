@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 class BodyCopy extends Component {
     render() {
-        return (<div className="paragraph" style={{'background-color': '#ffffff'}}>
+        return (<div className="paragraph" style="'background-color': '#ffffff'">
             <h3>Trump's Broken Promises</h3>
             <p>Trump promised on election night to be “a president for all Americans.” But the parade of horribles
                 that Trump has nominated to his administration show he is welcoming hate right into the White
