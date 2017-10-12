@@ -24557,7 +24557,7 @@
 /* 212 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	"use strict";
+	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
 	    value: true
@@ -24587,125 +24587,125 @@
 	    }
 
 	    _createClass(BodyCopy, [{
-	        key: "render",
+	        key: 'render',
 	        value: function render() {
 	            return _react2.default.createElement(
-	                "div",
-	                { className: "paragraph" },
+	                'div',
+	                { className: 'paragraph', style: { 'background-color': '#ffffff' } },
 	                _react2.default.createElement(
-	                    "h3",
+	                    'h3',
 	                    null,
-	                    "Trump's Broken Promises"
+	                    'Trump\'s Broken Promises'
 	                ),
 	                _react2.default.createElement(
-	                    "p",
+	                    'p',
 	                    null,
-	                    "Trump promised on election night to be \u201Ca president for all Americans.\u201D But the parade of horribles that Trump has nominated to his administration show he is welcoming hate right into the White House."
+	                    'Trump promised on election night to be \u201Ca president for all Americans.\u201D But the parade of horribles that Trump has nominated to his administration show he is welcoming hate right into the White House.'
 	                ),
-	                _react2.default.createElement("div", { className: "spacer" }),
+	                _react2.default.createElement('div', { className: 'spacer' }),
 	                _react2.default.createElement(
-	                    "p",
+	                    'p',
 	                    null,
-	                    "And his pledge during the campaign to \u201Cdrain the swamp\u201D and make Washington work for ordinary Americans instead of powerful elites? Forget about it. Trump\u2019s cabinet is so pro-corporate it\u2019s called \u201Can investment banker\u2019s dream.\u201D"
+	                    'And his pledge during the campaign to \u201Cdrain the swamp\u201D and make Washington work for ordinary Americans instead of powerful elites? Forget about it. Trump\u2019s cabinet is so pro-corporate it\u2019s called \u201Can investment banker\u2019s dream.\u201D'
 	                ),
-	                _react2.default.createElement("div", { className: "spacer" }),
+	                _react2.default.createElement('div', { className: 'spacer' }),
 	                _react2.default.createElement(
-	                    "h3",
+	                    'h3',
 	                    null,
-	                    "Who the Trump Cabinet Really Works For"
+	                    'Who the Trump Cabinet Really Works For'
 	                ),
-	                "Wall Street bankers and Trump\u2019s corporate cronies are cheering the Trump agenda. It\u2019s a corporate wish list that would eliminate protections for working people and our environment, and eviscerate strong rules reining in Wall Street.",
-	                _react2.default.createElement("div", { className: "spacer" }),
+	                'Wall Street bankers and Trump\u2019s corporate cronies are cheering the Trump agenda. It\u2019s a corporate wish list that would eliminate protections for working people and our environment, and eviscerate strong rules reining in Wall Street.',
+	                _react2.default.createElement('div', { className: 'spacer' }),
 	                _react2.default.createElement(
-	                    "p",
+	                    'p',
 	                    null,
-	                    "The Trump administration is shaping up to benefit Donald Trump and his family\u2019s business empire in a big way, with massive conflicts of interest posed by Trump\u2019s continued stake in the Trump Organization."
+	                    'The Trump administration is shaping up to benefit Donald Trump and his family\u2019s business empire in a big way, with massive conflicts of interest posed by Trump\u2019s continued stake in the Trump Organization.'
 	                ),
-	                _react2.default.createElement("div", { className: "spacer" }),
+	                _react2.default.createElement('div', { className: 'spacer' }),
 	                _react2.default.createElement(
-	                    "h3",
+	                    'h3',
 	                    null,
-	                    "The Senate Must Block and Resist Trump's Cabinet"
+	                    'The Senate Must Block and Resist Trump\'s Cabinet'
 	                ),
 	                _react2.default.createElement(
-	                    "p",
+	                    'p',
 	                    null,
-	                    "The U.S. Senate has confirmation power over most of Trump's cabinet. Senators must use this power to block and resist Trump\u2019s cabinet of hate and greed. Consider who we\u2019re talking about:"
+	                    'The U.S. Senate has confirmation power over most of Trump\'s cabinet. Senators must use this power to block and resist Trump\u2019s cabinet of hate and greed. Consider who we\u2019re talking about:'
 	                ),
-	                _react2.default.createElement("div", { className: "spacer" }),
+	                _react2.default.createElement('div', { className: 'spacer' }),
 	                _react2.default.createElement(
-	                    "div",
-	                    { className: "profiles" },
+	                    'div',
+	                    { className: 'profiles' },
 	                    _react2.default.createElement(
-	                        "div",
-	                        { className: "profile" },
-	                        _react2.default.createElement("img", { src: "images/profiles/Jeff_Sessions.jpg", alt: "Jeff Sessions photo" }),
+	                        'div',
+	                        { className: 'profile' },
+	                        _react2.default.createElement('img', { src: 'images/profiles/Jeff_Sessions.jpg', alt: 'Jeff Sessions photo' }),
 	                        _react2.default.createElement(
-	                            "strong",
+	                            'strong',
 	                            null,
-	                            "Enemy of civil rights and women's rights Jeff Sessions (Attorney General)"
+	                            'Enemy of civil rights and women\'s rights Jeff Sessions (Attorney General)'
 	                        ),
-	                        " \u2014 The same Jeff Sessions who was deemed too racist to confirm to a federal judgeship by a Republican Judiciary Committee in 1986 would be in charge of the Department of Justice. If confirmed, he would be responsible for enforcing the country\u2019s civil rights laws, despite ",
+	                        ' \u2014 The same Jeff Sessions who was deemed too racist to confirm to a federal judgeship by a Republican Judiciary Committee in 1986 would be in charge of the Department of Justice. If confirmed, he would be responsible for enforcing the country\u2019s civil rights laws, despite ',
 	                        _react2.default.createElement(
-	                            "a",
+	                            'a',
 	                            {
-	                                href: "http://www.cnn.com/2016/11/17/politics/jeff-sessions-racism-allegations/index.html",
-	                                target: "_blank" },
-	                            "a history"
+	                                href: 'http://www.cnn.com/2016/11/17/politics/jeff-sessions-racism-allegations/index.html',
+	                                target: '_blank' },
+	                            'a history'
 	                        ),
-	                        " of calling a black subordinate \"boy,\" \"joking\" about supporting the Ku Klux Klan, and calling the ACLU and NAACP \"un-American.\" His anti-woman record speaks for itself: He said ",
+	                        ' of calling a black subordinate "boy," "joking" about supporting the Ku Klux Klan, and calling the ACLU and NAACP "un-American." His anti-woman record speaks for itself: He said ',
 	                        _react2.default.createElement(
-	                            "a",
+	                            'a',
 	                            {
-	                                href: "http://www.weeklystandard.com/jeff-sessions-behavior-described-by-trump-in-grab-them-by-the-p-y-tape-isnt-sexual-assault/article/2004799?custom_click=rss",
-	                                target: "_blank" },
-	                            " \"I don't characterize\" grabbing women by the genitals \"as sexual assault,\""
+	                                href: 'http://www.weeklystandard.com/jeff-sessions-behavior-described-by-trump-in-grab-them-by-the-p-y-tape-isnt-sexual-assault/article/2004799?custom_click=rss',
+	                                target: '_blank' },
+	                            ' "I don\'t characterize" grabbing women by the genitals "as sexual assault,"'
 	                        ),
-	                        "voted ",
+	                        'voted ',
 	                        _react2.default.createElement(
-	                            "a",
-	                            { href: "https://www.govtrack.us/congress/votes/113-2013/s19", target: "_blank" },
-	                            "against reauthorizing the Violence Against Women Act"
+	                            'a',
+	                            { href: 'https://www.govtrack.us/congress/votes/113-2013/s19', target: '_blank' },
+	                            'against reauthorizing the Violence Against Women Act'
 	                        ),
-	                        " and ",
+	                        ' and ',
 	                        _react2.default.createElement(
-	                            "a",
+	                            'a',
 	                            {
-	                                href: "http://www.senate.gov/legislative/LIS/roll_call_lists/roll_call_vote_cfm.cfm?congress=113&session=2&vote=00059",
-	                                target: "_blank" },
-	                            "against bipartisan legislation to curb sexual assault"
+	                                href: 'http://www.senate.gov/legislative/LIS/roll_call_lists/roll_call_vote_cfm.cfm?congress=113&session=2&vote=00059',
+	                                target: '_blank' },
+	                            'against bipartisan legislation to curb sexual assault'
 	                        ),
-	                        " in the military ",
+	                        ' in the military ',
 	                        _react2.default.createElement(
-	                            "a",
+	                            'a',
 	                            {
-	                                href: "http://www.senate.gov/legislative/LIS/roll_call_lists/roll_call_vote_cfm.cfm?congress=114&session=1&vote=00211" },
-	                            "\u2013 twice."
+	                                href: 'http://www.senate.gov/legislative/LIS/roll_call_lists/roll_call_vote_cfm.cfm?congress=114&session=1&vote=00211' },
+	                            '\u2013 twice.'
 	                        )
 	                    ),
-	                    _react2.default.createElement("div", { className: "spacer" })
+	                    _react2.default.createElement('div', { className: 'spacer' })
 	                ),
 	                _react2.default.createElement(
-	                    "p",
+	                    'p',
 	                    null,
-	                    "The Senate will be narrowly divided 52-48 between Republicans and Democrats in 2017 and many key Senate committees will be split 10-9 or 11-10. ",
+	                    'The Senate will be narrowly divided 52-48 between Republicans and Democrats in 2017 and many key Senate committees will be split 10-9 or 11-10. ',
 	                    _react2.default.createElement(
-	                        "strong",
+	                        'strong',
 	                        null,
-	                        "If Democrats stick together it could only take one or two principled Republican votes to block many of Trump\u2019s nominees."
+	                        'If Democrats stick together it could only take one or two principled Republican votes to block many of Trump\u2019s nominees.'
 	                    )
 	                ),
-	                _react2.default.createElement("div", { className: "spacer" }),
+	                _react2.default.createElement('div', { className: 'spacer' }),
 	                _react2.default.createElement(
-	                    "p",
+	                    'p',
 	                    null,
-	                    "Donald Trump may have won the Electoral College, but members of the U.S. Senate should not give any support to Trump appointees espousing racism, xenophobia, misogyny, homophobia, climate denial, and corporate greed."
+	                    'Donald Trump may have won the Electoral College, but members of the U.S. Senate should not give any support to Trump appointees espousing racism, xenophobia, misogyny, homophobia, climate denial, and corporate greed.'
 	                ),
-	                _react2.default.createElement("div", { className: "spacer" }),
+	                _react2.default.createElement('div', { className: 'spacer' }),
 	                _react2.default.createElement(
-	                    "a",
-	                    { href: "#petition", className: "sign-the-petition" },
-	                    "Sign the petition if you agree."
+	                    'a',
+	                    { href: '#petition', className: 'sign-the-petition' },
+	                    'Sign the petition if you agree.'
 	                )
 	            );
 	        }
