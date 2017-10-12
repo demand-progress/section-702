@@ -5,6 +5,8 @@ import Social from './Social.jsx'
 import Organizations from './Organizations.jsx'
 import Contact from './Contact.jsx'
 import CreativeCommons from './CreativeCommons.jsx'
+import BodyCopy from '../components/BodyCopy.jsx'
+
 class CallPages extends Component {
 
     componentDidMount() {
@@ -20,6 +22,8 @@ class CallPages extends Component {
                 <Header />
 
                 <Form />
+
+                <BodyCopy />
 
                 <Social />
 

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
  
-import { articles } from '../store/articles' 
+import { articles, origin } from '../store/articles' 
 
 
 class Header extends Component {
@@ -13,14 +13,15 @@ class Header extends Component {
             queryParams = JSON.parse('{"' + decodeURI(window.location.search.replace("?","").replace(/&/g, "\",\"").replace(/=/g,"\":\"")) + '"}');            
         }
         if (!queryParams) {
-            location.replace(location.href + "?title=Tell Congress: ");
+            location.replace(location.href + "?origin=default");
             return;
         }
         if (!queryParams['text']){
             location.replace(location.href + "&text=" + this._copyPicker(articles.length));
         } else {
             this.state = {
-                title: queryParams['title'],
+                title: origin[queryParams['origin']].title,
+                subTitle: origin[queryParams['origin']].subTitle,
                 text: articles[queryParams['text']].body
             };
         }
@@ -35,9 +36,9 @@ class Header extends Component {
             <header>
                 <div className="fixed-trump"></div>
                 <div className="title">
-                    <span className="tell-congress">Tell Congress</span>
+                    <span className="tell-congress">{ this.state.title }</span>
                     <br/>
-                    <span className="dont-give-trump-unc">{ this.state.title }</span>
+                    <span className="dont-give-trump-unc">{ this.state.subTitle }</span>
                     <br/>
                     <span className="congress-is-debating">
                         { this.state.text }

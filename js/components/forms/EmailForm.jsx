@@ -1,7 +1,5 @@
 import React, { Component } from 'react'
 import Counter from '../Counter.jsx'
-// import BodyCopy from '../BodyCopy.jsx'
-import { bodyText } from '../../store/campaign' 
 import { config } from '../../store/config' 
 import { sendFormToActionKit } from '../../utils/actionKit'
 import { getSource } from '../../utils/index'
@@ -56,8 +54,6 @@ class EmailForm extends Component {
 
                     <Counter />
                 </div>
-
-                <bodyText />
 
             </div>
         )
