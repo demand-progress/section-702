@@ -51,18 +51,18 @@ class PhoneForm extends Component {
         }
 
         const request = new XMLHttpRequest();
-        let url = `https://dp-call-congress.herokuapp.com/create?db=cwd&campaignId=${config.callCampaign}&userPhone=${number}&source_id=${getSource()}`;
+        let url = `https://demandprogress.callpower.org/call/create?campaignId=5&userPhone=${number}`;
 
         try {
             if ('zip' in sessionStorage) {
-                url += `&zipcode=${sessionStorage.zip}`;
+                url += `&userLocation=${sessionStorage.zip}`;
             }
         } catch (err) {
             // Oh well
         }
 
-        // request.open('GET', url, true);
-        // request.send();
+        request.open('POST', url, true);
+        request.send();
 
         this.props.changeForm('script');
     }
