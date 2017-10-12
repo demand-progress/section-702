@@ -63,15 +63,3 @@ export const ajax = {
         xhr.send(formData);
     },
 };
-
-export function fetchSignatureCounts() {
-    const script = document.createElement('script');
-    script.async = true;
-    script.src = urls.count;
-    document.body.appendChild(script);
-}
-
-export function onFetchSignatureCounts(data) {
-    state.count = data.total.actions;
-    render();
-}

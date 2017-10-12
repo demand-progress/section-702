@@ -127,6 +127,10 @@
 
 	var _CreativeCommons2 = _interopRequireDefault(_CreativeCommons);
 
+	var _BodyCopy = __webpack_require__(212);
+
+	var _BodyCopy2 = _interopRequireDefault(_BodyCopy);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -160,6 +164,7 @@
 	                { className: 'wrapper' },
 	                _react2.default.createElement(_Header2.default, null),
 	                _react2.default.createElement(_Form2.default, null),
+	                _react2.default.createElement(_BodyCopy2.default, null),
 	                _react2.default.createElement(_Social2.default, null),
 	                _react2.default.createElement(_Organizations2.default, null),
 	                _react2.default.createElement(_Contact2.default, null),
@@ -4796,14 +4801,15 @@
 	            queryParams = JSON.parse('{"' + decodeURI(window.location.search.replace("?", "").replace(/&/g, "\",\"").replace(/=/g, "\":\"")) + '"}');
 	        }
 	        if (!queryParams) {
-	            location.replace(location.href + "?title=Tell Congress: ");
+	            location.replace(location.href + "?origin=default");
 	            return _possibleConstructorReturn(_this);
 	        }
 	        if (!queryParams['text']) {
 	            location.replace(location.href + "&text=" + _this._copyPicker(_articles.articles.length));
 	        } else {
 	            _this.state = {
-	                title: queryParams['title'],
+	                title: _articles.origin[queryParams['origin']].title,
+	                subTitle: _articles.origin[queryParams['origin']].subTitle,
 	                text: _articles.articles[queryParams['text']].body
 	            };
 	        }
@@ -4829,13 +4835,13 @@
 	                    _react2.default.createElement(
 	                        'span',
 	                        { className: 'tell-congress' },
-	                        'Tell Congress'
+	                        this.state.title
 	                    ),
 	                    _react2.default.createElement('br', null),
 	                    _react2.default.createElement(
 	                        'span',
 	                        { className: 'dont-give-trump-unc' },
-	                        this.state.title
+	                        this.state.subTitle
 	                    ),
 	                    _react2.default.createElement('br', null),
 	                    _react2.default.createElement(
@@ -4862,7 +4868,18 @@
 	Object.defineProperty(exports, "__esModule", {
 	    value: true
 	});
-	var articles = exports.articles = [{ body: "Lorem Ipsum (1" }, { body: "Lorem Ipsum and then Some! (2" }, { body: "Lorem Ipsum. What does it mean? (3" }];
+	var articles = exports.articles = [{ body: "Congress is debating a bill to give Trump, the NSA, and the FBI the permanent power to spy on Americans - without a warrant. It must be defeated (1)" }, { body: "Congress is debating a bill to give Trump, the NSA, and the FBI the permanent power to spy on Americans - without a warrant. It must be defeated (2)" }, { body: "Congress is debating a bill to give Trump, the NSA, and the FBI the permanent power to spy on Americans - without a warrant. It must be defeated (3)" }];
+
+	var origin = exports.origin = {
+	    afterAction: {
+	        title: 'Thank you for signing',
+	        subTitle: 'Now could you call your member of congress? \n It\'s the most effective way to have your voice heard.'
+	    },
+	    default: {
+	        title: 'Tell Congress:',
+	        subTitle: 'Don\'t give Trump unconstitutional spying powers!'
+	    }
+	};
 
 /***/ }),
 /* 40 */
@@ -4994,8 +5011,6 @@
 	exports.getSource = getSource;
 	exports.findPos = findPos;
 	exports.numberWithCommas = numberWithCommas;
-	exports.fetchSignatureCounts = fetchSignatureCounts;
-	exports.onFetchSignatureCounts = onFetchSignatureCounts;
 
 	var _state = __webpack_require__(42);
 
@@ -5067,18 +5082,6 @@
 	        xhr.send(formData);
 	    }
 	};
-
-	function fetchSignatureCounts() {
-	    var script = document.createElement('script');
-	    script.async = true;
-	    script.src = _config.urls.count;
-	    document.body.appendChild(script);
-	}
-
-	function onFetchSignatureCounts(data) {
-	    _state2.default.count = data.total.actions;
-	    render();
-	}
 
 /***/ }),
 /* 42 */
@@ -5153,8 +5156,6 @@
 
 	var _Counter2 = _interopRequireDefault(_Counter);
 
-	var _campaign = __webpack_require__(46);
-
 	var _config = __webpack_require__(43);
 
 	var _actionKit = __webpack_require__(47);
@@ -5168,8 +5169,6 @@
 	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-	// import BodyCopy from '../BodyCopy.jsx'
-
 
 	var emailHref = "mailto:?subject=I%20just%20signed%20this%3A&body=Hi%20-%20I%20just%20took%20action%20against%20Donald%20Trump’s%20horrifying%20picks%20for%20cabinet-level%20roles%20in%20his%20administration.%0A%0ATrump’s%20nominees%20have%20promoted%20white%20nationalism%2C%20attacked%20climate%20science%20and%20used%20their%20power%20as%20Wall%20Street%20insiders%20to%20fleece%20working%20families.%0A%0AI%20just%20signed%20a%20petition%20urging%20the%20Senate%20to%20block%20and%20resist%20any%20Trump%20nominee%20embracing%20hatred%20and%20greed.%20Could%20you%20sign%20too%3F%0A%0Ahttps%3A%2F%2Fwww.BlockTrumpsCabinet.com%2F%3Fsource%3Demail-share";
 	try {
@@ -5272,8 +5271,7 @@
 	                        'One or more partner groups may send you updates on this and other important campaigns'
 	                    ),
 	                    _react2.default.createElement(_Counter2.default, null)
-	                ),
-	                _react2.default.createElement('bodyText', null)
+	                )
 	            );
 	        }
 	    }, {
@@ -5350,6 +5348,8 @@
 	    value: true
 	});
 
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
 	var _react = __webpack_require__(2);
 
 	var _react2 = _interopRequireDefault(_react);
@@ -5364,169 +5364,83 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	var Counter = function Counter() {
-	    var className = 'counter';
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-	    if (_state2.default.count > 0) {
-	        className += ' loaded';
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var Counter = function (_Component) {
+	    _inherits(Counter, _Component);
+
+	    function Counter(props) {
+	        _classCallCheck(this, Counter);
+
+	        var _this = _possibleConstructorReturn(this, (Counter.__proto__ || Object.getPrototypeOf(Counter)).call(this, props));
+
+	        _this.state = {
+	            signatures: 0
+	        };
+	        return _this;
 	    }
 
-	    var signatures = (0, _utils.numberWithCommas)(_state2.default.count);
+	    _createClass(Counter, [{
+	        key: 'componentDidMount',
+	        value: function componentDidMount() {
+	            window.onFetchSignatureCounts = this.onFetchSignatureCounts.bind(this);
+	            this.fetchSignatureCounts();
+	        }
+	    }, {
+	        key: 'fetchSignatureCounts',
+	        value: function fetchSignatureCounts() {
+	            var script = document.createElement('script');
+	            script.async = true;
+	            script.src = _config.urls.count;
+	            document.body.appendChild(script);
+	        }
+	    }, {
+	        key: 'render',
+	        value: function render() {
 
-	    return _react2.default.createElement(
-	        'div',
-	        { className: className },
-	        _react2.default.createElement('hr', null),
-	        _react2.default.createElement(
-	            'div',
-	            { className: 'number-of-signatures' },
-	            signatures
-	        ),
-	        _react2.default.createElement(
-	            'div',
-	            { className: 'number-of-signatures-label' },
-	            'signatures are in'
-	        )
-	    );
-	};
+	            var className = 'counter';
+
+	            if (_state2.default.count > 0) {
+	                className += ' loaded';
+	            }
+
+	            var signatures = (0, _utils.numberWithCommas)(_state2.default.count);
+
+	            return _react2.default.createElement(
+	                'div',
+	                { className: className },
+	                _react2.default.createElement('hr', null),
+	                _react2.default.createElement(
+	                    'div',
+	                    { className: 'number-of-signatures' },
+	                    this.state.signatures
+	                ),
+	                _react2.default.createElement(
+	                    'div',
+	                    { className: 'number-of-signatures-label' },
+	                    'signatures are in'
+	                )
+	            );
+	        }
+	    }, {
+	        key: 'onFetchSignatureCounts',
+	        value: function onFetchSignatureCounts(data) {
+	            console.log(data);
+	            this.setState({ signatures: (0, _utils.numberWithCommas)(data.total.actions) });
+	        }
+	    }]);
+
+	    return Counter;
+	}(_react.Component);
 
 	exports.default = Counter;
 
 /***/ }),
-/* 46 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	"use strict";
-
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
-	exports.bodyText = undefined;
-
-	var _react = __webpack_require__(2);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	var bodyText = function bodyText() {
-	    return _react2.default.createElement(
-	        "div",
-	        { className: "paragraph" },
-	        _react2.default.createElement(
-	            "h3",
-	            null,
-	            "Trump\u2019s Broken Promises"
-	        ),
-	        _react2.default.createElement(
-	            "p",
-	            null,
-	            "Trump promised on election night to be \u201Ca president for all Americans.\u201D But the parade of horribles that Trump has nominated to his administration show he is welcoming hate right into the White House."
-	        ),
-	        _react2.default.createElement("div", { className: "spacer" }),
-	        _react2.default.createElement(
-	            "p",
-	            null,
-	            "And his pledge during the campaign to \u201Cdrain the swamp\u201D and make Washington work for ordinary Americans instead of powerful elites? Forget about it. Trump\u2019s cabinet is so pro-corporate it\u2019s called \u201Can investment banker\u2019s dream.\u201D"
-	        ),
-	        _react2.default.createElement("div", { className: "spacer" }),
-	        _react2.default.createElement(
-	            "h3",
-	            null,
-	            "Who the Trump Cabinet Really Works For"
-	        ),
-	        "Wall Street bankers and Trump\u2019s corporate cronies are cheering the Trump agenda. It\u2019s a corporate wish list that would eliminate protections for working people and our environment, and eviscerate strong rules reining in Wall Street.",
-	        _react2.default.createElement("div", { className: "spacer" }),
-	        _react2.default.createElement(
-	            "p",
-	            null,
-	            "The Trump administration is shaping up to benefit Donald Trump and his family\u2019s business empire in a big way, with massive conflicts of interest posed by Trump\u2019s continued stake in the Trump Organization."
-	        ),
-	        _react2.default.createElement("div", { className: "spacer" }),
-	        _react2.default.createElement(
-	            "h3",
-	            null,
-	            "The Senate Must Block and Resist Trump's Cabinet"
-	        ),
-	        _react2.default.createElement(
-	            "p",
-	            null,
-	            "The U.S. Senate has confirmation power over most of Trump's cabinet. Senators must use this power to block and resist Trump\u2019s cabinet of hate and greed. Consider who we\u2019re talking about:"
-	        ),
-	        _react2.default.createElement("div", { className: "spacer" }),
-	        _react2.default.createElement(
-	            "div",
-	            { className: "profiles" },
-	            _react2.default.createElement(
-	                "div",
-	                { className: "profile" },
-	                _react2.default.createElement("img", { src: "images/profiles/Jeff_Sessions.jpg", alt: "Jeff Sessions photo" }),
-	                _react2.default.createElement(
-	                    "strong",
-	                    null,
-	                    "Enemy of civil rights and women's rights Jeff Sessions (Attorney General)"
-	                ),
-	                " \u2014 The same Jeff Sessions who was deemed too racist to confirm to a federal judgeship by a Republican Judiciary Committee in 1986 would be in charge of the Department of Justice. If confirmed, he would be responsible for enforcing the country\u2019s civil rights laws, despite ",
-	                _react2.default.createElement(
-	                    "a",
-	                    { href: "http://www.cnn.com/2016/11/17/politics/jeff-sessions-racism-allegations/index.html", target: "_blank" },
-	                    "a history"
-	                ),
-	                " of calling a black subordinate \"boy,\" \"joking\" about supporting the Ku Klux Klan, and calling the ACLU and NAACP \"un-American.\" His anti-woman record speaks for itself: He said ",
-	                _react2.default.createElement(
-	                    "a",
-	                    { href: "http://www.weeklystandard.com/jeff-sessions-behavior-described-by-trump-in-grab-them-by-the-p-y-tape-isnt-sexual-assault/article/2004799?custom_click=rss", target: "_blank" },
-	                    " \"I don't characterize\" grabbing women by the genitals \"as sexual assault,\""
-	                ),
-	                " voted ",
-	                _react2.default.createElement(
-	                    "a",
-	                    { href: "https://www.govtrack.us/congress/votes/113-2013/s19", target: "_blank" },
-	                    "against reauthorizing the Violence Against Women Act"
-	                ),
-	                " and ",
-	                _react2.default.createElement(
-	                    "a",
-	                    { href: "http://www.senate.gov/legislative/LIS/roll_call_lists/roll_call_vote_cfm.cfm?congress=113&session=2&vote=00059", target: "_blank" },
-	                    "against bipartisan legislation to curb sexual assault"
-	                ),
-	                " in the military ",
-	                _react2.default.createElement(
-	                    "a",
-	                    { href: "http://www.senate.gov/legislative/LIS/roll_call_lists/roll_call_vote_cfm.cfm?congress=114&session=1&vote=00211" },
-	                    "\u2013 twice."
-	                )
-	            ),
-	            _react2.default.createElement("div", { className: "spacer clear" })
-	        ),
-	        _react2.default.createElement(
-	            "p",
-	            null,
-	            "The Senate will be narrowly divided 52-48 between Republicans and Democrats in 2017 and many key Senate committees will be split 10-9 or 11-10. ",
-	            _react2.default.createElement(
-	                "strong",
-	                null,
-	                "If Democrats stick together it could only take one or two principled Republican votes to block many of Trump\u2019s nominees."
-	            )
-	        ),
-	        _react2.default.createElement("div", { className: "spacer" }),
-	        _react2.default.createElement(
-	            "p",
-	            null,
-	            "Donald Trump may have won the Electoral College, but members of the U.S. Senate should not give any support to Trump appointees espousing racism, xenophobia, misogyny, homophobia, climate denial, and corporate greed."
-	        ),
-	        _react2.default.createElement("div", { className: "spacer" }),
-	        _react2.default.createElement(
-	            "a",
-	            { href: "#petition", className: "sign-the-petition" },
-	            "Sign the petition if you agree."
-	        )
-	    );
-	};
-
-	exports.bodyText = bodyText;
-
-/***/ }),
+/* 46 */,
 /* 47 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -24638,6 +24552,169 @@
 
 	module.exports = ReactDOMInvalidARIAHook;
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)))
+
+/***/ }),
+/* 212 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(2);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var BodyCopy = function (_Component) {
+	    _inherits(BodyCopy, _Component);
+
+	    function BodyCopy() {
+	        _classCallCheck(this, BodyCopy);
+
+	        return _possibleConstructorReturn(this, (BodyCopy.__proto__ || Object.getPrototypeOf(BodyCopy)).apply(this, arguments));
+	    }
+
+	    _createClass(BodyCopy, [{
+	        key: "render",
+	        value: function render() {
+	            return _react2.default.createElement(
+	                "div",
+	                { className: "paragraph" },
+	                _react2.default.createElement(
+	                    "h3",
+	                    null,
+	                    "Trump's Broken Promises"
+	                ),
+	                _react2.default.createElement(
+	                    "p",
+	                    null,
+	                    "Trump promised on election night to be \u201Ca president for all Americans.\u201D But the parade of horribles that Trump has nominated to his administration show he is welcoming hate right into the White House."
+	                ),
+	                _react2.default.createElement("div", { className: "spacer" }),
+	                _react2.default.createElement(
+	                    "p",
+	                    null,
+	                    "And his pledge during the campaign to \u201Cdrain the swamp\u201D and make Washington work for ordinary Americans instead of powerful elites? Forget about it. Trump\u2019s cabinet is so pro-corporate it\u2019s called \u201Can investment banker\u2019s dream.\u201D"
+	                ),
+	                _react2.default.createElement("div", { className: "spacer" }),
+	                _react2.default.createElement(
+	                    "h3",
+	                    null,
+	                    "Who the Trump Cabinet Really Works For"
+	                ),
+	                "Wall Street bankers and Trump\u2019s corporate cronies are cheering the Trump agenda. It\u2019s a corporate wish list that would eliminate protections for working people and our environment, and eviscerate strong rules reining in Wall Street.",
+	                _react2.default.createElement("div", { className: "spacer" }),
+	                _react2.default.createElement(
+	                    "p",
+	                    null,
+	                    "The Trump administration is shaping up to benefit Donald Trump and his family\u2019s business empire in a big way, with massive conflicts of interest posed by Trump\u2019s continued stake in the Trump Organization."
+	                ),
+	                _react2.default.createElement("div", { className: "spacer" }),
+	                _react2.default.createElement(
+	                    "h3",
+	                    null,
+	                    "The Senate Must Block and Resist Trump's Cabinet"
+	                ),
+	                _react2.default.createElement(
+	                    "p",
+	                    null,
+	                    "The U.S. Senate has confirmation power over most of Trump's cabinet. Senators must use this power to block and resist Trump\u2019s cabinet of hate and greed. Consider who we\u2019re talking about:"
+	                ),
+	                _react2.default.createElement("div", { className: "spacer" }),
+	                _react2.default.createElement(
+	                    "div",
+	                    { className: "profiles" },
+	                    _react2.default.createElement(
+	                        "div",
+	                        { className: "profile" },
+	                        _react2.default.createElement("img", { src: "images/profiles/Jeff_Sessions.jpg", alt: "Jeff Sessions photo" }),
+	                        _react2.default.createElement(
+	                            "strong",
+	                            null,
+	                            "Enemy of civil rights and women's rights Jeff Sessions (Attorney General)"
+	                        ),
+	                        " \u2014 The same Jeff Sessions who was deemed too racist to confirm to a federal judgeship by a Republican Judiciary Committee in 1986 would be in charge of the Department of Justice. If confirmed, he would be responsible for enforcing the country\u2019s civil rights laws, despite ",
+	                        _react2.default.createElement(
+	                            "a",
+	                            {
+	                                href: "http://www.cnn.com/2016/11/17/politics/jeff-sessions-racism-allegations/index.html",
+	                                target: "_blank" },
+	                            "a history"
+	                        ),
+	                        " of calling a black subordinate \"boy,\" \"joking\" about supporting the Ku Klux Klan, and calling the ACLU and NAACP \"un-American.\" His anti-woman record speaks for itself: He said ",
+	                        _react2.default.createElement(
+	                            "a",
+	                            {
+	                                href: "http://www.weeklystandard.com/jeff-sessions-behavior-described-by-trump-in-grab-them-by-the-p-y-tape-isnt-sexual-assault/article/2004799?custom_click=rss",
+	                                target: "_blank" },
+	                            " \"I don't characterize\" grabbing women by the genitals \"as sexual assault,\""
+	                        ),
+	                        "voted ",
+	                        _react2.default.createElement(
+	                            "a",
+	                            { href: "https://www.govtrack.us/congress/votes/113-2013/s19", target: "_blank" },
+	                            "against reauthorizing the Violence Against Women Act"
+	                        ),
+	                        " and ",
+	                        _react2.default.createElement(
+	                            "a",
+	                            {
+	                                href: "http://www.senate.gov/legislative/LIS/roll_call_lists/roll_call_vote_cfm.cfm?congress=113&session=2&vote=00059",
+	                                target: "_blank" },
+	                            "against bipartisan legislation to curb sexual assault"
+	                        ),
+	                        " in the military ",
+	                        _react2.default.createElement(
+	                            "a",
+	                            {
+	                                href: "http://www.senate.gov/legislative/LIS/roll_call_lists/roll_call_vote_cfm.cfm?congress=114&session=1&vote=00211" },
+	                            "\u2013 twice."
+	                        )
+	                    ),
+	                    _react2.default.createElement("div", { className: "spacer" })
+	                ),
+	                _react2.default.createElement(
+	                    "p",
+	                    null,
+	                    "The Senate will be narrowly divided 52-48 between Republicans and Democrats in 2017 and many key Senate committees will be split 10-9 or 11-10. ",
+	                    _react2.default.createElement(
+	                        "strong",
+	                        null,
+	                        "If Democrats stick together it could only take one or two principled Republican votes to block many of Trump\u2019s nominees."
+	                    )
+	                ),
+	                _react2.default.createElement("div", { className: "spacer" }),
+	                _react2.default.createElement(
+	                    "p",
+	                    null,
+	                    "Donald Trump may have won the Electoral College, but members of the U.S. Senate should not give any support to Trump appointees espousing racism, xenophobia, misogyny, homophobia, climate denial, and corporate greed."
+	                ),
+	                _react2.default.createElement("div", { className: "spacer" }),
+	                _react2.default.createElement(
+	                    "a",
+	                    { href: "#petition", className: "sign-the-petition" },
+	                    "Sign the petition if you agree."
+	                )
+	            );
+	        }
+	    }]);
+
+	    return BodyCopy;
+	}(_react.Component);
+
+	exports.default = BodyCopy;
 
 /***/ })
 /******/ ]);
