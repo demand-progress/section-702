@@ -1,6 +1,4 @@
 import React, { Component } from 'react'
-import { config } from '../../store/config'
-import { getSource } from '../../utils/index'
 
 class PhoneForm extends Component {
 
