@@ -49,7 +49,7 @@ class PhoneForm extends Component {
         }
 
         const request = new XMLHttpRequest();
-        let url = `https://demandprogress.callpower.org/call/create?campaignId=5&userPhone=${number}`;
+        let url = `https://demandprogress.callpower.org/call/create?campaignId=6&userPhone=${number}`;
 
         try {
             if ('zip' in sessionStorage) {
