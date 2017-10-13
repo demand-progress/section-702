@@ -1,0 +1,38 @@
+<html>
+<head>
+    <title>DontLetTrumpSpyOnUs-www Action Source Report</title>
+</head>
+<body>
+    <script>
+        window.onload = function() {
+            // iFrame
+            const iframe = document.createElement('iframe');
+            iframe.frameBorder = 0;
+            iframe.width = "100%";
+            iframe.height = "900px";
+
+            iframe.setAttribute('name', 'actionkit-iframe');
+            iframe.onload = function() {
+
+            };
+            document.body.appendChild(iframe);
+
+            // Form
+            const form = document.createElement('form');
+            form.style.display = 'none';
+            form.setAttribute('action', "https://act.demandprogress.org/rest/v1/report/run/action_source/");
+            form.setAttribute('method', 'post');
+            form.setAttribute('target', 'actionkit-iframe');
+            document.body.appendChild(form);
+
+            const input = document.createElement('input');
+            input.type = 'hidden';
+            input.name = "page_id";
+            input.value = "1993";
+            form.appendChild(input);
+
+            form.submit();
+        }
+    </script>
+</body>
+</html>
