@@ -1,6 +1,6 @@
-import React, { Component } from 'react'
+import React from 'react'
 
-const Contact = function() {
+const Contact =() => {
     return (
         <div className="contact">
             For press inquiries, please contact us at:

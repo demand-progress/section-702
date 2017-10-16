@@ -9,6 +9,10 @@ import BodyCopy from '../components/BodyCopy.jsx'
 
 class CallPages extends Component {
 
+    imagesToPreload(){
+        return ['images/phone.svg']
+    }
+    
     componentDidMount() {
         for (let i = 0; i < this.imagesToPreload.length; i++) {
             const image = new Image();
@@ -35,12 +39,6 @@ class CallPages extends Component {
             </div>
         );
     }
-
-    imagesToPreload(){
-        return ['images/phone.svg']
-    }
-
-
 }
 
 export default CallPages

@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { numberWithCommas } from '../utils/'
 import state from '../store/state'
-import { urls } from '../store/config'
+import { urls } from '../config/'
 
 class Counter extends Component {
 
@@ -26,7 +26,6 @@ class Counter extends Component {
 
     render() {
 
-
         let className = 'counter';
 
         if (state.count > 0) {
@@ -46,7 +45,7 @@ class Counter extends Component {
 
     onFetchSignatureCounts(data) {
         console.log(data);
-        this.setState({ signatures : numberWithCommas(data.total.actions) });
+        this.setState({ signatures: numberWithCommas(data.total.actions) });
     }
 }
 

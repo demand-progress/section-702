@@ -1,12 +1,11 @@
 import React, { Component } from 'react'
- 
 import { articles, origin } from '../store/articles' 
 
 
 class Header extends Component {
     // title and random article
     constructor(props) {
-        super(props);
+        super(props)
 
         var queryParams;
         if(window.location.search){

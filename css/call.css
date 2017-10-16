@@ -97,30 +97,19 @@ a:hover {
     z-index: -1;
 }
 
-#app .fixed-trump {
+#app {
     position:absolute;
     top: 0;
     left: 0;
     background-image: url(../images/trump-surveillance-2.jpg);
     background-position: left top;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: contain;
     background-attachment: fixed;
     width: 100%;
     height: 796px;
     opacity: 0.7;
     z-index: -1;
-}
-
-@media screen and (max-width: 1400px) {
-    #app {
-        background-size: 1031px;
-        background-position: -150px top;
-    }
-
-    #app .fixed-trump {
-        background-size: contain;
-    }
 }
 
 #app .hide-temporarily {
@@ -184,6 +173,7 @@ a:hover {
     max-width: 1005px;
     padding: 1px 32px 32px;
     border-radius: 3px;
+    /* background-color: #ffffff; */
 }
 
 #app .petition h3,
@@ -515,9 +505,6 @@ a:hover {
     vertical-align: bottom;
 }
 
-#fullName {
-}
-
 #app .email-form form input::-webkit-input-placeholder,
 #app .email-form form input::-moz-placeholder,
 #app .email-form form input::-ms-input-placeholder{
@@ -543,8 +530,8 @@ a:hover {
     cursor: pointer;
     font-size: 36px;
     font-weight: 700;
-    padding: 16px;
-    margin-top: 16px;
+    padding: 15px;
+    margin-top: 22px;
     margin-left: 10px;
     /* width: 250px; */
     height: 86px;
@@ -1058,21 +1045,10 @@ a:hover {
     padding: 54.8px 0 54.8px 0;
 }
 
+
+/* ///new code/// */
 .form-container {
     display: grid;
-}
-
-@media screen and (max-width: 400) {
-    
-}
-
-button img {
-    margin-right: 2%;
-}
-
-button img svg {
-    fill: #fff;
-    display: none;
 }
 
 #app #name {
@@ -1099,7 +1075,6 @@ button img svg {
     grid-area: myForm    
 }
 
-
 #app #form-container {
     display: grid;
     grid-template-areas: "myForm";
@@ -1116,6 +1091,26 @@ button img svg {
     position: absolute;
     top: -100px;
 } */
+
+input{
+    width:100%;
+    height: 96px;    
+}
+ #text, label {
+    font-family: 'Roboto Slab', serif;
+}
+
+.title span.dont-give-trump-unc {
+    text-transform: capitalize;
+}
+
+#app .calling-wrapper form h4 {
+    color: black;
+}
+
+#app button img {
+    margin-right: 5px;
+}
 
 @media screen and (max-width: 768px) {
     #form-container {
@@ -1139,22 +1134,18 @@ button img svg {
         width: 95%;
     }
 
-}
+    #app {
+        background-size: contain;
+    }
 
-input{
-    width:100%;
-    height: 96px;    
-}
- #text, label {
-    font-family: 'Roboto Slab', serif;
-}
+    #app .email-form form button {
+        margin-left: 0;
+    }
 
-.title span.dont-give-trump-unc {
-    text-transform: capitalize;
-}
 
-#app .calling-wrapper form h4 {
-    color: black;
+    #app #email {
+        margin-top: -25px;
+    }
 }
 
 @media screen and (max-width:572px) {
@@ -1169,7 +1160,8 @@ input{
     #app #form-grid {
         width: 90%;
         overflow: none;
-        margin-right: 7%;
+        position: relative;
+        left: -10px;
     }
     #app #name {
         width: 95%;
@@ -1177,6 +1169,10 @@ input{
 
     #app label {
         font-size: 80%;
+    }
+
+    #app {
+        background-size: cover;
     }
 
 }
