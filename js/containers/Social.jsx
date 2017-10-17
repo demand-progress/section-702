@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
-import { urls, hrefEmail } from '../config/'
+import { urls, hrefEmail, config } from '../config/'
 
 // Email
-let emailHref = hrefEmail
+// let emailHref = hrefEmail
 try {
     // These HTML elements are optional
     const emailSubject = encodeURIComponent(document.querySelector('#email-share-subject').textContent.trim());
@@ -17,7 +17,7 @@ class Social extends Component {
                 <div className="share">
                     <a onClick={this.onClickTwitter} target="_blank" href="#Share on Twitter" className="twitter">Tweet</a>
                     <a onClick={this.onClickFacebook} target="_blank" href="#Share on Facebook" className="facebook">Share</a>
-                    <a href={emailHref} target="_blank" className="email">Email</a>
+                    <a href={hrefEmail} target="_blank" className="email">Email</a>
                 </div>
             </div>
         );

@@ -4869,19 +4869,19 @@
 	    value: true
 	});
 	var articles = exports.articles = [{
-	    body: "(1) Congress is debating a bill to give Trump, the NSA, and the FBI the permanent power to spy on Americans - without a warrant. It must be defeated"
+	    body: "(1) Congress Is Debating A Bill To Extend The Power To Spy On Americans – Without A Warrant – To Trump, The NSA, And The FBI. It Must Be Fundamentally Fixed Or Stopped Dead."
 	}, {
-	    body: "(2) Congress is debating a bill to give Trump, the NSA, and the FBI the permanent power to spy on Americans - without a warrant. It must be defeated"
+	    body: "(2) Congress is debating a bill to extend the power to spy on Americans – without a warrant – to Trump, the NSA, and the FBI. It must be fundamentally fixed or stopped dead."
 	}];
 
 	var origin = exports.origin = {
 	    afterAction: {
-	        title: 'Call your member of Congress: Tell them to shut down unconstitutional spying on Americans',
-	        subTitle: 'Thanks for signing – now could you call your member of Congress? // It’s the most effective way to have your voice heard.'
+	        title: 'Thanks for signing – ',
+	        subTitle: 'Now could you call your member of Congress? \n It’s the most effective way to have your voice heard.'
 	    },
 	    default: {
-	        title: 'Tell Congress: Shut down unconstitutional spying on Americans',
-	        subTitle: 'Congress is debating a bill to extend the power to spy on Americans – without a warrant – to Trump, the NSA, and the FBI. It must be fundamentally fixed or stopped dead.'
+	        title: 'Tell Congress:',
+	        subTitle: 'Shut down unconstitutional spying on Americans'
 	    }
 	};
 
@@ -5164,12 +5164,6 @@
 
 	// Email
 	var emailHref = _config.hrefEmail;
-	try {
-	    // These HTML elements are optional
-	    var emailSubject = encodeURIComponent(document.querySelector('#email-share-subject').textContent.trim());
-	    var emailBody = encodeURIComponent(document.querySelector('#email-share-body').textContent.trim());
-	    emailHref = 'mailto:?subject=' + emailSubject + '&body=' + emailBody;
-	} catch (err) {}
 
 	var EmailForm = function (_Component) {
 	    _inherits(EmailForm, _Component);
@@ -6032,7 +6026,7 @@
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 	// Email
-	var emailHref = _config.hrefEmail;
+	// let emailHref = hrefEmail
 	try {
 	    // These HTML elements are optional
 	    var emailSubject = encodeURIComponent(document.querySelector('#email-share-subject').textContent.trim());
@@ -6070,7 +6064,7 @@
 	                    ),
 	                    _react2.default.createElement(
 	                        'a',
-	                        { href: emailHref, target: '_blank', className: 'email' },
+	                        { href: _config.hrefEmail, target: '_blank', className: 'email' },
 	                        'Email'
 	                    )
 	                )
@@ -6098,7 +6092,7 @@
 	        value: function onClickFacebook(e) {
 	            e.preventDefault();
 
-	            var shareUrl = config.link;
+	            var shareUrl = _config.config.link;
 
 	            if ('embeddedConfiguration' in window) {
 	                if (embeddedConfiguration.link) {
@@ -6224,6 +6218,11 @@
 	    return _react2.default.createElement(
 	        "div",
 	        { className: "creative-commons" },
+	        _react2.default.createElement(
+	            "a",
+	            { href: "./reports.html" },
+	            "View Report"
+	        ),
 	        "Trump photo (edited) via ",
 	        _react2.default.createElement(
 	            "a",

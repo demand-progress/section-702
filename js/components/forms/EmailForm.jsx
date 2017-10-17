@@ -7,12 +7,6 @@ import EmailFormCopy from '../../copy/EmailFormCopy.jsx'
 
 // Email
 let emailHref = hrefEmail
-try {
-    // These HTML elements are optional
-    const emailSubject = encodeURIComponent(document.querySelector('#email-share-subject').textContent.trim());
-    const emailBody = encodeURIComponent(document.querySelector('#email-share-body').textContent.trim());
-    emailHref = `mailto:?subject=${emailSubject}&body=${emailBody}`;
-} catch (err) { }
 
 class EmailForm extends Component {
     constructor(props) {
