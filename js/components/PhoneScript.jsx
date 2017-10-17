@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { urls, config } from '../config/'
 import { ajax } from '../utils/'
+// import PhoneScriptCopy from '../../copy/PhoneScriptCopy.jsx' 
 
 class PhoneScript extends Component {
 
@@ -45,6 +46,7 @@ class PhoneScript extends Component {
     }
     render() {
         return (
+            // <PhoneScriptCopy onSubmit={this.onClickSendFeedback.bind(this)}/>
             <div className="phone-script">
                 <em>We’re calling you now. <br /> After the conversation, you can <strong>press *</strong> and we’ll connect you to the next office.</em>
                 <div className="spacer" />
@@ -76,6 +78,7 @@ class PhoneScript extends Component {
                     </form>
                 </div>
             </div>
+            // end PhoneScriptCopy
         )
     }
 }

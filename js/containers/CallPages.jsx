@@ -5,14 +5,14 @@ import Social from './Social.jsx'
 import Organizations from './Organizations.jsx'
 import Contact from './Contact.jsx'
 import CreativeCommons from './CreativeCommons.jsx'
-import BodyCopy from '../components/BodyCopy.jsx'
+import BodyCopy from '../copy/BodyCopy.jsx'
 
 class CallPages extends Component {
 
     imagesToPreload(){
         return ['images/phone.svg']
     }
-    
+
     componentDidMount() {
         for (let i = 0; i < this.imagesToPreload.length; i++) {
             const image = new Image();

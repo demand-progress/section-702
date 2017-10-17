@@ -36,4 +36,11 @@ let numbers = {
     'Call the Senate:': '202-335-0610',
 }
 
-export { urls, config, numbers }
+// default email message
+let subjectText = "I just signed this:"
+let bodyText = "Hi - I just took action against Donald Trump’s horrifying picks for cabinet-level roles in his administration.\n\nTrump’s nominees have promoted white nationalism, attacked climate science and used their power as Wall Street insiders to fleece working families.\n\nI just signed a petition urging the Senate to block and resist any Trump nominee embracing hatred and greed. Could you sign too?\n\nhttps://www.BlockTrumpsCabinet.com/?source=email-share"
+const emailSubject = encodeURIComponent(subjectText.trim())
+const emailBody = encodeURIComponent(bodyText.trim())
+let hrefEmail = `mailto:?subject=${emailSubject}&body=${emailBody}`
+
+export { urls, config, numbers, hrefEmail }

@@ -1,4 +1,4 @@
-const getQueryVariables= () => {
+const getQueryVariables = () => {
     const variables = {};
 
     const queryString = location.search.substr(1);
