@@ -5,8 +5,11 @@ const BodyCopy = () => {
 
                 <h3>Section 702 Lets Spy Agencies Snoop on Americans – Without a Warrant.</h3>
                 <p>In an end run around the Constitution, spy agencies have warped Section 702 of the FISA Amendments Act into a way to unconstitutionally snoop on Americans.</p>
+                <br />
                 <p>The law was intended to allow intelligence agencies to monitor communications of foreign individuals outside the United States. But spy agencies like the NSA have claimed this authority allows them to scan through and collect the emails and phone calls of innocent Americans. Then, the government routinely does “backdoor searches” of this information, where they may look up information about U.S. persons, even for reasons completely unrelated to intelligence gathering.</p> 
+                <br />
                 <p>It’s the same law the NSA claims justified the scandalous programs uncovered by Edward Snowden, like the PRISM program, which forces tech companies to turn over data on their servers, and Upstream collection, which automatically searches all internet traffic that crosses tapped lines connecting the U.S. with the rest of the world.</p>
+                <br />
                 <p>Flying in the face of the Fourth Amendment, the government searches this information specifically for Americans at least tens of thousands of times a year without a warrant, without evidence of a crime, and without independent oversight.</p>
 
 
@@ -27,8 +30,10 @@ const BodyCopy = () => {
                 </ul>
 
                 <h3>Spying Powers Are Already Being Abused. Under Trump Things Could Get Far Worse.</h3>
-                <p>Even before a would-be authoritarian like Trump took power, the spying powers on the books have been abused consistently. The government has shown a persistent inability to follow rules that are supposed to protect Americans, as chronicled in a 2017 report by Demand Progress.</p>
+                <p>Even before a would-be authoritarian like Trump took power, the spying powers on the books have been abused consistently. The government has shown a persistent inability to follow rules that are supposed to protect Americans, as chronicled in a <a href="./reports.html">2017 report by Demand Progress.</a></p>
+                <br />
                 <p>Judges on the FISA Court have called the violations “a very serious Fourth Amendment issue” and complained of “an institutional ‘lack of candor’” from the spy agencies.</p>
+                <br />
                 <p>Surveillance powers have been turned against activists and people of color in the past, from the FBI’s intimidation campaign against Martin Luther King, Jr. to recent infiltration of Muslim student associations on college campuses. With Trump’s clear authoritarian impulses and tendency to target vulnerable populations, Congress extending these spying powers to Trump would be catastrophic.</p>
 
         <div className="spacer"></div>

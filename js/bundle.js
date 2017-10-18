@@ -6218,11 +6218,6 @@
 	    return _react2.default.createElement(
 	        "div",
 	        { className: "creative-commons" },
-	        _react2.default.createElement(
-	            "a",
-	            { href: "./reports.html" },
-	            "View Report"
-	        ),
 	        "Trump photo (edited) via ",
 	        _react2.default.createElement(
 	            "a",
@@ -23642,16 +23637,19 @@
 	            null,
 	            'In an end run around the Constitution, spy agencies have warped Section 702 of the FISA Amendments Act into a way to unconstitutionally snoop on Americans.'
 	        ),
+	        _react2.default.createElement('br', null),
 	        _react2.default.createElement(
 	            'p',
 	            null,
 	            'The law was intended to allow intelligence agencies to monitor communications of foreign individuals outside the United States. But spy agencies like the NSA have claimed this authority allows them to scan through and collect the emails and phone calls of innocent Americans. Then, the government routinely does \u201Cbackdoor searches\u201D of this information, where they may look up information about U.S. persons, even for reasons completely unrelated to intelligence gathering.'
 	        ),
+	        _react2.default.createElement('br', null),
 	        _react2.default.createElement(
 	            'p',
 	            null,
 	            'It\u2019s the same law the NSA claims justified the scandalous programs uncovered by Edward Snowden, like the PRISM program, which forces tech companies to turn over data on their servers, and Upstream collection, which automatically searches all internet traffic that crosses tapped lines connecting the U.S. with the rest of the world.'
 	        ),
+	        _react2.default.createElement('br', null),
 	        _react2.default.createElement(
 	            'p',
 	            null,
@@ -23735,13 +23733,20 @@
 	        _react2.default.createElement(
 	            'p',
 	            null,
-	            'Even before a would-be authoritarian like Trump took power, the spying powers on the books have been abused consistently. The government has shown a persistent inability to follow rules that are supposed to protect Americans, as chronicled in a 2017 report by Demand Progress.'
+	            'Even before a would-be authoritarian like Trump took power, the spying powers on the books have been abused consistently. The government has shown a persistent inability to follow rules that are supposed to protect Americans, as chronicled in a ',
+	            _react2.default.createElement(
+	                'a',
+	                { href: './reports.html' },
+	                '2017 report by Demand Progress.'
+	            )
 	        ),
+	        _react2.default.createElement('br', null),
 	        _react2.default.createElement(
 	            'p',
 	            null,
 	            'Judges on the FISA Court have called the violations \u201Ca very serious Fourth Amendment issue\u201D and complained of \u201Can institutional \u2018lack of candor\u2019\u201D from the spy agencies.'
 	        ),
+	        _react2.default.createElement('br', null),
 	        _react2.default.createElement(
 	            'p',
 	            null,
