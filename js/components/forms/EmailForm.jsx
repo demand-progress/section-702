@@ -73,7 +73,7 @@ class EmailForm extends Component {
             return;
         }
 
-        const address = form.querySelector('[name="address"]');
+        const address = form.address;
         if (!address.value.trim()) {
             address.focus();
             alert('Please enter your address.');
@@ -111,7 +111,7 @@ class EmailForm extends Component {
             'form_name': 'act-petition',
             'js': 1,
             'name': `${title.value} ${name.value.trim()}`,
-            'street_address': address.value.trim(),
+            'address1': address.value.trim(),
             'opt_in': 1,
             'page': config.akPage,
             'source': getSource(),
