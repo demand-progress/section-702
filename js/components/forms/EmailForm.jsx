@@ -17,20 +17,32 @@ class EmailForm extends Component {
         return (
             <div className="email-form">
                 <div className="petition" id="petition">
-                    <h3><img src="./images/document-pink.svg"/> Sign the petition</h3>
+                    <h3 id="petitionHeader"><img src="./images/document-pink.svg"/> Sign the petition</h3>
                     <div id="form-container" className="the-problem">
                         <form id="form-grid" className="form" onSubmit={ this.onSubmit.bind(this) } ref="form">
                             <div id="name" className="inputBox">
-                                <label htmlFor="name">Your Name</label><br />
-                                <input  className="name" name="name" placeholder="Your name" autoFocus="autoFocus" />
-                            </div>
-                            <div id="zip" className="inputBox">
-                                <label htmlFor="zip">ZIP Code</label><br />
-                                <input className="zip" name="zip" placeholder="Zip code" type="tel" />
+                                <div id="fullName">
+                                    <select id="nameTitle" name="title">
+                                        <option value="mr">Mr.</option>
+                                        <option value="miss">Miss</option>
+                                        <option value="mrs">Mrs.</option>
+                                        <option value="ms">Ms.</option>
+                                    </select>        
+                                    <input  className="name" name="name" placeholder="Your name" autoFocus="autoFocus" />
+                                </div>
+                                <label htmlFor="name">Your Full Name</label><br />
                             </div>
                             <div id="email" className="inputBox">
-                                <label htmlFor="email">Email</label><br />
                                 <input className="email" name="email" placeholder="Email" type="email" />
+                                <label htmlFor="email">adress@domain.com</label><br />
+                            </div>                            
+                            <div id="address" className="inputBox">
+                                <input className="address" name="address" placeholder="Street Address" type="address" />
+                                <label htmlFor="address">1234 Main St.</label><br />
+                            </div>                            
+                            <div id="zip" className="inputBox">
+                                <input className="zip" name="zip" placeholder="Zip code" type="tel" />
+                                <label htmlFor="zip">5 Digit ZIP Code</label><br />
                             </div>
                             <EmailFormCopy />
 
@@ -52,10 +64,19 @@ class EmailForm extends Component {
         const form = e.target;
         const emailRegex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
 
+        const title = form.querySelector('[name="title"]');
+
         const name = form.querySelector('[name="name"]');
         if (!name.value.trim()) {
             name.focus();
             alert('Please enter your name.');
+            return;
+        }
+
+        const address = form.address;
+        if (!address.value.trim()) {
+            address.focus();
+            alert('Please enter your address.');
             return;
         }
 
@@ -89,7 +110,8 @@ class EmailForm extends Component {
             'email': email.value.trim(),
             'form_name': 'act-petition',
             'js': 1,
-            'name': name.value.trim(),
+            'name': `${title.value} ${name.value.trim()}`,
+            'address1': address.value.trim(),
             'opt_in': 1,
             'page': config.akPage,
             'source': getSource(),

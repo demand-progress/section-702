@@ -184,6 +184,12 @@ a:hover {
     margin: 24px 0 8px;
 }
 
+#app #petitionHeader {
+    background-color: gold;
+    margin: 0;
+    padding: 10px 
+}
+
 #app .petition .spacer,
 #app .paragraph .spacer {
     padding: 16px 0 0;
@@ -531,7 +537,6 @@ a:hover {
     font-size: 36px;
     font-weight: 700;
     padding: 15px;
-    margin-top: 22px;
     margin-left: 10px;
     /* width: 250px; */
     height: 86px;
@@ -621,6 +626,11 @@ a:hover {
 }
 
 @media screen and (min-width: 769px) {
+    #app #nameTitle {
+        border-top: 1px solid #bdbdbd;
+        border-left: 1px solid #bdbdbd;
+        border-bottom: 1px solid #bdbdbd;
+    }
     #app .email-form form {
         border: none;
         max-width: 100%;
@@ -629,7 +639,7 @@ a:hover {
         border: 1px solid #bdbdbd;
         /* width: 25%; */
     }
-    #app .email-form form input.email {
+    #app .email-form form input.email, #app .email-form form input.name {
         border-left: none;
         border-right: none;
     }
@@ -1039,7 +1049,7 @@ a:hover {
     line-height: 1.5;
     text-align: left;
     color: #000000;
-    border-radius: 3px;
+    border-radius: 0 0 3px 3px;
     background-image: -webkit-linear-gradient(top, #ffe500, #ffc500);
     background-image: linear-gradient(to bottom, #ffe500, #ffc500);
     padding: 54.8px 0 54.8px 0;
@@ -1051,17 +1061,37 @@ a:hover {
     display: grid;
 }
 
+#app #fullName{
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    border-bottom: 1px solid #ccc;    
+}
+
+#app #title {
+    grid-area: mytitle;
+}
+
+#app #nameTitle {
+    margin: 10px;
+    /* background-color: #ccc */
+}
+
 #app #name {
-    grid-area: myName
-  }
+    grid-area: myName;
+}
 
 #app #zip {
     grid-area: myZip
-  }
+}
 
 #app #email {
     grid-area: myEmail
-  }
+}
+
+#app #address {
+    grid-area: myAddress
+}
 
 #app #submit {
     grid-area: myButton
@@ -1082,9 +1112,14 @@ a:hover {
 
 #app #form-grid {
     display: grid;
-    grid-template-columns: 160px 160px 160px 174px;
+    grid-template-columns: 180px 140px 140px 80px 174px;
     grid-row-gap: 30px;    
-    grid-template-areas: "myName myZip myEmail myButton" "myText myText myText myText";
+    grid-template-areas: "myName myEmail myAddress myZip myButton" "myText myText myText myText myText";
+}
+
+#app #form-grid label {
+    color: #999;
+    font-size: 0.8em;
 }
 
 /* #app #form-grid, #petition h3 {
@@ -1134,13 +1169,9 @@ ul#points li strong {
     #app #form-grid {
         grid-template-columns: 65% 40%;
         grid-template-rows: auto;
-        grid-template-areas: "myName myZip" "myEmail myEmail"
+        grid-template-areas: "myName myName" "myEmail myEmail" "myAddress myZip"
         "myText myText"
         "myButton myButton";
-    }
-
-    #name input {
-        width: 95%;
     }
 
     #app {
@@ -1151,6 +1182,9 @@ ul#points li strong {
         margin-left: 0;
     }
 
+    #app #nameTitle {
+        background-color: #fff;
+    }
 
     #app #email {
         margin-top: -25px;
@@ -1160,6 +1194,10 @@ ul#points li strong {
 @media screen and (max-width:572px) {
     #app .petition {
         padding: 5px; 
+    }
+
+    #app #nameTitle {
+        background-color: #fff;
     }
 
     #app .email-form form {

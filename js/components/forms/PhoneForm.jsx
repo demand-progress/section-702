@@ -60,9 +60,9 @@ class PhoneForm extends Component {
 
         this.props.changeForm('script');            
         
-        console.log('url', url)
-        console.log('data', data)
-        ajax.post(url, data)
+        // console.log('url', url)
+        // console.log('data', data)
+        // ajax.post(url, data)
         
     }
 
