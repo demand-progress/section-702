@@ -73,7 +73,8 @@ class EmailForm extends Component {
             return;
         }
 
-        const address = form.querySelector('[name="address1"]');
+
+        const address = form.address;
         if (!address.value.trim()) {
             address.focus();
             alert('Please enter your address.');
