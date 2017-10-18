@@ -12,6 +12,7 @@ const BodyCopy = () => {
                 <br />
                 <p>Flying in the face of the Fourth Amendment, the government searches this information specifically for Americans at least tens of thousands of times a year without a warrant, without evidence of a crime, and without independent oversight.</p>
 
+                <br />
 
                 <h3>The So-Called “USA Liberty Act” Would Not Stop Trump From Spying on People in the U.S.</h3>
                 <p>The so-called “USA Liberty Act” (H.R. 3989), which was recently introduced in the House, must be rejected by Congress. Here’s why:</p>
@@ -28,6 +29,7 @@ const BodyCopy = () => {
                     <li><strong>It gives the NSA too many free passes.</strong> The bill adds some transparency measures but doesn’t enforce them, giving the NSA leeway to ignore transparency reports to Congress, and only a small amount of information would trickle out to the public. And there’s no independent oversight into how President Trump and Attorney General Sessions interpret the law.</li>
                     <br />
                 </ul>
+                <br />
 
                 <h3>Spying Powers Are Already Being Abused. Under Trump Things Could Get Far Worse.</h3>
                 <p>Even before a would-be authoritarian like Trump took power, the spying powers on the books have been abused consistently. The government has shown a persistent inability to follow rules that are supposed to protect Americans, as chronicled in a <a href="./reports.html">2017 report by Demand Progress.</a></p>

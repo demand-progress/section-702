@@ -23655,6 +23655,7 @@
 	            null,
 	            'Flying in the face of the Fourth Amendment, the government searches this information specifically for Americans at least tens of thousands of times a year without a warrant, without evidence of a crime, and without independent oversight.'
 	        ),
+	        _react2.default.createElement('br', null),
 	        _react2.default.createElement(
 	            'h3',
 	            null,
@@ -23725,6 +23726,7 @@
 	            ),
 	            _react2.default.createElement('br', null)
 	        ),
+	        _react2.default.createElement('br', null),
 	        _react2.default.createElement(
 	            'h3',
 	            null,
