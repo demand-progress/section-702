@@ -32,7 +32,7 @@ const BodyCopy = () => {
                 <br />
 
                 <h3>Spying Powers Are Already Being Abused. Under Trump Things Could Get Far Worse.</h3>
-                <p>Even before a would-be authoritarian like Trump took power, the spying powers on the books have been abused consistently. The government has shown a persistent inability to follow rules that are supposed to protect Americans, as chronicled in a <a href="./reports.html">2017 report by Demand Progress.</a></p>
+                <p>Even before a would-be authoritarian like Trump took power, the spying powers on the books have been abused consistently. The government has shown a persistent inability to follow rules that are supposed to protect Americans, as chronicled in a <a href="https://s3.amazonaws.com/demandprogress/reports/FISA_Violations.pdf">2017 report by Demand Progress.</a></p>
                 <br />
                 <p>Judges on the FISA Court have called the violations “a very serious Fourth Amendment issue” and complained of “an institutional ‘lack of candor’” from the spy agencies.</p>
                 <br />

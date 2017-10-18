@@ -23738,7 +23738,7 @@
 	            'Even before a would-be authoritarian like Trump took power, the spying powers on the books have been abused consistently. The government has shown a persistent inability to follow rules that are supposed to protect Americans, as chronicled in a ',
 	            _react2.default.createElement(
 	                'a',
-	                { href: './reports.html' },
+	                { href: 'https://s3.amazonaws.com/demandprogress/reports/FISA_Violations.pdf' },
 	                '2017 report by Demand Progress.'
 	            )
 	        ),
