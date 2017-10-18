@@ -4824,7 +4824,13 @@
 	    }, {
 	        key: 'render',
 	        value: function render() {
-	            console.log(this.state.title);
+	            if (!this.state.title) {
+	                this.state.title = "";
+	            }
+	            if (!this.state.subTitle) {
+	                this.state.subTitle = "";
+	            }
+	            // console.log(this.state.origin);
 	            return _react2.default.createElement(
 	                'header',
 	                null,
@@ -4986,11 +4992,11 @@
 	            var form = void 0;
 	            switch (this.state.form) {
 	                case 'email':
-	                    form = _react2.default.createElement(_EmailForm2.default, { changeForm: this.changeForm });
+	                    form = _react2.default.createElement(_EmailForm2.default, { changeForm: this.changeForm.bind(this) });
 	                    break;
 
 	                case 'phone':
-	                    form = _react2.default.createElement(_PhoneForm2.default, { changeForm: this.changeForm });
+	                    form = _react2.default.createElement(_PhoneForm2.default, { changeForm: this.changeForm.bind(this) });
 	                    break;
 
 	                case 'script':
@@ -5080,7 +5086,7 @@
 	                    { className: 'petition', id: 'petition' },
 	                    _react2.default.createElement(
 	                        'h3',
-	                        null,
+	                        { id: 'petitionHeader' },
 	                        _react2.default.createElement('img', { src: './images/document-pink.svg' }),
 	                        ' Sign the petition'
 	                    ),
@@ -5094,34 +5100,73 @@
 	                                'div',
 	                                { id: 'name', className: 'inputBox' },
 	                                _react2.default.createElement(
-	                                    'label',
-	                                    { htmlFor: 'name' },
-	                                    'Your Name'
+	                                    'div',
+	                                    { id: 'fullName' },
+	                                    _react2.default.createElement(
+	                                        'select',
+	                                        { id: 'nameTitle', name: 'title' },
+	                                        _react2.default.createElement(
+	                                            'option',
+	                                            { value: 'mr' },
+	                                            'Mr.'
+	                                        ),
+	                                        _react2.default.createElement(
+	                                            'option',
+	                                            { value: 'miss' },
+	                                            'Miss'
+	                                        ),
+	                                        _react2.default.createElement(
+	                                            'option',
+	                                            { value: 'mrs' },
+	                                            'Mrs.'
+	                                        ),
+	                                        _react2.default.createElement(
+	                                            'option',
+	                                            { value: 'ms' },
+	                                            'Ms.'
+	                                        )
+	                                    ),
+	                                    _react2.default.createElement('input', { className: 'name', name: 'name', placeholder: 'Your name', autoFocus: 'autoFocus' })
 	                                ),
-	                                _react2.default.createElement('br', null),
-	                                _react2.default.createElement('input', { className: 'name', name: 'name', placeholder: 'Your name', autoFocus: 'autoFocus' })
-	                            ),
-	                            _react2.default.createElement(
-	                                'div',
-	                                { id: 'zip', className: 'inputBox' },
 	                                _react2.default.createElement(
 	                                    'label',
-	                                    { htmlFor: 'zip' },
-	                                    'ZIP Code'
+	                                    { htmlFor: 'name' },
+	                                    'Your Full Name'
 	                                ),
-	                                _react2.default.createElement('br', null),
-	                                _react2.default.createElement('input', { className: 'zip', name: 'zip', placeholder: 'Zip code', type: 'tel' })
+	                                _react2.default.createElement('br', null)
 	                            ),
 	                            _react2.default.createElement(
 	                                'div',
 	                                { id: 'email', className: 'inputBox' },
+	                                _react2.default.createElement('input', { className: 'email', name: 'email', placeholder: 'Email', type: 'email' }),
 	                                _react2.default.createElement(
 	                                    'label',
 	                                    { htmlFor: 'email' },
-	                                    'Email'
+	                                    'adress@domain.com'
 	                                ),
-	                                _react2.default.createElement('br', null),
-	                                _react2.default.createElement('input', { className: 'email', name: 'email', placeholder: 'Email', type: 'email' })
+	                                _react2.default.createElement('br', null)
+	                            ),
+	                            _react2.default.createElement(
+	                                'div',
+	                                { id: 'address', className: 'inputBox' },
+	                                _react2.default.createElement('input', { className: 'address', name: 'address', placeholder: 'Street Address', type: 'address' }),
+	                                _react2.default.createElement(
+	                                    'label',
+	                                    { htmlFor: 'address' },
+	                                    '1234 Main St.'
+	                                ),
+	                                _react2.default.createElement('br', null)
+	                            ),
+	                            _react2.default.createElement(
+	                                'div',
+	                                { id: 'zip', className: 'inputBox' },
+	                                _react2.default.createElement('input', { className: 'zip', name: 'zip', placeholder: 'Zip code', type: 'tel' }),
+	                                _react2.default.createElement(
+	                                    'label',
+	                                    { htmlFor: 'zip' },
+	                                    '5 Digit ZIP Code'
+	                                ),
+	                                _react2.default.createElement('br', null)
 	                            ),
 	                            _react2.default.createElement(_EmailFormCopy2.default, null),
 	                            _react2.default.createElement(
@@ -5149,10 +5194,19 @@
 	            var form = e.target;
 	            var emailRegex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
 
+	            var title = form.querySelector('[name="title"]');
+
 	            var name = form.querySelector('[name="name"]');
 	            if (!name.value.trim()) {
 	                name.focus();
 	                alert('Please enter your name.');
+	                return;
+	            }
+
+	            var address = form.address;
+	            if (!address.value.trim()) {
+	                address.focus();
+	                alert('Please enter your address.');
 	                return;
 	            }
 
@@ -5186,7 +5240,8 @@
 	                'email': email.value.trim(),
 	                'form_name': 'act-petition',
 	                'js': 1,
-	                'name': name.value.trim(),
+	                'name': title.value + ' ' + name.value.trim(),
+	                'address1': address.value.trim(),
 	                'opt_in': 1,
 	                'page': _config.config.akPage,
 	                'source': (0, _index.getSource)(),
@@ -5460,7 +5515,7 @@
 	});
 	// config
 	var config = {};
-	config.akPage = 'DontLetTrumpSpyOnUs-www';
+	config.akPage = 'DontLetTrumpSpyOnUs-www-simple';
 	config.link = 'https://DontLetTrumpSpyonUs.com/';
 	config.prettyCampaignName = 'Don\'t Let Trump Spy on Us';
 	config.callCampaign = 'dont-let-trump-spy-on-us';
@@ -5497,7 +5552,7 @@
 
 	    // default email message
 	};var subjectText = "I just signed this:";
-	var bodyText = "Hi - I just took action against Donald Trump’s horrifying picks for cabinet-level roles in his administration.\n\nTrump’s nominees have promoted white nationalism, attacked climate science and used their power as Wall Street insiders to fleece working families.\n\nI just signed a petition urging the Senate to block and resist any Trump nominee embracing hatred and greed. Could you sign too?\n\nhttps://www.BlockTrumpsCabinet.com/?source=email-share";
+	var bodyText = "Congress is seriously considering a bill that would extend the power to spy on Americans – without a warrant – to Donald Trump, the NSA, and the FBI.\n\nI just signed a petition telling Congress to reject any bill giving Trump unconstitutional powers to spy on Americans.\n\nCould you sign too?\n\n[https://www.DontLetTrumpSpyOnUs.com/?source=email-share]";
 	var emailSubject = encodeURIComponent(subjectText.trim());
 	var emailBody = encodeURIComponent(bodyText.trim());
 	var hrefEmail = 'mailto:?subject=' + emailSubject + '&body=' + emailBody;
@@ -5758,9 +5813,9 @@
 
 	            this.props.changeForm('script');
 
-	            console.log('url', url);
-	            console.log('data', data);
-	            ajax.post(url, data);
+	            // console.log('url', url)
+	            // console.log('data', data)
+	            // ajax.post(url, data)
 	        }
 	    }, {
 	        key: 'onClickOptOut',

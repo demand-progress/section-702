@@ -5,14 +5,14 @@ import Thanks from '../components/Thanks.jsx'
 import OptOutForm from '../components/forms/OptOutForm.jsx'
 import PhoneScript from '../components/PhoneScript.jsx'
 import { findPos, getSource } from '../utils/'
-import state from '../store/state.js'
+import cur from '../store/state.js'
 
 class Form extends Component {
     constructor(props) {
         super(props);
         let form = 'email'
 
-        if (state.query.call_tool) {
+        if (cur.query.call_tool) {
             form = 'phone'
         }
 
@@ -20,12 +20,12 @@ class Form extends Component {
             form = 'phone'
         }
 
-        if (state.query.phase) {
-            form = state.query.phase
+        if (cur.query.phase) {
+            form = cur.query.phase
         }
 
-        if (state.query.debugState) {
-            form = state.query.debugState
+        if (cur.query.debugState) {
+            form = cur.query.debugState
         }
 
         if ('embeddedConfiguration' in window) {
@@ -48,11 +48,11 @@ class Form extends Component {
         let form
         switch (this.state.form) {
             case 'email':
-            form = <EmailForm changeForm={ this.changeForm } />
+            form = <EmailForm changeForm={ this.changeForm.bind(this) } />
             break
 
             case 'phone':
-            form = <PhoneForm changeForm={ this.changeForm } />
+            form = <PhoneForm changeForm={ this.changeForm.bind(this) } />
             break
 
             case 'script':
