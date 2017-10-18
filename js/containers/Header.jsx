@@ -30,7 +30,7 @@ class Header extends Component {
         return Math.floor(Math.random() * qty);
     }
     render() {
-        console.log(this.state.title);
+        // console.log(this.state.origin);
         return (
             <header>
                 <div className="fixed-trump"></div>

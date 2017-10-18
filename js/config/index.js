@@ -1,6 +1,6 @@
 // config
 const config = {}
-config.akPage = 'dont-let-trump-spy-on-us-www'
+config.akPage = 'DontLetTrumpSpyOnUs-www'
 config.link = 'https://DontLetTrumpSpyonUs.com/'
 config.prettyCampaignName = 'Don\'t Let Trump Spy on Us'
 config.callCampaign = 'dont-let-trump-spy-on-us'
@@ -38,7 +38,7 @@ let numbers = {
 
 // default email message
 let subjectText = "I just signed this:"
-let bodyText = "Hi - I just took action against Donald Trump’s horrifying picks for cabinet-level roles in his administration.\n\nTrump’s nominees have promoted white nationalism, attacked climate science and used their power as Wall Street insiders to fleece working families.\n\nI just signed a petition urging the Senate to block and resist any Trump nominee embracing hatred and greed. Could you sign too?\n\nhttps://www.BlockTrumpsCabinet.com/?source=email-share"
+let bodyText = "Congress is seriously considering a bill that would extend the power to spy on Americans – without a warrant – to Donald Trump, the NSA, and the FBI.\n\nI just signed a petition telling Congress to reject any bill giving Trump unconstitutional powers to spy on Americans.\n\nCould you sign too?\n\n[https://www.DontLetTrumpSpyOnUs.com/?source=email-share]"
 const emailSubject = encodeURIComponent(subjectText.trim())
 const emailBody = encodeURIComponent(bodyText.trim())
 let hrefEmail = `mailto:?subject=${emailSubject}&body=${emailBody}`
