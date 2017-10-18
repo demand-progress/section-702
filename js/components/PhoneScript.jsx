@@ -1,8 +1,17 @@
 import React, { Component } from 'react'
-import { urls, config } from '../store/config' 
+import { urls, config } from '../config/'
+import { ajax } from '../utils/'
+// import PhoneScriptCopy from '../../copy/PhoneScriptCopy.jsx' 
 
-const PhoneScript = React.createClass({
-    onClickSendFeedback: function(e) {
+class PhoneScript extends Component {
+
+    constructor(props) {
+        super(props);
+        this.state = { 
+            sent: false,
+         }
+    }
+    onClickSendFeedback(e) {
         e.preventDefault();
 
         const data = {
@@ -14,11 +23,11 @@ const PhoneScript = React.createClass({
         const fields = [
             document.querySelector('#who'),
             document.querySelector('#how'),
-        ];
+        ]
 
         fields.forEach(field => {
             data.text += `${field.name}:\n${field.value}\n\n`;
-        });
+        })
 
         let url = urls.feedback;
 
@@ -33,17 +42,11 @@ const PhoneScript = React.createClass({
 
         this.setState({
             sent: true,
-        });
-    },
-
-    getInitialState: function() {
-        return {
-            sent: false,
-        };
-    },
-
-    render: function() {
+        })
+    }
+    render() {
         return (
+            // <PhoneScriptCopy onSubmit={this.onClickSendFeedback.bind(this)}/>
             <div className="phone-script">
                 <em>We’re calling you now. <br /> After the conversation, you can <strong>press *</strong> and we’ll connect you to the next office.</em>
                 <div className="spacer" />
@@ -75,8 +78,9 @@ const PhoneScript = React.createClass({
                     </form>
                 </div>
             </div>
-        );
-    },
-})
+            // end PhoneScriptCopy
+        )
+    }
+}
 
 export default PhoneScript

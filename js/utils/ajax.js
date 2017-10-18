@@ -1,6 +1,5 @@
-// Setup shortcuts for AJAX.
 const ajax = {
-    get: function(url, callback) {
+    get(url, callback) {
         callback = callback || function() {}
 
         const xhr = new XMLHttpRequest()
@@ -13,7 +12,7 @@ const ajax = {
         xhr.send()
     },
 
-    post: function(url, formData, callback) {
+    post(url, formData, callback) {
         callback = callback || function() {}
 
         const xhr = new XMLHttpRequest()
@@ -21,10 +20,10 @@ const ajax = {
             if (xhr.readyState === 4 && callback) {
                 callback(xhr.response)
             }
-        }
+        };
         xhr.open('post', url, true)
         xhr.send(formData)
-    }
-}
+    },
+};
 
 export default ajax

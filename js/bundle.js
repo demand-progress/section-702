@@ -127,7 +127,7 @@
 
 	var _CreativeCommons2 = _interopRequireDefault(_CreativeCommons);
 
-	var _BodyCopy = __webpack_require__(55);
+	var _BodyCopy = __webpack_require__(216);
 
 	var _BodyCopy2 = _interopRequireDefault(_BodyCopy);
 
@@ -149,6 +149,11 @@
 	    }
 
 	    _createClass(CallPages, [{
+	        key: 'imagesToPreload',
+	        value: function imagesToPreload() {
+	            return ['images/phone.svg'];
+	        }
+	    }, {
 	        key: 'componentDidMount',
 	        value: function componentDidMount() {
 	            for (var i = 0; i < this.imagesToPreload.length; i++) {
@@ -170,11 +175,6 @@
 	                _react2.default.createElement(_Contact2.default, null),
 	                _react2.default.createElement(_CreativeCommons2.default, null)
 	            );
-	        }
-	    }, {
-	        key: 'imagesToPreload',
-	        value: function imagesToPreload() {
-	            return ['images/phone.svg'];
 	        }
 	    }]);
 
@@ -4868,16 +4868,20 @@
 	Object.defineProperty(exports, "__esModule", {
 	    value: true
 	});
-	var articles = exports.articles = [{ body: "Congress is debating a bill to give Trump, the NSA, and the FBI the permanent power to spy on Americans - without a warrant. It must be defeated (1)" }, { body: "Congress is debating a bill to give Trump, the NSA, and the FBI the permanent power to spy on Americans - without a warrant. It must be defeated (2)" }, { body: "Congress is debating a bill to give Trump, the NSA, and the FBI the permanent power to spy on Americans - without a warrant. It must be defeated (3)" }];
+	var articles = exports.articles = [{
+	    body: "(1) Congress Is Debating A Bill To Extend The Power To Spy On Americans – Without A Warrant – To Trump, The NSA, And The FBI. It Must Be Fundamentally Fixed Or Stopped Dead."
+	}, {
+	    body: "(2) Congress is debating a bill to extend the power to spy on Americans – without a warrant – to Trump, the NSA, and the FBI. It must be fundamentally fixed or stopped dead."
+	}];
 
 	var origin = exports.origin = {
 	    afterAction: {
-	        title: 'Thank you for signing',
-	        subTitle: 'Now could you call your member of congress? \n It\'s the most effective way to have your voice heard.'
+	        title: 'Thanks for signing – ',
+	        subTitle: 'Now could you call your member of Congress? \n It’s the most effective way to have your voice heard.'
 	    },
 	    default: {
 	        title: 'Tell Congress:',
-	        subTitle: 'Don\'t give Trump unconstitutional spying powers!'
+	        subTitle: 'Shut down unconstitutional spying on Americans'
 	    }
 	};
 
@@ -4891,11 +4895,11 @@
 	    value: true
 	});
 
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
 	var _react = __webpack_require__(2);
 
 	var _react2 = _interopRequireDefault(_react);
-
-	var _utils = __webpack_require__(41);
 
 	var _EmailForm = __webpack_require__(44);
 
@@ -4905,7 +4909,7 @@
 
 	var _PhoneForm2 = _interopRequireDefault(_PhoneForm);
 
-	var _Thanks = __webpack_require__(48);
+	var _Thanks = __webpack_require__(215);
 
 	var _Thanks2 = _interopRequireDefault(_Thanks);
 
@@ -4917,47 +4921,28 @@
 
 	var _PhoneScript2 = _interopRequireDefault(_PhoneScript);
 
+	var _utils = __webpack_require__(41);
+
 	var _state = __webpack_require__(42);
 
 	var _state2 = _interopRequireDefault(_state);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	var Form = _react2.default.createClass({
-	    displayName: 'Form',
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-	    render: function render() {
-	        var form = void 0;
-	        switch (this.state.form) {
-	            case 'email':
-	                form = _react2.default.createElement(_EmailForm2.default, { changeForm: this.changeForm });
-	                break;
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
-	            case 'phone':
-	                form = _react2.default.createElement(_PhoneForm2.default, { changeForm: this.changeForm });
-	                break;
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	            case 'script':
-	                form = _react2.default.createElement(_PhoneScript2.default, null);
-	                break;
+	var Form = function (_Component) {
+	    _inherits(Form, _Component);
 
-	            case 'thanks':
-	                form = _react2.default.createElement(_Thanks2.default, null);
-	                break;
+	    function Form(props) {
+	        _classCallCheck(this, Form);
 
-	            case 'opt-out':
-	                form = _react2.default.createElement(_OptOutForm2.default, null);
-	                break;
-	        }
+	        var _this = _possibleConstructorReturn(this, (Form.__proto__ || Object.getPrototypeOf(Form)).call(this, props));
 
-	        return _react2.default.createElement(
-	            'div',
-	            { className: 'form' },
-	            form
-	        );
-	    },
-
-	    getInitialState: function getInitialState() {
 	        var form = 'email';
 
 	        if (_state2.default.query.call_tool) {
@@ -4979,21 +4964,58 @@
 	        if ('embeddedConfiguration' in window) {
 	            form = embeddedConfiguration.phase || 'email';
 	        }
-
-	        return {
+	        _this.state = {
 	            form: form
 	        };
-	    },
-
-	    changeForm: function changeForm(form) {
-	        this.setState({
-	            form: form
-	        });
-
-	        var pos = (0, _utils.findPos)(this);
-	        scrollTo(0, pos - 16);
+	        return _this;
 	    }
-	});
+
+	    _createClass(Form, [{
+	        key: 'changeForm',
+	        value: function changeForm(form) {
+	            this.setState({
+	                form: form
+	            });
+
+	            var pos = (0, _utils.findPos)(this);
+	            scrollTo(0, pos - 16);
+	        }
+	    }, {
+	        key: 'render',
+	        value: function render() {
+	            var form = void 0;
+	            switch (this.state.form) {
+	                case 'email':
+	                    form = _react2.default.createElement(_EmailForm2.default, { changeForm: this.changeForm });
+	                    break;
+
+	                case 'phone':
+	                    form = _react2.default.createElement(_PhoneForm2.default, { changeForm: this.changeForm });
+	                    break;
+
+	                case 'script':
+	                    form = _react2.default.createElement(_PhoneScript2.default, null);
+	                    break;
+
+	                case 'thanks':
+	                    form = _react2.default.createElement(_Thanks2.default, null);
+	                    break;
+
+	                case 'opt-out':
+	                    form = _react2.default.createElement(_OptOutForm2.default, null);
+	                    break;
+	            }
+
+	            return _react2.default.createElement(
+	                'div',
+	                { className: 'form' },
+	                form
+	            );
+	        }
+	    }]);
+
+	    return Form;
+	}(_react.Component);
 
 	exports.default = Form;
 
@@ -5006,19 +5028,35 @@
 	Object.defineProperty(exports, "__esModule", {
 	    value: true
 	});
-	exports.ajax = undefined;
+	exports.findPos = exports.getSource = undefined;
 	exports.getQueryVariables = getQueryVariables;
-	exports.getSource = getSource;
-	exports.findPos = findPos;
 	exports.numberWithCommas = numberWithCommas;
 
 	var _state = __webpack_require__(42);
 
 	var _state2 = _interopRequireDefault(_state);
 
-	var _config = __webpack_require__(43);
+	var _ajax = __webpack_require__(212);
+
+	var _ajax2 = _interopRequireDefault(_ajax);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var getSource = exports.getSource = function getSource() {
+	    var source = _state2.default.query.source || 'website';
+	    return source.toLowerCase();
+	};
+
+	var findPos = exports.findPos = function findPos(obj) {
+	    var curTop = 0;
+	    if (obj.offsetParent) {
+	        do {
+	            curTop += obj.offsetTop;
+	        } while (obj = obj.offsetParent);
+
+	        return [curTop];
+	    }
+	};
 
 	function getQueryVariables() {
 	    var variables = {};
@@ -5034,54 +5072,37 @@
 	    return variables;
 	}
 
-	function getSource() {
-	    var source = _state2.default.query.source || 'website';
-	    return source.toLowerCase();
-	}
-
-	function findPos(obj) {
-	    var curTop = 0;
-	    if (obj.offsetParent) {
-	        do {
-	            curTop += obj.offsetTop;
-	        } while (obj = obj.offsetParent);
-
-	        return [curTop];
-	    }
-	}
-
 	function numberWithCommas(x) {
 	    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 	}
 
-	// Setup shortcuts for AJAX.
-	var ajax = exports.ajax = {
-	    get: function get(url, callback) {
-	        callback = callback || function () {};
+	// export const ajax = {
+	//     get: function(url, callback) {
+	//         callback = callback || function() {};
 
-	        var xhr = new XMLHttpRequest();
-	        xhr.onreadystatechange = function () {
-	            if (xhr.readyState === 4 && callback) {
-	                callback(xhr.response);
-	            }
-	        };
-	        xhr.open('get', url, true);
-	        xhr.send();
-	    },
+	//         const xhr = new XMLHttpRequest();
+	//         xhr.onreadystatechange = function() {
+	//             if (xhr.readyState === 4 && callback) {
+	//                 callback(xhr.response);
+	//             }
+	//         };
+	//         xhr.open('get', url, true);
+	//         xhr.send();
+	//     },
 
-	    post: function post(url, formData, callback) {
-	        callback = callback || function () {};
+	//     post: function(url, formData, callback) {
+	//         callback = callback || function() {};
 
-	        var xhr = new XMLHttpRequest();
-	        xhr.onreadystatechange = function () {
-	            if (xhr.readyState === 4 && callback) {
-	                callback(xhr.response);
-	            }
-	        };
-	        xhr.open('post', url, true);
-	        xhr.send(formData);
-	    }
-	};
+	//         const xhr = new XMLHttpRequest();
+	//         xhr.onreadystatechange = function() {
+	//             if (xhr.readyState === 4 && callback) {
+	//                 callback(xhr.response);
+	//             }
+	//         };
+	//         xhr.open('post', url, true);
+	//         xhr.send(formData);
+	//     },
+	// };
 
 /***/ }),
 /* 42 */
@@ -5096,47 +5117,15 @@
 	var _utils = __webpack_require__(41);
 
 	var state = {};
-	state.count = 5000;
+	state.count = 0;
 	state.isMobile = /mobile/i.test(navigator.userAgent);
 	state.isIE = /trident/i.test(navigator.userAgent);
 	state.query = (0, _utils.getQueryVariables)();
 
-	// fetchSignatureCounts()
-	// window.onFetchSignatureCounts = onFetchSignatureCounts;
-
 	exports.default = state;
 
 /***/ }),
-/* 43 */
-/***/ (function(module, exports) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	// Config
-	var config = {};
-	config.akPage = 'DontLetTrumpSpyOnUs-www';
-	config.callCampaign = 'block-trumps-cabinet';
-	config.callCampaignSessions = 'block-trumps-cabinet-stop-sessions';
-	config.callCampaignMnuchin = 'block-trumps-cabinet-block-mnuchin';
-	config.link = 'https://DontLetTrumpSpyOnUs.com/';
-	config.prettyCampaignName = 'Don\'t Let Trump Spy On Us';
-	config.prettyCampaignNameSessions = 'Block Trump\'s Cabinet - Stop Sessions';
-	config.prettyCampaignNameMnuchin = 'Block Trump\'s Cabinet - Stop Mnuchin';
-
-	var urls = {};
-	urls.actionkit = 'https://act.demandprogress.org/act/';
-	urls.count = 'https://act.demandprogress.org/progress/' + config.akPage + '?callback=onFetchSignatureCounts';
-	urls.facebook = 'https://www.facebook.com/sharer.php?u=';
-	urls.feedback = 'https://dp-feedback-tool.herokuapp.com/api/v1/feedback?';
-	urls.twitter = 'https://twitter.com/intent/tweet?text=';
-
-	exports.config = config;
-	exports.urls = urls;
-
-/***/ }),
+/* 43 */,
 /* 44 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -5156,11 +5145,15 @@
 
 	var _Counter2 = _interopRequireDefault(_Counter);
 
-	var _config = __webpack_require__(43);
+	var _config = __webpack_require__(213);
 
 	var _actionKit = __webpack_require__(46);
 
 	var _index = __webpack_require__(41);
+
+	var _EmailFormCopy = __webpack_require__(214);
+
+	var _EmailFormCopy2 = _interopRequireDefault(_EmailFormCopy);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -5170,13 +5163,8 @@
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	var emailHref = "mailto:?subject=I%20just%20signed%20this%3A&body=Hi%20-%20I%20just%20took%20action%20against%20Donald%20Trump’s%20horrifying%20picks%20for%20cabinet-level%20roles%20in%20his%20administration.%0A%0ATrump’s%20nominees%20have%20promoted%20white%20nationalism%2C%20attacked%20climate%20science%20and%20used%20their%20power%20as%20Wall%20Street%20insiders%20to%20fleece%20working%20families.%0A%0AI%20just%20signed%20a%20petition%20urging%20the%20Senate%20to%20block%20and%20resist%20any%20Trump%20nominee%20embracing%20hatred%20and%20greed.%20Could%20you%20sign%20too%3F%0A%0Ahttps%3A%2F%2Fwww.BlockTrumpsCabinet.com%2F%3Fsource%3Demail-share";
-	try {
-	    // These HTML elements are optional
-	    var emailSubject = encodeURIComponent(document.querySelector('#email-share-subject').textContent.trim());
-	    var emailBody = encodeURIComponent(document.querySelector('#email-share-body').textContent.trim());
-	    emailHref = 'mailto:?subject=' + emailSubject + '&body=' + emailBody;
-	} catch (err) {}
+	// Email
+	var emailHref = _config.hrefEmail;
 
 	var EmailForm = function (_Component) {
 	    _inherits(EmailForm, _Component);
@@ -5214,7 +5202,7 @@
 	                                _react2.default.createElement(
 	                                    'label',
 	                                    { htmlFor: 'name' },
-	                                    'Your Full name'
+	                                    'Your Name'
 	                                ),
 	                                _react2.default.createElement('br', null),
 	                                _react2.default.createElement('input', { className: 'name', name: 'name', placeholder: 'Your name', autoFocus: 'autoFocus' })
@@ -5225,7 +5213,7 @@
 	                                _react2.default.createElement(
 	                                    'label',
 	                                    { htmlFor: 'zip' },
-	                                    '5-Digit Zip Code'
+	                                    'ZIP Code'
 	                                ),
 	                                _react2.default.createElement('br', null),
 	                                _react2.default.createElement('input', { className: 'zip', name: 'zip', placeholder: 'Zip code', type: 'tel' })
@@ -5236,27 +5224,12 @@
 	                                _react2.default.createElement(
 	                                    'label',
 	                                    { htmlFor: 'email' },
-	                                    'address@domain.com'
+	                                    'Email'
 	                                ),
 	                                _react2.default.createElement('br', null),
 	                                _react2.default.createElement('input', { className: 'email', name: 'email', placeholder: 'Email', type: 'email' })
 	                            ),
-	                            _react2.default.createElement(
-	                                'p',
-	                                { id: 'text' },
-	                                _react2.default.createElement(
-	                                    'strong',
-	                                    null,
-	                                    'Donald Trump\u2019s first appointments to cabinet-level roles in his administration are horrifying.'
-	                                ),
-	                                ' Trump\u2019s nominees and rumored picks have promoted white nationalism, attacked climate science, and used their power as Wall Street insiders and corporate lobbyists to fleece working families.',
-	                                _react2.default.createElement('br', null),
-	                                _react2.default.createElement(
-	                                    'span',
-	                                    null,
-	                                    'As representatives of all Americans, you must stand up against hatred and greed. Fight to block and resist every Trump nominee who embraces racism, xenophobia, misogyny, homophobia, climate denial, and Wall Street greed.'
-	                                )
-	                            ),
+	                            _react2.default.createElement(_EmailFormCopy2.default, null),
 	                            _react2.default.createElement(
 	                                'button',
 	                                { id: 'submit' },
@@ -5268,7 +5241,7 @@
 	                    _react2.default.createElement(
 	                        'div',
 	                        { className: 'disclaimer' },
-	                        'One or more partner groups may send you updates on this and other important campaigns'
+	                        'One or more of the participating organizations may contact you about future campaigns.'
 	                    ),
 	                    _react2.default.createElement(_Counter2.default, null)
 	                )
@@ -5280,6 +5253,7 @@
 	            e.preventDefault();
 
 	            var form = e.target;
+	            var emailRegex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
 
 	            var name = form.querySelector('[name="name"]');
 	            if (!name.value.trim()) {
@@ -5288,7 +5262,6 @@
 	                return;
 	            }
 
-	            var emailRegex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
 	            var email = form.querySelector('[name="email"]');
 	            if (!email.value.trim()) {
 	                email.focus();
@@ -5360,7 +5333,7 @@
 
 	var _state2 = _interopRequireDefault(_state);
 
-	var _config = __webpack_require__(43);
+	var _config = __webpack_require__(213);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -5453,7 +5426,7 @@
 	exports.fetchSignatureCounts = fetchSignatureCounts;
 	exports.onFetchSignatureCounts = onFetchSignatureCounts;
 
-	var _config = __webpack_require__(43);
+	var _config = __webpack_require__(213);
 
 	function sendFormToActionKit(fields) {
 	    // iFrame
@@ -5517,7 +5490,7 @@
 /* 47 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	"use strict";
+	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
 	    value: true
@@ -5528,6 +5501,10 @@
 	var _react = __webpack_require__(2);
 
 	var _react2 = _interopRequireDefault(_react);
+
+	var _config = __webpack_require__(213);
+
+	var _index = __webpack_require__(41);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -5547,102 +5524,107 @@
 	    }
 
 	    _createClass(PhoneForm, [{
-	        key: "render",
+	        key: 'render',
 	        value: function render() {
 	            return _react2.default.createElement(
-	                "div",
-	                { className: "phone-form-wrapper" },
+	                'div',
+	                { className: 'phone-form-wrapper' },
 	                _react2.default.createElement(
-	                    "h2",
+	                    'h2',
 	                    null,
-	                    "Thanks for signing. ",
-	                    _react2.default.createElement("br", null),
-	                    " Now, could you make a call?"
+	                    'Thanks for signing. ',
+	                    _react2.default.createElement('br', null),
+	                    ' Now, could you make a call?'
 	                ),
 	                _react2.default.createElement(
-	                    "div",
-	                    { className: "paragraph" },
-	                    "It\u2019s the single most effective thing you can do."
+	                    'div',
+	                    { className: 'paragraph' },
+	                    'It\u2019s the single most effective thing you can do.'
 	                ),
 	                _react2.default.createElement(
-	                    "div",
-	                    { className: "phone-form" },
+	                    'div',
+	                    { className: 'phone-form' },
 	                    _react2.default.createElement(
-	                        "form",
+	                        'form',
 	                        { onSubmit: this.onSubmit.bind(this) },
-	                        _react2.default.createElement("input", { placeholder: "Your Phone Number", id: "fieldPhone", ref: "field-phone", className: "phone", name: "phone", autoComplete: "on", pattern: "[\\d\\(\\)\\-\\+ ]*", autoFocus: true }),
+	                        _react2.default.createElement('input', { placeholder: 'Your Phone Number', id: 'fieldPhone', ref: 'field-phone', className: 'phone', name: 'phone', autoComplete: 'on', pattern: '[\\d\\(\\)\\-\\+ ]*', autoFocus: true }),
 	                        _react2.default.createElement(
-	                            "button",
+	                            'button',
 	                            null,
-	                            "CALL THE SENATE",
-	                            _react2.default.createElement("img", { src: "images/phone.svg" })
+	                            'CALL THE SENATE',
+	                            _react2.default.createElement('img', { src: 'images/phone.svg' })
 	                        )
 	                    ),
 	                    _react2.default.createElement(
-	                        "div",
-	                        { className: "privacy" },
-	                        "This tool uses ",
+	                        'div',
+	                        { className: 'privacy' },
 	                        _react2.default.createElement(
-	                            "a",
-	                            { href: "https://www.twilio.com/legal/privacy", target: "_blank" },
-	                            "Twilio"
+	                            'p',
+	                            null,
+	                            'This tool uses ',
+	                            _react2.default.createElement(
+	                                'a',
+	                                { href: 'http://callpower.org/', target: '_blank' },
+	                                'Call Power'
+	                            )
 	                        ),
-	                        "\u2019s APIs.",
-	                        _react2.default.createElement("br", null),
-	                        "Or dial ",
 	                        _react2.default.createElement(
-	                            "a",
-	                            { href: "tel:+12023350610" },
-	                            "(202) 335-0610"
-	                        ),
-	                        " to connect."
+	                            'p',
+	                            null,
+	                            'Or dial ',
+	                            _react2.default.createElement(
+	                                'a',
+	                                { href: 'tel:+12023350610' },
+	                                '(202) 335-0610'
+	                            ),
+	                            ' to connect.'
+	                        )
 	                    )
 	                ),
 	                _react2.default.createElement(
-	                    "div",
-	                    { className: "paragraph" },
-	                    "Just enter your number and click \u201Ccall\u201D",
-	                    _react2.default.createElement("br", null),
-	                    _react2.default.createElement("br", null),
-	                    "We\u2019ll connect you with your senators and key party leaders, and give you a script of what you can say."
+	                    'div',
+	                    { className: 'paragraph' },
+	                    'Just enter your number and click \u201Ccall\u201D',
+	                    _react2.default.createElement('br', null),
+	                    _react2.default.createElement('br', null),
+	                    'We\u2019ll connect you with your senators and key party leaders, and give you a script of what you can say.'
 	                )
 	            );
 	        }
 	    }, {
-	        key: "onSubmit",
+	        key: 'onSubmit',
 	        value: function onSubmit(e) {
 	            e.preventDefault();
 
 	            var phoneField = e.target.fieldPhone;
-
 	            var number = phoneField.value.replace(/[^\d]/g, '');
 
 	            if (number.length !== 10) {
-	                phoneField.focus();
+	                // this.phoneField.focus();
 	                return alert('Please enter your 10 digit phone number.');
 	            }
 
-	            var request = new XMLHttpRequest();
-	            var url = "https://demandprogress.callpower.org/call/create?campaignId=6&userPhone=" + number;
+	            var url = 'https://demandprogress.callpower.org/call/create';
 
+	            var zip = void 0;
 	            try {
 	                if ('zip' in sessionStorage) {
-	                    url += "&userLocation=" + sessionStorage.zip;
+	                    zip = '' + sessionStorage.zip;
 	                }
 	            } catch (err) {
 	                // Oh well
 	            }
 
-	            request.open('POST', url, true);
-	            request.send();
-
 	            this.props.changeForm('script');
+
+	            console.log('url', url);
+	            console.log('data', data);
+	            ajax.post(url, data);
 	        }
 	    }, {
-	        key: "onClickOptOut",
+	        key: 'onClickOptOut',
 	        value: function onClickOptOut(e) {
 	            e.preventDefault();
-
 	            this.props.changeForm('opt-out');
 	        }
 	    }]);
@@ -5653,32 +5635,7 @@
 	exports.default = PhoneForm;
 
 /***/ }),
-/* 48 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	"use strict";
-
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
-
-	var _react = __webpack_require__(2);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	var Thanks = function Thanks() {
-	    return _react2.default.createElement(
-	        "div",
-	        { className: "thanks" },
-	        "Thanks for making your voice heard!"
-	    );
-	};
-
-	exports.default = Thanks;
-
-/***/ }),
+/* 48 */,
 /* 49 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -5688,112 +5645,116 @@
 	    value: true
 	});
 
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
 	var _react = __webpack_require__(2);
 
 	var _react2 = _interopRequireDefault(_react);
 
+	var _config = __webpack_require__(213);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	var OptOutForm = _react2.default.createClass({
-	    displayName: 'OptOutForm',
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
-	    numbers: {
-	        // 'The Office of the Treasury Secretary': '202-622-1100',
-	        // 'The Office of the White House Chief of Staff': '202-456-3737',
-	        // 'SEC Chair Mary Jo White': '202-551-2100',
-	        // 'SEC Commissioner Luis Aguilar': '202-551-2500',
-	        // 'SEC Commissioner Daniel Gallagher': '202-551-2600',
-	        // 'SEC Commissioner Kara Stein': '202-551-2800',
-	        // 'SEC Commissioner Michael Piwowar': '202-551-2700',
-	        // 'The Office of the SEC General Counsel': '202-551-5100',
-	        // 'The Domestic Policy Council': '202-456-5594',
-	        // 'The Office of Public Engagement': '202-456-1097',
-	        // 'The Office of the Press Secretary': '202-456-3282',
-	        // 'The White House General Counsel': '202-456-2632',
-	        // 'The Office of Management and Budget': '202-395-4840',
-	        // 'White House Operations': '202-456-2500',
-	        // 'The Domestic Policy Council': '202-456-6515',
-	        // 'The Office of Administration': '202-456-2861',
-	        // 'The Council of Economic Advisers': '202-395-5084',
-	        // 'Hillary Clinton\'s Campaign': '646-854-1432',
-	        'Call the Senate:': '202-335-0610'
-	    },
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	    renderNumbers: function renderNumbers() {
-	        var numbers = [];
+	var OptOutForm = function (_Component) {
+	    _inherits(OptOutForm, _Component);
 
-	        for (var name in this.numbers) {
-	            var number = this.numbers[name];
+	    function OptOutForm(props) {
+	        _classCallCheck(this, OptOutForm);
 
-	            numbers.push(_react2.default.createElement(
+	        var _this = _possibleConstructorReturn(this, (OptOutForm.__proto__ || Object.getPrototypeOf(OptOutForm)).call(this, props));
+
+	        _this.state = {
+	            signatures: 0
+	        };
+	        return _this;
+	    }
+
+	    _createClass(OptOutForm, [{
+	        key: 'renderNumbers',
+	        value: function renderNumbers() {
+	            var numberList = [];
+
+	            for (var name in _config.numbers) {
+	                var number = _config.numbers[name];
+
+	                numberList.push(_react2.default.createElement(
+	                    'div',
+	                    { className: 'number' },
+	                    _react2.default.createElement(
+	                        'div',
+	                        { className: 'name' },
+	                        name
+	                    ),
+	                    _react2.default.createElement(
+	                        'div',
+	                        { className: 'phone' },
+	                        _react2.default.createElement(
+	                            'a',
+	                            { href: 'tel:' + number },
+	                            number
+	                        )
+	                    )
+	                ));
+	            }
+
+	            return numberList;
+	        }
+	    }, {
+	        key: 'render',
+	        value: function render() {
+	            return _react2.default.createElement(
 	                'div',
-	                { className: 'number' },
+	                { className: 'opt-out-form' },
 	                _react2.default.createElement(
 	                    'div',
-	                    { className: 'name' },
-	                    name
+	                    { className: 'script' },
+	                    'Tell them:',
+	                    _react2.default.createElement('div', { className: 'spacer' }),
+	                    _react2.default.createElement(
+	                        'div',
+	                        { className: 'suggestion' },
+	                        '\u201CWith his cabinet nominations, Donald Trump is breaking his promises to be a president for all Americans and to make the economy work for ordinary people, not just wealthy elites.',
+	                        _react2.default.createElement('div', { className: 'spacer' }),
+	                        'Please fight to block and resist every Trump nominee who embraces hatred and Wall Street greed.',
+	                        _react2.default.createElement('div', { className: 'spacer' }),
+	                        'In particular, please vote AGAINST enemy of civil rights ',
+	                        _react2.default.createElement(
+	                            'strong',
+	                            null,
+	                            'Jeff Sessions'
+	                        ),
+	                        ' for Attorney General, foreclosure king ',
+	                        _react2.default.createElement(
+	                            'strong',
+	                            null,
+	                            'Steve Mnuchin'
+	                        ),
+	                        ' (mi-NOO-chin) for Treasury Secretary, and Wall Street billionaire ',
+	                        _react2.default.createElement(
+	                            'strong',
+	                            null,
+	                            'Wilbur Ross'
+	                        ),
+	                        ' for Commerce Secretary. Thank you."'
+	                    )
 	                ),
 	                _react2.default.createElement(
 	                    'div',
-	                    { className: 'phone' },
-	                    _react2.default.createElement(
-	                        'a',
-	                        { href: 'tel:' + number },
-	                        number
-	                    )
+	                    { className: 'numbers' },
+	                    this.renderNumbers()
 	                )
-	            ));
+	            );
 	        }
+	    }]);
 
-	        return numbers;
-	    },
-
-	    render: function render() {
-	        return _react2.default.createElement(
-	            'div',
-	            { className: 'opt-out-form' },
-	            _react2.default.createElement(
-	                'div',
-	                { className: 'script' },
-	                'Tell them:',
-	                _react2.default.createElement('div', { className: 'spacer' }),
-	                _react2.default.createElement(
-	                    'div',
-	                    { className: 'suggestion' },
-	                    '\u201CWith his cabinet nominations, Donald Trump is breaking his promises to be a president for all Americans and to make the economy work for ordinary people, not just wealthy elites.',
-	                    _react2.default.createElement('div', { className: 'spacer' }),
-	                    'Please fight to block and resist every Trump nominee who embraces hatred and Wall Street greed.',
-	                    _react2.default.createElement('div', { className: 'spacer' }),
-	                    'In particular, please vote AGAINST enemy of civil rights ',
-	                    _react2.default.createElement(
-	                        'strong',
-	                        null,
-	                        'Jeff Sessions'
-	                    ),
-	                    ' for Attorney General, foreclosure king ',
-	                    _react2.default.createElement(
-	                        'strong',
-	                        null,
-	                        'Steve Mnuchin'
-	                    ),
-	                    ' (mi-NOO-chin) for Treasury Secretary, and Wall Street billionaire ',
-	                    _react2.default.createElement(
-	                        'strong',
-	                        null,
-	                        'Wilbur Ross'
-	                    ),
-	                    ' for Commerce Secretary. Thank you."'
-	                )
-	            ),
-	            _react2.default.createElement(
-	                'div',
-	                { className: 'numbers' },
-	                this.renderNumbers()
-	            )
-	        );
-	    }
-	});
+	    return OptOutForm;
+	}(_react.Component);
 
 	exports.default = OptOutForm;
 
@@ -5807,149 +5768,177 @@
 	    value: true
 	});
 
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
 	var _react = __webpack_require__(2);
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _config = __webpack_require__(43);
+	var _config = __webpack_require__(213);
+
+	var _utils = __webpack_require__(41);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	var PhoneScript = _react2.default.createClass({
-	    displayName: 'PhoneScript',
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-	    onClickSendFeedback: function onClickSendFeedback(e) {
-	        e.preventDefault();
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
-	        var data = {
-	            campaign: _config.config.callCampaign,
-	            subject: 'Feedback from ' + (_config.config.prettyCampaignName || _config.config.callCampaign),
-	            text: ''
-	        };
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	        var fields = [document.querySelector('#who'), document.querySelector('#how')];
+	// import PhoneScriptCopy from '../../copy/PhoneScriptCopy.jsx' 
 
-	        fields.forEach(function (field) {
-	            data.text += field.name + ':\n' + field.value + '\n\n';
-	        });
+	var PhoneScript = function (_Component) {
+	    _inherits(PhoneScript, _Component);
 
-	        var url = _config.urls.feedback;
+	    function PhoneScript(props) {
+	        _classCallCheck(this, PhoneScript);
 
-	        for (var key in data) {
-	            url += key;
-	            url += '=';
-	            url += encodeURIComponent(data[key]);
-	            url += '&';
-	        }
+	        var _this = _possibleConstructorReturn(this, (PhoneScript.__proto__ || Object.getPrototypeOf(PhoneScript)).call(this, props));
 
-	        ajax.get(url);
-
-	        this.setState({
-	            sent: true
-	        });
-	    },
-
-	    getInitialState: function getInitialState() {
-	        return {
+	        _this.state = {
 	            sent: false
 	        };
-	    },
+	        return _this;
+	    }
 
-	    render: function render() {
-	        return _react2.default.createElement(
-	            'div',
-	            { className: 'phone-script' },
-	            _react2.default.createElement(
-	                'em',
-	                null,
-	                'We\u2019re calling you now. ',
-	                _react2.default.createElement('br', null),
-	                ' After the conversation, you can ',
+	    _createClass(PhoneScript, [{
+	        key: 'onClickSendFeedback',
+	        value: function onClickSendFeedback(e) {
+	            e.preventDefault();
+
+	            var data = {
+	                campaign: _config.config.callCampaign,
+	                subject: 'Feedback from ' + (_config.config.prettyCampaignName || _config.config.callCampaign),
+	                text: ''
+	            };
+
+	            var fields = [document.querySelector('#who'), document.querySelector('#how')];
+
+	            fields.forEach(function (field) {
+	                data.text += field.name + ':\n' + field.value + '\n\n';
+	            });
+
+	            var url = _config.urls.feedback;
+
+	            for (var key in data) {
+	                url += key;
+	                url += '=';
+	                url += encodeURIComponent(data[key]);
+	                url += '&';
+	            }
+
+	            _utils.ajax.get(url);
+
+	            this.setState({
+	                sent: true
+	            });
+	        }
+	    }, {
+	        key: 'render',
+	        value: function render() {
+	            return (
+	                // <PhoneScriptCopy onSubmit={this.onClickSendFeedback.bind(this)}/>
 	                _react2.default.createElement(
-	                    'strong',
-	                    null,
-	                    'press *'
-	                ),
-	                ' and we\u2019ll connect you to the next office.'
-	            ),
-	            _react2.default.createElement('div', { className: 'spacer' }),
-	            _react2.default.createElement(
-	                'em',
-	                null,
-	                'Here\u2019s what you can say:'
-	            ),
-	            _react2.default.createElement('div', { className: 'spacer' }),
-	            _react2.default.createElement(
-	                'div',
-	                { className: 'suggestion' },
-	                '\u201CWith his cabinet nominations, Donald Trump is breaking his promises to be a president for all Americans and to make the economy work for ordinary people, not just wealthy elites.',
-	                _react2.default.createElement('div', { className: 'spacer' }),
-	                'Please fight to block and resist every Trump nominee who embraces hatred and Wall Street greed.',
-	                _react2.default.createElement('div', { className: 'spacer' }),
-	                'In particular, please vote AGAINST enemy of civil rights ',
-	                _react2.default.createElement(
-	                    'strong',
-	                    null,
-	                    'Jeff Sessions'
-	                ),
-	                ' for Attorney General, foreclosure king ',
-	                _react2.default.createElement(
-	                    'strong',
-	                    null,
-	                    'Steve Mnuchin'
-	                ),
-	                ' (mi-NOO-chin) for Treasury Secretary, and Wall Street billionaire ',
-	                _react2.default.createElement(
-	                    'strong',
-	                    null,
-	                    'Wilbur Ross'
-	                ),
-	                ' for Commerce Secretary. Thank you."'
-	            ),
-	            _react2.default.createElement('div', { className: 'spacer' }),
-	            _react2.default.createElement(
-	                'div',
-	                { className: 'calling-wrapper' },
-	                _react2.default.createElement(
-	                    'h3',
-	                    null,
-	                    'After your call(s), use the form to let us know how it went!'
-	                ),
-	                _react2.default.createElement(
-	                    'form',
-	                    { action: '#', method: 'get', className: this.state.sent ? 'sent' : false },
+	                    'div',
+	                    { className: 'phone-script' },
+	                    _react2.default.createElement(
+	                        'em',
+	                        null,
+	                        'We\u2019re calling you now. ',
+	                        _react2.default.createElement('br', null),
+	                        ' After the conversation, you can ',
+	                        _react2.default.createElement(
+	                            'strong',
+	                            null,
+	                            'press *'
+	                        ),
+	                        ' and we\u2019ll connect you to the next office.'
+	                    ),
+	                    _react2.default.createElement('div', { className: 'spacer' }),
+	                    _react2.default.createElement(
+	                        'em',
+	                        null,
+	                        'Here\u2019s what you can say:'
+	                    ),
+	                    _react2.default.createElement('div', { className: 'spacer' }),
 	                    _react2.default.createElement(
 	                        'div',
-	                        { className: 'wrapper' },
+	                        { className: 'suggestion' },
+	                        '\u201CWith his cabinet nominations, Donald Trump is breaking his promises to be a president for all Americans and to make the economy work for ordinary people, not just wealthy elites.',
+	                        _react2.default.createElement('div', { className: 'spacer' }),
+	                        'Please fight to block and resist every Trump nominee who embraces hatred and Wall Street greed.',
+	                        _react2.default.createElement('div', { className: 'spacer' }),
+	                        'In particular, please vote AGAINST enemy of civil rights ',
 	                        _react2.default.createElement(
-	                            'h4',
+	                            'strong',
 	                            null,
-	                            'Who did you speak with?'
+	                            'Jeff Sessions'
 	                        ),
-	                        _react2.default.createElement('input', { required: 'required', type: 'text', name: 'Who did you speak with?', id: 'who' }),
+	                        ' for Attorney General, foreclosure king ',
 	                        _react2.default.createElement(
-	                            'h4',
+	                            'strong',
 	                            null,
-	                            'How did it go?'
+	                            'Steve Mnuchin'
 	                        ),
-	                        _react2.default.createElement('input', { required: 'required', type: 'text', name: 'How did it go?', id: 'how' }),
-	                        _react2.default.createElement('br', null),
+	                        ' (mi-NOO-chin) for Treasury Secretary, and Wall Street billionaire ',
 	                        _react2.default.createElement(
-	                            'div',
-	                            { id: 'thanks' },
-	                            'Thank you!'
+	                            'strong',
+	                            null,
+	                            'Wilbur Ross'
+	                        ),
+	                        ' for Commerce Secretary. Thank you."'
+	                    ),
+	                    _react2.default.createElement('div', { className: 'spacer' }),
+	                    _react2.default.createElement(
+	                        'div',
+	                        { className: 'calling-wrapper' },
+	                        _react2.default.createElement(
+	                            'h3',
+	                            null,
+	                            'After your call(s), use the form to let us know how it went!'
 	                        ),
 	                        _react2.default.createElement(
-	                            'button',
-	                            { onClick: this.onClickSendFeedback, type: 'submit', name: 'submit' },
-	                            'Send Feedback'
+	                            'form',
+	                            { action: '#', method: 'get', className: this.state.sent ? 'sent' : false },
+	                            _react2.default.createElement(
+	                                'div',
+	                                { className: 'wrapper' },
+	                                _react2.default.createElement(
+	                                    'h4',
+	                                    null,
+	                                    'Who did you speak with?'
+	                                ),
+	                                _react2.default.createElement('input', { required: 'required', type: 'text', name: 'Who did you speak with?', id: 'who' }),
+	                                _react2.default.createElement(
+	                                    'h4',
+	                                    null,
+	                                    'How did it go?'
+	                                ),
+	                                _react2.default.createElement('input', { required: 'required', type: 'text', name: 'How did it go?', id: 'how' }),
+	                                _react2.default.createElement('br', null),
+	                                _react2.default.createElement(
+	                                    'div',
+	                                    { id: 'thanks' },
+	                                    'Thank you!'
+	                                ),
+	                                _react2.default.createElement(
+	                                    'button',
+	                                    { onClick: this.onClickSendFeedback, type: 'submit', name: 'submit' },
+	                                    'Send Feedback'
+	                                )
+	                            )
 	                        )
 	                    )
 	                )
-	            )
-	        );
-	    }
-	});
+	                // end PhoneScriptCopy
+
+	            );
+	        }
+	    }]);
+
+	    return PhoneScript;
+	}(_react.Component);
 
 	exports.default = PhoneScript;
 
@@ -5963,89 +5952,111 @@
 	    value: true
 	});
 
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
 	var _react = __webpack_require__(2);
 
 	var _react2 = _interopRequireDefault(_react);
 
+	var _config = __webpack_require__(213);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	// Email
-	var emailHref = "mailto:?subject=I%20just%20signed%20this%3A&body=Hi%20-%20I%20just%20took%20action%20against%20Donald%20Trump’s%20horrifying%20picks%20for%20cabinet-level%20roles%20in%20his%20administration.%0A%0ATrump’s%20nominees%20have%20promoted%20white%20nationalism%2C%20attacked%20climate%20science%20and%20used%20their%20power%20as%20Wall%20Street%20insiders%20to%20fleece%20working%20families.%0A%0AI%20just%20signed%20a%20petition%20urging%20the%20Senate%20to%20block%20and%20resist%20any%20Trump%20nominee%20embracing%20hatred%20and%20greed.%20Could%20you%20sign%20too%3F%0A%0Ahttps%3A%2F%2Fwww.BlockTrumpsCabinet.com%2F%3Fsource%3Demail-share";
-	try {
-	    // These HTML elements are optional
-	    var emailSubject = encodeURIComponent(document.querySelector('#email-share-subject').textContent.trim());
-	    var emailBody = encodeURIComponent(document.querySelector('#email-share-body').textContent.trim());
-	    emailHref = 'mailto:?subject=' + emailSubject + '&body=' + emailBody;
-	} catch (err) {}
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-	var Social = _react2.default.createClass({
-	    displayName: 'Social',
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
-	    render: function render() {
-	        return _react2.default.createElement(
-	            'div',
-	            { className: 'midnight-share-train' },
-	            _react2.default.createElement(
-	                'div',
-	                { className: 'share' },
-	                _react2.default.createElement(
-	                    'a',
-	                    { onClick: this.onClickTwitter, target: '_blank', href: '#Share on Twitter', className: 'twitter' },
-	                    'Tweet'
-	                ),
-	                _react2.default.createElement(
-	                    'a',
-	                    { onClick: this.onClickFacebook, target: '_blank', href: '#Share on Facebook', className: 'facebook' },
-	                    'Share'
-	                ),
-	                _react2.default.createElement(
-	                    'a',
-	                    { href: emailHref,
-	                        target: '_blank', className: 'email' },
-	                    'Email'
-	                )
-	            )
-	        );
-	    },
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	    onClickTwitter: function onClickTwitter(e) {
-	        e.preventDefault();
+	// // Email
+	// // let emailHref = hrefEmail
+	// try {
+	//     // These HTML elements are optional
+	//     const emailSubject = encodeURIComponent(document.querySelector('#email-share-subject').textContent.trim());
+	//     const emailBody = encodeURIComponent(document.querySelector('#email-share-body').textContent.trim());
+	//     emailHref = `mailto:?subject=${emailSubject}&body=${emailBody}`;
+	// } catch (err) { }
 
-	        var shareText = document.querySelector('[name="twitter:description"]').content;
+	var Social = function (_Component) {
+	    _inherits(Social, _Component);
 
-	        // const source = getSource();
-	        //
-	        // if (source) {
-	        //     shareText += '/?source=' + source;
-	        // }
+	    function Social() {
+	        _classCallCheck(this, Social);
 
-	        var url = urls.twitter + encodeURIComponent(shareText) + '&ref=demandprogress';
-
-	        window.open(url);
-	    },
-
-	    onClickFacebook: function onClickFacebook(e) {
-	        e.preventDefault();
-
-	        var shareUrl = config.link;
-
-	        if ('embeddedConfiguration' in window) {
-	            if (embeddedConfiguration.link) {
-	                shareUrl = embeddedConfiguration.link;
-	            }
-	        }
-
-	        var url = urls.facebook + encodeURIComponent(shareUrl + '?source=fb-share');
-
-	        // const source = getSource();
-	        //
-	        // if (source) {
-	        //     url += '%3Fsource%3D' + source;
-	        // }
-
-	        window.open(url);
+	        return _possibleConstructorReturn(this, (Social.__proto__ || Object.getPrototypeOf(Social)).apply(this, arguments));
 	    }
-	});
+
+	    _createClass(Social, [{
+	        key: 'render',
+	        value: function render() {
+	            return _react2.default.createElement(
+	                'div',
+	                { className: 'midnight-share-train' },
+	                _react2.default.createElement(
+	                    'div',
+	                    { className: 'share' },
+	                    _react2.default.createElement(
+	                        'a',
+	                        { onClick: this.onClickTwitter, target: '_blank', href: '#Share on Twitter', className: 'twitter' },
+	                        'Tweet'
+	                    ),
+	                    _react2.default.createElement(
+	                        'a',
+	                        { onClick: this.onClickFacebook, target: '_blank', href: '#Share on Facebook', className: 'facebook' },
+	                        'Share'
+	                    ),
+	                    _react2.default.createElement(
+	                        'a',
+	                        { href: _config.hrefEmail, target: '_blank', className: 'email' },
+	                        'Email'
+	                    )
+	                )
+	            );
+	        }
+	    }, {
+	        key: 'onClickTwitter',
+	        value: function onClickTwitter(e) {
+	            e.preventDefault();
+
+	            var shareText = document.querySelector('[name="twitter:description"]').content;
+
+	            // const source = getSource();
+	            //
+	            // if (source) {
+	            //     shareText += '/?source=' + source;
+	            // }
+
+	            var url = _config.urls.twitter + encodeURIComponent(shareText) + '&ref=demandprogress';
+
+	            window.open(url);
+	        }
+	    }, {
+	        key: 'onClickFacebook',
+	        value: function onClickFacebook(e) {
+	            e.preventDefault();
+
+	            var shareUrl = _config.config.link;
+
+	            if ('embeddedConfiguration' in window) {
+	                if (embeddedConfiguration.link) {
+	                    shareUrl = embeddedConfiguration.link;
+	                }
+	            }
+
+	            var url = _config.urls.facebook + encodeURIComponent(shareUrl + '?source=fb-share');
+
+	            // const source = getSource();
+	            //
+	            // if (source) {
+	            //     url += '%3Fsource%3D' + source;
+	            // }
+
+	            window.open(url);
+	        }
+	    }]);
+
+	    return Social;
+	}(_react.Component);
 
 	exports.default = Social;
 
@@ -6091,155 +6102,7 @@
 	                null,
 	                "In partnership with"
 	            ),
-	            _react2.default.createElement(
-	                "div",
-	                { className: "smaller" },
-	                _react2.default.createElement(
-	                    "a",
-	                    { title: "18 Million Rising", href: "http://18millionrising.org/", target: "_blank" },
-	                    _react2.default.createElement("img", { src: "images/logos/18mr_logo_short.png" })
-	                ),
-	                _react2.default.createElement(
-	                    "a",
-	                    { title: "350.org", href: "https://350.org/", target: "_blank" },
-	                    _react2.default.createElement("img", { src: "images/logos/350-logo-org.png" })
-	                ),
-	                _react2.default.createElement(
-	                    "a",
-	                    { title: "American Family Voices", href: "http://www.americanfamilyvoices.org", target: "_blank" },
-	                    _react2.default.createElement("img", { src: "images/logos/afv.jpg" })
-	                ),
-	                _react2.default.createElement(
-	                    "a",
-	                    { title: "Americans for Tax Fairness Action Fund", href: "http://atfactionfund.org/", target: "_blank" },
-	                    _react2.default.createElement("img", { src: "images/logos/ATFAF.png" })
-	                ),
-	                _react2.default.createElement(
-	                    "a",
-	                    { title: "Catholics in Alliance", href: "http://www.catholicsinalliance.org/", target: "_blank" },
-	                    _react2.default.createElement("img", { src: "images/logos/CatholicsInAlliance.jpg" })
-	                ),
-	                _react2.default.createElement(
-	                    "a",
-	                    { title: "Courage Campaign", href: "https://couragecampaign.org/", target: "_blank" },
-	                    _react2.default.createElement("img", { src: "images/logos/Courage-Logo-Color-High-Rez.jpg" })
-	                ),
-	                _react2.default.createElement(
-	                    "a",
-	                    { title: "CPD Action", href: "https://cpdaction.org/", target: "_blank" },
-	                    _react2.default.createElement("img", { src: "images/logos/cpd-action-logo.png" })
-	                ),
-	                _react2.default.createElement(
-	                    "a",
-	                    { title: "CWA", href: "http://www.cwa-union.org/", target: "_blank" },
-	                    _react2.default.createElement("img", { src: "images/logos/CWA-blue-line.jpg" })
-	                ),
-	                _react2.default.createElement(
-	                    "a",
-	                    { title: "Daily Kos", href: "http://www.dailykos.com/", target: "_blank" },
-	                    _react2.default.createElement("img", { src: "images/logos/dk_logo_400dpi_1024.jpg" })
-	                ),
-	                _react2.default.createElement(
-	                    "a",
-	                    { title: "Rootstrikers", href: "http://www.rootstrikers.org/#!/", target: "_blank" },
-	                    _react2.default.createElement("img", { src: "images/logos/logo-rootstrikers-blacktext_900px.png" })
-	                ),
-	                _react2.default.createElement(
-	                    "a",
-	                    { title: "Democracy for America", href: "https://www.democracyforamerica.com/", target: "_blank" },
-	                    _react2.default.createElement("img", { src: "images/logos/DFA_logo_bottom_200.png" })
-	                ),
-	                _react2.default.createElement(
-	                    "a",
-	                    { title: "Free Press Action Fund", href: "https://www.freepress.net/", target: "_blank" },
-	                    _react2.default.createElement("img", { src: "images/logos/fp-actionfund.png" })
-	                ),
-	                _react2.default.createElement(
-	                    "a",
-	                    { title: "Friends of the Earth", href: "http://www.foe.org/", target: "_blank" },
-	                    _react2.default.createElement("img", { src: "images/logos/FOE_logo_color.jpg" })
-	                ),
-	                _react2.default.createElement(
-	                    "a",
-	                    { title: "Greenpeace", href: "http://www.greenpeace.org/usa/", target: "_blank" },
-	                    _react2.default.createElement("img", { src: "images/logos/Greenpeace-Logo.jpg" })
-	                ),
-	                _react2.default.createElement(
-	                    "a",
-	                    { title: "Hedge Clippers", href: "http://hedgeclippers.org/", target: "_blank" },
-	                    _react2.default.createElement("img", { src: "images/logos/HedgeClippers.jpg" })
-	                ),
-	                _react2.default.createElement(
-	                    "a",
-	                    { title: "League of Conservation Votes", href: "http://www.lcv.org/", target: "_blank" },
-	                    _react2.default.createElement("img", { src: "images/logos/lcv_horizontal_url_large.jpg" })
-	                ),
-	                _react2.default.createElement(
-	                    "a",
-	                    { title: "MPower Change", href: "https://mpowerchange.org/", target: "_blank" },
-	                    _react2.default.createElement("img", { src: "images/logos/MPower Change Action v2.png" })
-	                ),
-	                _react2.default.createElement(
-	                    "a",
-	                    { title: "NYCC", href: "http://nycommunities.org/", target: "_blank" },
-	                    _react2.default.createElement("img", { src: "images/logos/ny-communities-for-change.png" })
-	                ),
-	                _react2.default.createElement(
-	                    "a",
-	                    { title: "Other 98% Action", href: "http://other98.com/", target: "_blank" },
-	                    _react2.default.createElement("img", { src: "images/logos/o98-black-horizontal.png" })
-	                ),
-	                _react2.default.createElement(
-	                    "a",
-	                    { title: "People's Action", href: "https://peoplesaction.org/", target: "_blank" },
-	                    _react2.default.createElement("img", { src: "images/logos/PeoplesAction.png" })
-	                ),
-	                _react2.default.createElement(
-	                    "a",
-	                    { title: "People for the American Way", href: "http://www.pfaw.org/", target: "_blank" },
-	                    _react2.default.createElement("img", { src: "images/logos/pfaw-logo.jpg" })
-	                ),
-	                _react2.default.createElement(
-	                    "a",
-	                    { title: "Presente Action", href: "http://www.presente.org/", target: "_blank" },
-	                    _react2.default.createElement("img", { src: "images/logos/PresenteActionLogo.jpeg" })
-	                ),
-	                _react2.default.createElement(
-	                    "a",
-	                    { title: "Public Citizen", href: "http://www.citizen.org/Page.aspx?pid=183", target: "_blank" },
-	                    _react2.default.createElement("img", { src: "images/logos/publiccitizen.jpg" })
-	                ),
-	                _react2.default.createElement(
-	                    "a",
-	                    { title: "RootsAction", href: "http://rootsaction.org/", target: "_blank" },
-	                    _react2.default.createElement("img", { src: "images/logos/RootsAction_transparent300.png" })
-	                ),
-	                _react2.default.createElement(
-	                    "a",
-	                    { title: "SumOfUs", href: "https://www.sumofus.org/", target: "_blank" },
-	                    _react2.default.createElement("img", { src: "images/logos/SumOfUs_horiz-logo-color.jpg" })
-	                ),
-	                _react2.default.createElement(
-	                    "a",
-	                    { title: "The Nation", href: "https://www.thenation.com/", target: "_blank" },
-	                    _react2.default.createElement("img", { src: "images/logos/NewNationLogo07.jpg" })
-	                ),
-	                _react2.default.createElement(
-	                    "a",
-	                    { title: "UltraViolet", href: "https://weareultraviolet.org/", target: "_blank" },
-	                    _react2.default.createElement("img", { src: "images/logos/ultraviolet.jpg" })
-	                ),
-	                _react2.default.createElement(
-	                    "a",
-	                    { title: "Win Without War", href: "http://winwithoutwar.org/", target: "_blank" },
-	                    _react2.default.createElement("img", { src: "images/logos/WWW Logo_Stacked_Color_LARGE-1.jpg" })
-	                ),
-	                _react2.default.createElement(
-	                    "a",
-	                    { title: "Working Families Party", href: "http://workingfamilies.org/", target: "_blank" },
-	                    _react2.default.createElement("img", { src: "images/logos/wfp.jpg" })
-	                )
-	            )
+	            _react2.default.createElement("div", { className: "smaller" })
 	        )
 	    );
 	};
@@ -6294,246 +6157,80 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	var CreativeCommons = _react2.default.createClass({
-	    displayName: "CreativeCommons",
-
-	    render: function render() {
-	        return _react2.default.createElement(
-	            "div",
-	            { className: "creative-commons" },
-	            "Trump photo (edited) via ",
-	            _react2.default.createElement(
-	                "a",
-	                { href: "https://commons.wikimedia.org/wiki/File%3ADonald_Trump_(16493063167).jpg", target: "_blank" },
-	                "Michael Vadon"
-	            ),
-	            " under a ",
-	            _react2.default.createElement(
-	                "a",
-	                { href: "http://creativecommons.org/licenses/by-sa/2.0", target: "_blank" },
-	                "CC BY-SA 2.0"
-	            ),
-	            " license.",
-	            _react2.default.createElement("br", null),
-	            "Sessions photo (edited) via ",
-	            _react2.default.createElement(
-	                "a",
-	                { href: "https://commons.wikimedia.org/wiki/File%3AJeff_Sessions_by_Gage_Skidmore.jpg", target: "_blank" },
-	                "Gage Skidmore"
-	            ),
-	            " under a ",
-	            _react2.default.createElement(
-	                "a",
-	                { href: "http://creativecommons.org/licenses/by-sa/3.0", target: "_blank" },
-	                "CC BY-SA 3.0"
-	            ),
-	            " license.",
-	            _react2.default.createElement("br", null),
-	            "Tillerson photo (edited) via ",
-	            _react2.default.createElement(
-	                "a",
-	                { href: "https://www.flickr.com/photos/worldeconomicforum/3488866258/", target: "_blank" },
-	                "World Economic Forum"
-	            ),
-	            " under a ",
-	            _react2.default.createElement(
-	                "a",
-	                { href: "https://creativecommons.org/licenses/by-nc-sa/2.0/", target: "_blank" },
-	                "CC BY-NC-SA 2.0"
-	            ),
-	            " license.",
-	            _react2.default.createElement("br", null),
-	            "Ross photo (edited) via Cyprus Business Press under a ",
-	            _react2.default.createElement(
-	                "a",
-	                { href: "https://creativecommons.org/licenses/by-nc-nd/3.0/", target: "_blank" },
-	                "CC BY-NC-ND 3.0"
-	            ),
-	            " license.",
-	            _react2.default.createElement("br", null),
-	            "Pruitt photo (edited) via ",
-	            _react2.default.createElement(
-	                "a",
-	                { href: "https://www.flickr.com/photos/gageskidmore/16503867219/in/photolist-r9oCJP-rqQHPX-r9heYS-eac2U8-ERurNv-rqKgqb-E3i1cr-p1nWhb-nsVqj3-nbGwQY-nbGtUu-nbGqz2-nbGnqM-nteJif-nte9nu-r9g9xm-nbH1aX-qu4gpp-nbH3D4-nsV2gZ-qu49w6-2QuBHv-nbGEPe-9mXmBW-6LaCys-nsUuWa-nr9pGw-nbGtX2-nsVpdW-roxxSu-nbGWWL-nbGpWD-r7w9jM-roxzyL-9mXnoy-nsVe6S-ntbZYR-8sDtvi-r9hceU-9mUjLk-nbGZRS-nbGJ5d-nteqzj-nuY8Px-8vGwz2-nsUsTT-8sGwmo-nsVi6A-roxGE9-nr9QVs", target: "_blank" },
-	                "Gage Skidmore"
-	            ),
-	            " under a ",
-	            _react2.default.createElement(
-	                "a",
-	                { href: "https://creativecommons.org/licenses/by-sa/2.0/", target: "_blank" },
-	                "CC BY-SA 2.0"
-	            ),
-	            " license."
-	        );
-	    }
-	});
+	var CreativeCommons = function CreativeCommons() {
+	    return _react2.default.createElement(
+	        "div",
+	        { className: "creative-commons" },
+	        "Trump photo (edited) via ",
+	        _react2.default.createElement(
+	            "a",
+	            { href: "https://commons.wikimedia.org/wiki/File%3ADonald_Trump_(16493063167).jpg", target: "_blank" },
+	            "Michael Vadon"
+	        ),
+	        " under a ",
+	        _react2.default.createElement(
+	            "a",
+	            { href: "http://creativecommons.org/licenses/by-sa/2.0", target: "_blank" },
+	            "CC BY-SA 2.0"
+	        ),
+	        " license.",
+	        _react2.default.createElement("br", null),
+	        "Sessions photo (edited) via ",
+	        _react2.default.createElement(
+	            "a",
+	            { href: "https://commons.wikimedia.org/wiki/File%3AJeff_Sessions_by_Gage_Skidmore.jpg", target: "_blank" },
+	            "Gage Skidmore"
+	        ),
+	        " under a ",
+	        _react2.default.createElement(
+	            "a",
+	            { href: "http://creativecommons.org/licenses/by-sa/3.0", target: "_blank" },
+	            "CC BY-SA 3.0"
+	        ),
+	        " license.",
+	        _react2.default.createElement("br", null),
+	        "Tillerson photo (edited) via ",
+	        _react2.default.createElement(
+	            "a",
+	            { href: "https://www.flickr.com/photos/worldeconomicforum/3488866258/", target: "_blank" },
+	            "World Economic Forum"
+	        ),
+	        " under a ",
+	        _react2.default.createElement(
+	            "a",
+	            { href: "https://creativecommons.org/licenses/by-nc-sa/2.0/", target: "_blank" },
+	            "CC BY-NC-SA 2.0"
+	        ),
+	        " license.",
+	        _react2.default.createElement("br", null),
+	        "Ross photo (edited) via Cyprus Business Press under a ",
+	        _react2.default.createElement(
+	            "a",
+	            { href: "https://creativecommons.org/licenses/by-nc-nd/3.0/", target: "_blank" },
+	            "CC BY-NC-ND 3.0"
+	        ),
+	        " license.",
+	        _react2.default.createElement("br", null),
+	        "Pruitt photo (edited) via ",
+	        _react2.default.createElement(
+	            "a",
+	            { href: "https://www.flickr.com/photos/gageskidmore/16503867219/in/photolist-r9oCJP-rqQHPX-r9heYS-eac2U8-ERurNv-rqKgqb-E3i1cr-p1nWhb-nsVqj3-nbGwQY-nbGtUu-nbGqz2-nbGnqM-nteJif-nte9nu-r9g9xm-nbH1aX-qu4gpp-nbH3D4-nsV2gZ-qu49w6-2QuBHv-nbGEPe-9mXmBW-6LaCys-nsUuWa-nr9pGw-nbGtX2-nsVpdW-roxxSu-nbGWWL-nbGpWD-r7w9jM-roxzyL-9mXnoy-nsVe6S-ntbZYR-8sDtvi-r9hceU-9mUjLk-nbGZRS-nbGJ5d-nteqzj-nuY8Px-8vGwz2-nsUsTT-8sGwmo-nsVi6A-roxGE9-nr9QVs", target: "_blank" },
+	            "Gage Skidmore"
+	        ),
+	        " under a ",
+	        _react2.default.createElement(
+	            "a",
+	            { href: "https://creativecommons.org/licenses/by-sa/2.0/", target: "_blank" },
+	            "CC BY-SA 2.0"
+	        ),
+	        " license."
+	    );
+	};
 
 	exports.default = CreativeCommons;
 
 /***/ }),
-/* 55 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
-
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-	var _react = __webpack_require__(2);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-	var BodyCopy = function (_Component) {
-	    _inherits(BodyCopy, _Component);
-
-	    function BodyCopy() {
-	        _classCallCheck(this, BodyCopy);
-
-	        return _possibleConstructorReturn(this, (BodyCopy.__proto__ || Object.getPrototypeOf(BodyCopy)).apply(this, arguments));
-	    }
-
-	    _createClass(BodyCopy, [{
-	        key: 'render',
-	        value: function render() {
-	            return _react2.default.createElement(
-	                'div',
-	                { className: 'paragraph', style: { 'background-color': '#ffffff' } },
-	                _react2.default.createElement(
-	                    'h3',
-	                    null,
-	                    'Trump\'s Broken Promises'
-	                ),
-	                _react2.default.createElement(
-	                    'p',
-	                    null,
-	                    'Trump promised on election night to be \u201Ca president for all Americans.\u201D But the parade of horribles that Trump has nominated to his administration show he is welcoming hate right into the White House.'
-	                ),
-	                _react2.default.createElement('div', { className: 'spacer' }),
-	                _react2.default.createElement(
-	                    'p',
-	                    null,
-	                    'And his pledge during the campaign to \u201Cdrain the swamp\u201D and make Washington work for ordinary Americans instead of powerful elites? Forget about it. Trump\u2019s cabinet is so pro-corporate it\u2019s called \u201Can investment banker\u2019s dream.\u201D'
-	                ),
-	                _react2.default.createElement('div', { className: 'spacer' }),
-	                _react2.default.createElement(
-	                    'h3',
-	                    null,
-	                    'Who the Trump Cabinet Really Works For'
-	                ),
-	                'Wall Street bankers and Trump\u2019s corporate cronies are cheering the Trump agenda. It\u2019s a corporate wish list that would eliminate protections for working people and our environment, and eviscerate strong rules reining in Wall Street.',
-	                _react2.default.createElement('div', { className: 'spacer' }),
-	                _react2.default.createElement(
-	                    'p',
-	                    null,
-	                    'The Trump administration is shaping up to benefit Donald Trump and his family\u2019s business empire in a big way, with massive conflicts of interest posed by Trump\u2019s continued stake in the Trump Organization.'
-	                ),
-	                _react2.default.createElement('div', { className: 'spacer' }),
-	                _react2.default.createElement(
-	                    'h3',
-	                    null,
-	                    'The Senate Must Block and Resist Trump\'s Cabinet'
-	                ),
-	                _react2.default.createElement(
-	                    'p',
-	                    null,
-	                    'The U.S. Senate has confirmation power over most of Trump\'s cabinet. Senators must use this power to block and resist Trump\u2019s cabinet of hate and greed. Consider who we\u2019re talking about:'
-	                ),
-	                _react2.default.createElement('div', { className: 'spacer' }),
-	                _react2.default.createElement(
-	                    'div',
-	                    { className: 'profiles' },
-	                    _react2.default.createElement(
-	                        'div',
-	                        { className: 'profile' },
-	                        _react2.default.createElement('img', { src: 'images/profiles/Jeff_Sessions.jpg', alt: 'Jeff Sessions photo' }),
-	                        _react2.default.createElement(
-	                            'strong',
-	                            null,
-	                            'Enemy of civil rights and women\'s rights Jeff Sessions (Attorney General)'
-	                        ),
-	                        ' \u2014 The same Jeff Sessions who was deemed too racist to confirm to a federal judgeship by a Republican Judiciary Committee in 1986 would be in charge of the Department of Justice. If confirmed, he would be responsible for enforcing the country\u2019s civil rights laws, despite ',
-	                        _react2.default.createElement(
-	                            'a',
-	                            {
-	                                href: 'http://www.cnn.com/2016/11/17/politics/jeff-sessions-racism-allegations/index.html',
-	                                target: '_blank' },
-	                            'a history'
-	                        ),
-	                        ' of calling a black subordinate "boy," "joking" about supporting the Ku Klux Klan, and calling the ACLU and NAACP "un-American." His anti-woman record speaks for itself: He said ',
-	                        _react2.default.createElement(
-	                            'a',
-	                            {
-	                                href: 'http://www.weeklystandard.com/jeff-sessions-behavior-described-by-trump-in-grab-them-by-the-p-y-tape-isnt-sexual-assault/article/2004799?custom_click=rss',
-	                                target: '_blank' },
-	                            ' "I don\'t characterize" grabbing women by the genitals "as sexual assault,"'
-	                        ),
-	                        'voted ',
-	                        _react2.default.createElement(
-	                            'a',
-	                            { href: 'https://www.govtrack.us/congress/votes/113-2013/s19', target: '_blank' },
-	                            'against reauthorizing the Violence Against Women Act'
-	                        ),
-	                        ' and ',
-	                        _react2.default.createElement(
-	                            'a',
-	                            {
-	                                href: 'http://www.senate.gov/legislative/LIS/roll_call_lists/roll_call_vote_cfm.cfm?congress=113&session=2&vote=00059',
-	                                target: '_blank' },
-	                            'against bipartisan legislation to curb sexual assault'
-	                        ),
-	                        ' in the military ',
-	                        _react2.default.createElement(
-	                            'a',
-	                            {
-	                                href: 'http://www.senate.gov/legislative/LIS/roll_call_lists/roll_call_vote_cfm.cfm?congress=114&session=1&vote=00211' },
-	                            '\u2013 twice.'
-	                        )
-	                    ),
-	                    _react2.default.createElement('div', { className: 'spacer' })
-	                ),
-	                _react2.default.createElement(
-	                    'p',
-	                    null,
-	                    'The Senate will be narrowly divided 52-48 between Republicans and Democrats in 2017 and many key Senate committees will be split 10-9 or 11-10. ',
-	                    _react2.default.createElement(
-	                        'strong',
-	                        null,
-	                        'If Democrats stick together it could only take one or two principled Republican votes to block many of Trump\u2019s nominees.'
-	                    )
-	                ),
-	                _react2.default.createElement('div', { className: 'spacer' }),
-	                _react2.default.createElement(
-	                    'p',
-	                    null,
-	                    'Donald Trump may have won the Electoral College, but members of the U.S. Senate should not give any support to Trump appointees espousing racism, xenophobia, misogyny, homophobia, climate denial, and corporate greed.'
-	                ),
-	                _react2.default.createElement('div', { className: 'spacer' }),
-	                _react2.default.createElement(
-	                    'a',
-	                    { href: '#petition', className: 'sign-the-petition' },
-	                    'Sign the petition if you agree.'
-	                )
-	            );
-	        }
-	    }]);
-
-	    return BodyCopy;
-	}(_react.Component);
-
-	exports.default = BodyCopy;
-
-/***/ }),
+/* 55 */,
 /* 56 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -24710,6 +24407,332 @@
 
 	module.exports = ReactDOMInvalidARIAHook;
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)))
+
+/***/ }),
+/* 212 */
+/***/ (function(module, exports) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	var ajax = {
+	    get: function get(url, callback) {
+	        callback = callback || function () {};
+
+	        var xhr = new XMLHttpRequest();
+	        xhr.onreadystatechange = function () {
+	            if (xhr.readyState === 4 && callback) {
+	                callback(xhr.response);
+	            }
+	        };
+	        xhr.open('get', url, true);
+	        xhr.send();
+	    },
+	    post: function post(url, formData, callback) {
+	        callback = callback || function () {};
+
+	        var xhr = new XMLHttpRequest();
+	        xhr.onreadystatechange = function () {
+	            if (xhr.readyState === 4 && callback) {
+	                callback(xhr.response);
+	            }
+	        };
+	        xhr.open('post', url, true);
+	        xhr.send(formData);
+	    }
+	};
+
+	exports.default = ajax;
+
+/***/ }),
+/* 213 */
+/***/ (function(module, exports) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	// config
+	var config = {};
+	config.akPage = 'dont-let-trump-spy-on-us-www';
+	config.link = 'https://DontLetTrumpSpyonUs.com/';
+	config.prettyCampaignName = 'Don\'t Let Trump Spy on Us';
+	config.callCampaign = 'dont-let-trump-spy-on-us';
+
+	// URLs
+	var urls = {};
+	urls.actionkit = 'https://act.demandprogress.org/act/';
+	urls.count = 'https://act.demandprogress.org/progress/' + config.akPage + '?callback=onFetchSignatureCounts';
+	urls.facebook = 'https://www.facebook.com/sharer.php?u=';
+	urls.feedback = 'https://dp-feedback-tool.herokuapp.com/api/v1/feedback?';
+	urls.twitter = 'https://twitter.com/intent/tweet?text=';
+
+	// phone numbers
+	var numbers = {
+	    // 'The Office of the Treasury Secretary': '202-622-1100',
+	    // 'The Office of the White House Chief of Staff': '202-456-3737',
+	    // 'SEC Chair Mary Jo White': '202-551-2100',
+	    // 'SEC Commissioner Luis Aguilar': '202-551-2500',
+	    // 'SEC Commissioner Daniel Gallagher': '202-551-2600',
+	    // 'SEC Commissioner Kara Stein': '202-551-2800',
+	    // 'SEC Commissioner Michael Piwowar': '202-551-2700',
+	    // 'The Office of the SEC General Counsel': '202-551-5100',
+	    // 'The Domestic Policy Council': '202-456-5594',
+	    // 'The Office of Public Engagement': '202-456-1097',
+	    // 'The Office of the Press Secretary': '202-456-3282',
+	    // 'The White House General Counsel': '202-456-2632',
+	    // 'The Office of Management and Budget': '202-395-4840',
+	    // 'White House Operations': '202-456-2500',
+	    // 'The Domestic Policy Council': '202-456-6515',
+	    // 'The Office of Administration': '202-456-2861',
+	    // 'The Council of Economic Advisers': '202-395-5084',
+	    // 'Hillary Clinton\'s Campaign': '646-854-1432',
+	    'Call the Senate:': '202-335-0610'
+
+	    // default email message
+	};var subjectText = "I just signed this:";
+	var bodyText = "Hi - I just took action against Donald Trump’s horrifying picks for cabinet-level roles in his administration.\n\nTrump’s nominees have promoted white nationalism, attacked climate science and used their power as Wall Street insiders to fleece working families.\n\nI just signed a petition urging the Senate to block and resist any Trump nominee embracing hatred and greed. Could you sign too?\n\nhttps://www.BlockTrumpsCabinet.com/?source=email-share";
+	var emailSubject = encodeURIComponent(subjectText.trim());
+	var emailBody = encodeURIComponent(bodyText.trim());
+	var hrefEmail = 'mailto:?subject=' + emailSubject + '&body=' + emailBody;
+
+	exports.urls = urls;
+	exports.config = config;
+	exports.numbers = numbers;
+	exports.hrefEmail = hrefEmail;
+
+/***/ }),
+/* 214 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _react = __webpack_require__(2);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var EmailFormCopy = function EmailFormCopy() {
+	    return _react2.default.createElement(
+	        "div",
+	        { id: "text" },
+	        _react2.default.createElement(
+	            "p",
+	            null,
+	            "Petition to Congress:"
+	        ),
+	        _react2.default.createElement("br", null),
+	        _react2.default.createElement(
+	            "p",
+	            null,
+	            "We urge Congress to reject the so-called \u201CUSA Liberty Act,\u201D H.R. 3989, unless it is significantly improved. As introduced, this bill would extend Section 702, enabling the Trump administration to continue spying on Americans without a warrant."
+	        ),
+	        _react2.default.createElement("br", null),
+	        _react2.default.createElement(
+	            "p",
+	            null,
+	            _react2.default.createElement(
+	                "span",
+	                null,
+	                "Any reauthorization of Section 702 must end backdoor searches, permanently ban \u201Cabout\u201D collection, and guarantee that surveillance information cannot be secretly used in court against defendants. Unfortunately, the USA Liberty Act lacks all of these provisions. Without these reforms, Section 702 must expire."
+	            )
+	        )
+	    );
+	};
+
+	exports.default = EmailFormCopy;
+
+/***/ }),
+/* 215 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _react = __webpack_require__(2);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var Thanks = function Thanks() {
+	    return _react2.default.createElement(
+	        "div",
+	        { className: "thanks" },
+	        "Thanks for making your voice heard!"
+	    );
+	};
+
+	exports.default = Thanks;
+
+/***/ }),
+/* 216 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _react = __webpack_require__(2);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var BodyCopy = function BodyCopy() {
+	    return _react2.default.createElement(
+	        'div',
+	        { className: 'paragraph', style: { 'background-color': '#ffffff' } },
+	        _react2.default.createElement(
+	            'h3',
+	            null,
+	            'Section 702 Lets Spy Agencies Snoop on Americans \u2013 Without a Warrant.'
+	        ),
+	        _react2.default.createElement(
+	            'p',
+	            null,
+	            'In an end run around the Constitution, spy agencies have warped Section 702 of the FISA Amendments Act into a way to unconstitutionally snoop on Americans.'
+	        ),
+	        _react2.default.createElement('br', null),
+	        _react2.default.createElement(
+	            'p',
+	            null,
+	            'The law was intended to allow intelligence agencies to monitor communications of foreign individuals outside the United States. But spy agencies like the NSA have claimed this authority allows them to scan through and collect the emails and phone calls of innocent Americans. Then, the government routinely does \u201Cbackdoor searches\u201D of this information, where they may look up information about U.S. persons, even for reasons completely unrelated to intelligence gathering.'
+	        ),
+	        _react2.default.createElement('br', null),
+	        _react2.default.createElement(
+	            'p',
+	            null,
+	            'It\u2019s the same law the NSA claims justified the scandalous programs uncovered by Edward Snowden, like the PRISM program, which forces tech companies to turn over data on their servers, and Upstream collection, which automatically searches all internet traffic that crosses tapped lines connecting the U.S. with the rest of the world.'
+	        ),
+	        _react2.default.createElement('br', null),
+	        _react2.default.createElement(
+	            'p',
+	            null,
+	            'Flying in the face of the Fourth Amendment, the government searches this information specifically for Americans at least tens of thousands of times a year without a warrant, without evidence of a crime, and without independent oversight.'
+	        ),
+	        _react2.default.createElement('br', null),
+	        _react2.default.createElement(
+	            'h3',
+	            null,
+	            'The So-Called \u201CUSA Liberty Act\u201D Would Not Stop Trump From Spying on People in the U.S.'
+	        ),
+	        _react2.default.createElement(
+	            'p',
+	            null,
+	            'The so-called \u201CUSA Liberty Act\u201D (H.R. 3989), which was recently introduced in the House, must be rejected by Congress. Here\u2019s why:'
+	        ),
+	        _react2.default.createElement(
+	            'ul',
+	            { id: 'points' },
+	            _react2.default.createElement('br', null),
+	            _react2.default.createElement(
+	                'li',
+	                null,
+	                _react2.default.createElement(
+	                    'strong',
+	                    null,
+	                    'It doesn\u2019t stop backdoor searches,'
+	                ),
+	                ' which is when the government searches through the hundreds of millions of communications it collects yearly for information on Americans and people on U.S. soil \u2013 all without a warrant. Instead, the bill okays accessing and sharing this information for foreign intelligence purposes, a loophole big enough to drive a truck through.'
+	            ),
+	            _react2.default.createElement('br', null),
+	            _react2.default.createElement(
+	                'li',
+	                null,
+	                _react2.default.createElement(
+	                    'strong',
+	                    null,
+	                    'It fails to permanently end "about" collection,'
+	                ),
+	                ' an illegal practice the NSA says they\'ve stopped that allows for warrantless spying on Americans\u2019 communications that merely mention an intelligence target. Collections should be limited to communications that are "to" or "from" a target.'
+	            ),
+	            _react2.default.createElement('br', null),
+	            _react2.default.createElement(
+	                'li',
+	                null,
+	                _react2.default.createElement(
+	                    'strong',
+	                    null,
+	                    'It doesn\u2019t prevent the government from secretly using surveillance information in court against defendants.'
+	                ),
+	                ' Despite tens of thousands of searches by the government of Section 702 data, only a handful of defendants have ever received notice of it \u2013 and only after the Department of Justice was caught misleading the Supreme Court about its practices.'
+	            ),
+	            _react2.default.createElement('br', null),
+	            _react2.default.createElement(
+	                'li',
+	                null,
+	                _react2.default.createElement(
+	                    'strong',
+	                    null,
+	                    'It doesn\u2019t stop Section 702 information from being used in investigations and prosecutions that have nothing to do with national security,'
+	                ),
+	                ' because the bill doesn\u2019t place any meaningful limits on when and how data collected under Section 702 can be shared with other agencies or used in court.'
+	            ),
+	            _react2.default.createElement('br', null),
+	            _react2.default.createElement(
+	                'li',
+	                null,
+	                _react2.default.createElement(
+	                    'strong',
+	                    null,
+	                    'It gives the NSA too many free passes.'
+	                ),
+	                ' The bill adds some transparency measures but doesn\u2019t enforce them, giving the NSA leeway to ignore transparency reports to Congress, and only a small amount of information would trickle out to the public. And there\u2019s no independent oversight into how President Trump and Attorney General Sessions interpret the law.'
+	            ),
+	            _react2.default.createElement('br', null)
+	        ),
+	        _react2.default.createElement('br', null),
+	        _react2.default.createElement(
+	            'h3',
+	            null,
+	            'Spying Powers Are Already Being Abused. Under Trump Things Could Get Far Worse.'
+	        ),
+	        _react2.default.createElement(
+	            'p',
+	            null,
+	            'Even before a would-be authoritarian like Trump took power, the spying powers on the books have been abused consistently. The government has shown a persistent inability to follow rules that are supposed to protect Americans, as chronicled in a ',
+	            _react2.default.createElement(
+	                'a',
+	                { href: 'https://s3.amazonaws.com/demandprogress/reports/FISA_Violations.pdf', target: '_blank' },
+	                '2017 report by Demand Progress.'
+	            )
+	        ),
+	        _react2.default.createElement('br', null),
+	        _react2.default.createElement(
+	            'p',
+	            null,
+	            'Judges on the FISA Court have called the violations \u201Ca very serious Fourth Amendment issue\u201D and complained of \u201Can institutional \u2018lack of candor\u2019\u201D from the spy agencies.'
+	        ),
+	        _react2.default.createElement('br', null),
+	        _react2.default.createElement(
+	            'p',
+	            null,
+	            'Surveillance powers have been turned against activists and people of color in the past, from the FBI\u2019s intimidation campaign against Martin Luther King, Jr. to recent infiltration of Muslim student associations on college campuses. With Trump\u2019s clear authoritarian impulses and tendency to target vulnerable populations, Congress extending these spying powers to Trump would be catastrophic.'
+	        ),
+	        _react2.default.createElement('div', { className: 'spacer' }),
+	        _react2.default.createElement(
+	            'a',
+	            { href: '#petition', className: 'sign-the-petition' },
+	            'Sign the petition if you agree.'
+	        )
+	    );
+	};
+
+	exports.default = BodyCopy;
 
 /***/ })
 /******/ ]);
