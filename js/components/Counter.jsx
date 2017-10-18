@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { numberWithCommas } from '../utils/'
-import state from '../store/state'
+//import state from '../store/state'
 import { urls } from '../config/'
 
 class Counter extends Component {
@@ -28,17 +28,23 @@ class Counter extends Component {
 
         let className = 'counter';
 
-        if (state.count > 0) {
+        if (this.state.signatures > 0) {
             className += ' loaded';
         }
 
-        const signatures = numberWithCommas(state.count);
+        const signatures = numberWithCommas(this.state.signatures);
+
+        let display = null;
+        if (this.state.signatures > 1000) {
+            display = <div><div className="number-of-signatures">{this.state.signatures}</div><div className="number-of-signatures-label">signatures are in</div></div>;
+        } else {
+            display = <div></div>;
+        }
 
         return (
             <div className={className}>
                 <hr />
-                <div className="number-of-signatures">{this.state.signatures}</div>
-                <div className="number-of-signatures-label">signatures are in</div>
+                { display }
             </div>
         );
     }
