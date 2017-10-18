@@ -3,7 +3,8 @@ import Counter from '../Counter.jsx'
 import { config, hrefEmail } from '../../config/' 
 import { sendFormToActionKit } from '../../utils/actionKit'
 import { getSource } from '../../utils/index'
-import EmailFormCopy from '../../copy/EmailFormCopy.jsx' 
+import EmailFormCopy from '../../copy/EmailFormCopy.jsx'
+import Autocomplete from 'react-google-autocomplete';
 
 // Email
 let emailHref = hrefEmail
@@ -11,6 +12,10 @@ let emailHref = hrefEmail
 class EmailForm extends Component {
     constructor(props) {
         super(props);
+
+        this.state = {
+            addressFields: ['street_number', 'route', 'locality', "administrative_area_level_1", 'postal_code']
+        }
 
     }
     render() {
@@ -37,12 +42,25 @@ class EmailForm extends Component {
                                 <label htmlFor="email">adress@domain.com</label><br />
                             </div>                            
                             <div id="address" className="inputBox">
-                                <input className="address" name="address" placeholder="Street Address" type="address" />
-                                <label htmlFor="address">1234 Main St.</label><br />
-                            </div>                            
-                            <div id="zip" className="inputBox">
-                                <input className="zip" name="zip" placeholder="Zip code" type="tel" />
-                                <label htmlFor="zip">5 Digit ZIP Code</label><br />
+                                <Autocomplete
+                                    ref={ auto => this.autoComplete = auto }
+                                    style={{width: '100%'}}
+                                    onPlaceSelected={(place) => {
+                                        for (let c in place.address_components) {
+                                        console.log("component", c);
+                                            for (let t in place.address_components[c].types) {
+                                            console.log("type", t);
+                                                if (t in this.state.addressFields) {
+                                                    this.setState({t: c.long_name});
+                                                }
+                                            }
+                                        }
+                                        console.log("place", place);
+                                        console.log(this.state);
+                                    }}
+                                    types={['address']}
+                                    componentRestrictions={{country: "us"}}
+                                />
                             </div>
                             <EmailFormCopy />
 
