@@ -1,14 +1,14 @@
 import React, { Component } from 'react'
 import { urls, hrefEmail, config } from '../config/'
 
-// Email
-// let emailHref = hrefEmail
-try {
-    // These HTML elements are optional
-    const emailSubject = encodeURIComponent(document.querySelector('#email-share-subject').textContent.trim());
-    const emailBody = encodeURIComponent(document.querySelector('#email-share-body').textContent.trim());
-    emailHref = `mailto:?subject=${emailSubject}&body=${emailBody}`;
-} catch (err) { }
+// // Email
+// // let emailHref = hrefEmail
+// try {
+//     // These HTML elements are optional
+//     const emailSubject = encodeURIComponent(document.querySelector('#email-share-subject').textContent.trim());
+//     const emailBody = encodeURIComponent(document.querySelector('#email-share-body').textContent.trim());
+//     emailHref = `mailto:?subject=${emailSubject}&body=${emailBody}`;
+// } catch (err) { }
 
 class Social extends Component {
     render() {

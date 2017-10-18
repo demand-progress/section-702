@@ -6025,14 +6025,14 @@
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	// Email
-	// let emailHref = hrefEmail
-	try {
-	    // These HTML elements are optional
-	    var emailSubject = encodeURIComponent(document.querySelector('#email-share-subject').textContent.trim());
-	    var emailBody = encodeURIComponent(document.querySelector('#email-share-body').textContent.trim());
-	    emailHref = 'mailto:?subject=' + emailSubject + '&body=' + emailBody;
-	} catch (err) {}
+	// // Email
+	// // let emailHref = hrefEmail
+	// try {
+	//     // These HTML elements are optional
+	//     const emailSubject = encodeURIComponent(document.querySelector('#email-share-subject').textContent.trim());
+	//     const emailBody = encodeURIComponent(document.querySelector('#email-share-body').textContent.trim());
+	//     emailHref = `mailto:?subject=${emailSubject}&body=${emailBody}`;
+	// } catch (err) { }
 
 	var Social = function (_Component) {
 	    _inherits(Social, _Component);
@@ -23738,7 +23738,7 @@
 	            'Even before a would-be authoritarian like Trump took power, the spying powers on the books have been abused consistently. The government has shown a persistent inability to follow rules that are supposed to protect Americans, as chronicled in a ',
 	            _react2.default.createElement(
 	                'a',
-	                { href: 'https://s3.amazonaws.com/demandprogress/reports/FISA_Violations.pdf' },
+	                { href: 'https://s3.amazonaws.com/demandprogress/reports/FISA_Violations.pdf', target: '_blank' },
 	                '2017 report by Demand Progress.'
 	            )
 	        ),
