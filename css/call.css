@@ -251,6 +251,8 @@ a:hover {
         display: block;
         margin: 0 auto 12px;
     }
+
+
 }
 
 #app .paragraph a.sign-the-petition {
@@ -651,6 +653,10 @@ a:hover {
 
     #app .email-form form input.zip {
         border-bottom: none;
+    }
+
+    #app .phone-form form button {
+        padding: 16px 20px;
     }
 }
 
