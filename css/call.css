@@ -649,6 +649,10 @@ a:hover {
 }
 
 @media screen and (min-width: 769px) {
+    #app::after {
+        background-size: cover;
+    }
+
     #app #prefix {
         border-top: 1px solid #bdbdbd;
         border-left: 1px solid #bdbdbd;
