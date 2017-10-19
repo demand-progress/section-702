@@ -15,12 +15,15 @@ class PhoneForm extends Component {
     render() {
         return (
             <div className="phone-form-wrapper">
-                <div style={(getSource() == "signed") ? { display: 'none' } : {} }>
+                <div style={(getSource() == "directcall") ? { display: 'none' } : {} }>
                 <h2>Thanks for signing. <br/> Now, could you make a call?</h2>
                 
                 <div className="paragraph">
                     It’s the single most effective thing you can do.
                 </div>
+                </div>
+                <div style={(getSource() == "directcall") ? { } : { display: 'none' } }>
+                    <h2>Make a call to stop warrantless spying on Americans:</h2>
                 </div>
 
                 <div className="phone-form">

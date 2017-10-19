@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, user-scalable=yes">
     <title>Tell Congress: Don't Let Trump Spy On Us</title>
-    <link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Slab" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Slab">
     <link rel="stylesheet" href="css/call.css?c=57">
     <link rel="icon" href="favicon">
 
@@ -28,21 +28,27 @@
 
     <!-- Email -->
     <script type="text/template" id="email-share-subject">
-I just signed this:
     </script>
-    <script type="text/template" id="email-share-body">Hi - I just took action against Donald Trump’s horrifying picks for cabinet-level roles in his administration.
-
-Trump’s nominees have promoted white nationalism, attacked climate science and used their power as Wall Street insiders to fleece working families.
-
-I just signed a petition urging the Senate to block and resist any Trump nominee embracing hatred and greed. Could you sign too?
-
-https://www.BlockTrumpsCabinet.com/?source=email-share
+    <script type="text/template" id="email-share-body">
     </script>
-    <link rel="stylesheet" href="./css/call.css">
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAqKONbxlEM5StH6P-g2sMs_ZC7uiS4yF8&libraries=places"></script>
 </head>
-<body style="background-image: url(./images/trump-surveillance-2.jpg);">
+<body>
 
-<h1 style="text-align: center; color: white; font-weight: bold;">Thank you for viewing us. We will begin another campaign soon.</h1>
+<div id="app">
+    <div class="please-wait">Please wait...</div>
+</div>
 
+<script src="js/bundle.js"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-74199344-10"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-74199344-10');
+</script>
 </body>
 </html>
