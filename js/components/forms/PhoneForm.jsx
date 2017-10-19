@@ -5,19 +5,28 @@ import { getSource } from '../../utils/index'
 
 class PhoneForm extends Component {
 
+    constructor(props) {
+        super(props);
+        this.state = {
+            source: getSource()
+        }
+    }
+
     render() {
         return (
             <div className="phone-form-wrapper">
+                <div style={(getSource() == "signed") ? { display: 'none' } : {} }>
                 <h2>Thanks for signing. <br/> Now, could you make a call?</h2>
                 
                 <div className="paragraph">
                     It’s the single most effective thing you can do.
                 </div>
+                </div>
 
                 <div className="phone-form">
                     <form onSubmit={ this.onSubmit.bind(this) }>
                         <input placeholder="Your Phone Number" id="fieldPhone" ref="field-phone" className="phone" name="phone" autoComplete="on" pattern="[\d\(\)\-\+ ]*" autoFocus />
-                        <button>CALL THE SENATE
+                        <button>CALL CONGRESS
                             <img src="images/phone.svg" />
                         </button>
                     </form>
@@ -30,7 +39,7 @@ class PhoneForm extends Component {
                     Just enter your number and click “call”
                     <br/>
                     <br/>
-                    We’ll connect you with your senators and key party leaders, and give you a script of what you can say.
+                    We’ll connect you with your congress people and key party leaders, and give you a script of what you can say.
                 </div>
             </div>
         );
@@ -43,12 +52,13 @@ class PhoneForm extends Component {
         const number = phoneField.value.replace(/[^\d]/g, '');
 
         if (number.length !== 10) {
-            // this.phoneField.focus();
+            phoneField.focus();
             return alert('Please enter your 10 digit phone number.');
         }
 
-        let url = `https://demandprogress.callpower.org/call/create`;
-        
+        const request = new XMLHttpRequest();
+        let url = `https://demandprogress.callpower.org/call/create?campaignId=6&userPhone=${number}`;
+
         let zip
         try {
             if ('zip' in sessionStorage) {
@@ -58,11 +68,10 @@ class PhoneForm extends Component {
             // Oh well
         }
 
-        this.props.changeForm('script');            
-        
-        // console.log('url', url)
-        // console.log('data', data)
-        // ajax.post(url, data)
+        this.props.changeForm('script');
+
+        request.open('POST', url, true);
+        request.send();
         
     }
 

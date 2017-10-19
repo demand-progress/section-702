@@ -1,6 +1,6 @@
 // config
 const config = {}
-config.akPage = 'DontLetTrumpSpyOnUs-www-simple'
+config.akPage = 'DontLetTrumpSpyOnUs-www'
 config.link = 'https://DontLetTrumpSpyonUs.com/'
 config.prettyCampaignName = 'Don\'t Let Trump Spy on Us'
 config.callCampaign = 'dont-let-trump-spy-on-us'

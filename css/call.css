@@ -1,6 +1,6 @@
 /* Reset */
 
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video, textarea {
     margin: 0;
     padding: 0;
     border: 0;
@@ -189,7 +189,7 @@ a:hover {
     text-align: left;
     color: #4a4a4a;
     margin: 0 auto;
-    max-width: 1005px;
+    max-width: 750px;
     padding: 1px 32px 32px;
     border-radius: 3px;
     /* background-color: #ffffff; */
@@ -448,7 +448,7 @@ a:hover {
 
 #app .phone-script {
     border: 1px solid #a9a9a9;
-    background-color: #f1f1f1;
+    background-color: #fff;
     box-shadow: 2px 2px 7px rgba(0, 0, 0, 0.216);
     margin: 0 auto 32px;
     max-width: 700px;
@@ -471,10 +471,14 @@ a:hover {
 }
 
 #app .phone-script .suggestion {
-    color: #9a1606;
     margin: 10px auto;
-    max-width: 480px;
+    max-width: 500px;
     text-align: left;
+}
+
+#app .phone-script .suggestion p {
+
+    margin: 10px 0 10px 0;
 }
 
 #app .phone-script .spacer {
@@ -650,6 +654,10 @@ a:hover {
 }
 
 @media screen and (min-width: 769px) {
+    #app::after {
+        background-size: cover;
+    }
+
     #app #prefix {
         border-top: 1px solid #bdbdbd;
         border-left: 1px solid #bdbdbd;
@@ -689,7 +697,7 @@ a:hover {
 }
 
 #app .opt-out-form .suggestion {
-    color: #9a1606;
+    color: #4a4a4a;
     margin: 10px auto;
     text-align: left;
 }
@@ -874,6 +882,7 @@ a:hover {
     max-width: 960px;
     padding: 32px;
     text-align: center;
+    color: #666;
 }
 
 #app .creative-commons {
@@ -1003,7 +1012,7 @@ a:hover {
     background-color: #e10f6a;
 }
 #app .calling-wrapper #thanks {
-    background: #0199ff;
+    background: #f223a4;
     color: #f0f4f5;
     display: none;
     font-size: 20px;
@@ -1030,8 +1039,6 @@ a:hover {
 }
 
 .tell-congress {
-    width: 234px;
-    height: 48px;
     font-family: 'Roboto Slab', serif;
     font-size: 36px;
     font-weight: bold;
@@ -1044,7 +1051,7 @@ a:hover {
     width: 960px;
     height: 140px;
     font-family: 'Roboto Slab', serif;
-    font-size: 40px;
+    font-size: 60px;
     font-weight: bold;
     line-height: 1.17;
     text-align: left;
@@ -1053,10 +1060,8 @@ a:hover {
 }
 
 .congress-is-debating {
-    width: 960px;
-    height: 144px;
     font-family: 'Roboto Slab', serif;
-    font-size: 36px;
+    font-size: 24px;
     text-align: left;
     color: #ffc500;
     text-shadow: 5px 5px 15px #000000;
@@ -1225,7 +1230,7 @@ ul#points li strong {
     }
 
     p, .title span{
-        font-size: 1em
+        font-size: 1.5em
     }
 
     input {
@@ -1235,9 +1240,16 @@ ul#points li strong {
     #app .email-form form input.email, #app .email-form form input.address{
         border: 1px solid #bdbdbd;        
     }
+    
+    .title .tell-congress {
+        font-size: 1em;
+    }
 }
 
 @media screen and (max-width:572px) {
+    #app .wrapper > header {
+        padding: 0px 0 10px 0;
+    }
     #app .petition {
         padding: 5px; 
     }
@@ -1266,7 +1278,16 @@ ul#points li strong {
     }
 
     p, .title span{
-        font-size: .7em
+        font-size: 1em
     }
 
+    .title .tell-congress, .title .congress-is-debating {
+        font-size: .5em;
+    }
+}
+
+/* Styling for auto complete window */
+.pac-container, .pac-item {
+    width: inherit !important;
+    min-width: 300px;
 }
