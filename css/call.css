@@ -97,7 +97,7 @@ a:hover {
     z-index: -1;
 }
 
-#app {
+/* #app {
     position:absolute;
     top: 0;
     left: 0;
@@ -110,7 +110,26 @@ a:hover {
     height: 796px;
     opacity: 1;
     z-index: -1;
-}
+    opacity: 0.5;
+    
+} */
+
+#app::after {
+    content: "";
+    position:absolute;
+    top: 0;
+    left: 0;
+    background-image: url(../images/trump-surveillance-2.jpg);
+    background-position: left top;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-attachment: fixed;
+    width: 100%;
+    height: 796px;
+    opacity: 1;
+    z-index: -1;
+    opacity: 0.5;  
+  }
 
 #app .hide-temporarily {
     display: none;
@@ -1025,7 +1044,7 @@ a:hover {
     width: 960px;
     height: 140px;
     font-family: 'Roboto Slab', serif;
-    font-size: 60px;
+    font-size: 40px;
     font-weight: bold;
     line-height: 1.17;
     text-align: left;
@@ -1057,7 +1076,11 @@ a:hover {
     border-radius: 0 0 3px 3px;
     background-image: -webkit-linear-gradient(top, #ffe500, #ffc500);
     background-image: linear-gradient(to bottom, #ffe500, #ffc500);
-    padding: 54.8px 0 54.8px 0;
+    padding: 14.8px 0 54.8px 0;
+}
+
+#address input{
+    border-radius: 0 3px 3px 0
 }
 
 
@@ -1071,9 +1094,12 @@ a:hover {
     align-items: center;
     background-color: #fff;
     border-bottom: 1px solid #ccc;
-    border-radius: 3px 0 0 3px;  
+    border-radius: 3px 0 0 3px;
+    box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.076);    
 }
-
+ input.name{
+     background-color: transparent
+ }
 #app #title {
     grid-area: mytitle;
 }
@@ -1118,9 +1144,9 @@ a:hover {
 
 #app #form-grid {
     display: grid;
-    grid-template-columns: 180px 140px 140px 80px 174px;
+    grid-template-columns: 180px 160px 160px 174px;
     grid-row-gap: 30px;    
-    grid-template-areas: "myName myEmail myAddress myZip myButton" "myText myText myText myText myText";
+    grid-template-areas: "myName myEmail myAddress myButton" "myText myText myText myText";
 }
 
 #app #form-grid label {
@@ -1171,7 +1197,7 @@ ul#points li strong {
     #app #form-grid {
         grid-template-columns: 65% 40%;
         grid-template-rows: auto;
-        grid-template-areas: "myName myName" "myEmail myEmail" "myAddress myZip"
+        grid-template-areas: "myName myName" "myEmail myEmail" "myAddress myAddress"
         "myText myText"
         "myButton myButton";
     }
@@ -1197,7 +1223,11 @@ ul#points li strong {
     }
 
     p, .title span{
-        font-size: 1.2em
+        font-size: 1em
+    }
+
+    input {
+        width: 100% !important
     }
 }
 
@@ -1220,9 +1250,6 @@ ul#points li strong {
         position: relative;
         left: -10px;
     }
-    #app #name {
-        width: 95%;
-    }
 
     #app label {
         font-size: 80%;
@@ -1233,7 +1260,7 @@ ul#points li strong {
     }
 
     p, .title span{
-        font-size: 1em
+        font-size: .7em
     }
 
 }

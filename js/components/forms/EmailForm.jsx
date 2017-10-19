@@ -23,12 +23,14 @@ class EmailForm extends Component {
                             <div id="name" className="inputBox">
                                 <div id="fullName">
                                     <select id="prefix" name="prefix">
+                                        <option value="mx">Mx.</option>
                                         <option value="mr">Mr.</option>
-                                        <option value="miss">Miss</option>
                                         <option value="mrs">Mrs.</option>
                                         <option value="ms">Ms.</option>
+                                        <option value="dr">Dr.</option>
+                                        <option value="rev">Rev.</option>
                                     </select>        
-                                    <input  className="name" name="name" placeholder="Your name" autoFocus="autoFocus" />
+                                    <input  className="name" name="name" placeholder="Your name" />
                                 </div>
                                 <label htmlFor="name">Your Full Name</label><br />
                             </div>
@@ -40,10 +42,10 @@ class EmailForm extends Component {
                                 <input className="address" name="address1" placeholder="Street Address" type="address" />
                                 <label htmlFor="address">1234 Main St.</label><br />
                             </div>                            
-                            <div id="zip" className="inputBox">
+                            {/* <div id="zip" className="inputBox">
                                 <input className="zip" name="zip" placeholder="Zip code" type="tel" />
                                 <label htmlFor="zip">5 Digit ZIP Code</label><br />
-                            </div>
+                            </div> */}
                             <EmailFormCopy />
 
                             <button id="submit" ><img src="./images/document-white.svg"/>Sign</button>
@@ -92,18 +94,18 @@ class EmailForm extends Component {
             return;
         }
 
-        const zip = form.querySelector('[name="zip"]');
-        if (!zip.value.trim()) {
-            zip.focus();
-            alert('Please enter your zip.');
-            return;
-        }
+        // const zip = form.querySelector('[name="zip"]');
+        // if (!zip.value.trim()) {
+        //     zip.focus();
+        //     alert('Please enter your zip.');
+        //     return;
+        // }
 
-        try {
-            sessionStorage.zip = zip.value.trim();
-        } catch (err) {
-            // Oh well
-        }
+        // try {
+        //     sessionStorage.zip = zip.value.trim();
+        // } catch (err) {
+        //     // Oh well
+        // }
 
         const fields = {
             'action_user_agent': navigator.userAgent,
@@ -117,7 +119,7 @@ class EmailForm extends Component {
             'page': config.akPage,
             'source': getSource(),
             'want_progress': 1,
-            'zip': zip.value.trim(),
+            // 'zip': zip.value.trim(),
         };
 
         sendFormToActionKit(fields);
