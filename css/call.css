@@ -656,7 +656,7 @@ a:hover {
         border-bottom: 1px solid #bdbdbd;
     }
     #app .email-form form {
-        border: none;
+        /* border: none; */
         max-width: 100%;
     }
     #app .email-form form input {
@@ -1095,7 +1095,9 @@ a:hover {
     background-color: #fff;
     border-bottom: 1px solid #ccc;
     border-radius: 3px 0 0 3px;
-    box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.076);    
+    box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.076);   
+    border: 1px solid #bdbdbd;
+    height: 80px; 
 }
  input.name{
      background-color: transparent
@@ -1228,6 +1230,10 @@ ul#points li strong {
 
     input {
         width: 100% !important
+    }
+
+    #app .email-form form input.email, #app .email-form form input.address{
+        border: 1px solid #bdbdbd;        
     }
 }
 
