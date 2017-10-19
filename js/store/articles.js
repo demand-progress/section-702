@@ -17,6 +17,10 @@ export const origin = {
     },
     default: {
         title: 'Tell Congress:',
+        subTitle:'Don’t give Trump unconstitutional spying powers'
+    },
+    alt: {
+        title: 'Tell Congress:',
         subTitle:'Shut down unconstitutional spying on Americans'
     }
 }

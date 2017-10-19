@@ -42,7 +42,7 @@ class PhoneForm extends Component {
                     Just enter your number and click “call”
                     <br/>
                     <br/>
-                    We’ll connect you with your congress people and key party leaders, and give you a script of what you can say.
+                    We’ll connect you with members of Congress and key party leaders, and give you a script of what you can say.
                 </div>
             </div>
         );
