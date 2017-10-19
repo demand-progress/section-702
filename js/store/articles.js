@@ -1,9 +1,12 @@
 export const articles = [
     {
-        body: "(1) Congress Is Debating A Bill To Extend The Power To Spy On Americans – Without A Warrant – To Trump, The NSA, And The FBI. It Must Be Fundamentally Fixed Or Stopped Dead."
+        body: "Congress Is Debating A Bill To Extend The Power To Spy On Americans – Without A Warrant – To Trump, The NSA, And The FBI. It Must Be Fundamentally Fixed Or Stopped Dead."
     },
     {
-        body: "(2) Congress is debating a bill to extend the power to spy on Americans – without a warrant – to Trump, the NSA, and the FBI. It must be fundamentally fixed or stopped dead."
+        body: "Congress is debating a bill to extend the power to spy on Americans – without a warrant – to Trump, the NSA, and the FBI. It must be fundamentally fixed or stopped dead."
+    },
+    {
+        body: "Congress is debating a bill to extend the power to spy on Americans – without a warrant – to Trump, the NSA, and the FBI. It must be fundamentally fixed or stopped dead."
     }
 ]
 
