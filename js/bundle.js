@@ -6462,7 +6462,7 @@
 	                        _react2.default.createElement(
 	                            'p',
 	                            null,
-	                            '\u201CHi, my name is [NAME] and I live in [TOWN]. I\u2019m calling to urge my members of Congress to support strong surveillance reform legislation that stops spying on Americans without a warrant. The proposed \u201CUSA Liberty Act,\u201D H.R. 3989, unless it is strengthened to stop spying on Americans without a warrant.'
+	                            '\u201CHi, my name is [NAME] and I live in [TOWN]. I\u2019m calling to urge my members of Congress to support strong surveillance reform legislation that stops spying on Americans without a warrant. The proposed \u201CUSA Liberty Act,\u201D H.R. 3989, needs wholesale improvements before you should consider supporting it.'
 	                        ),
 	                        _react2.default.createElement(
 	                            'p',
