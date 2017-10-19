@@ -35,13 +35,13 @@ class EmailForm extends Component {
                                         <option value="dr">Dr.</option>
                                         <option value="rev">Rev.</option>
                                     </select>        
-                                    <input  className="name" name="name" placeholder="Your name" />
+                                    <input  className="name" name="name" placeholder="Your Name" />
                                 </div>
                                 <label htmlFor="name">Your Full Name</label><br />
                             </div>
                             <div id="email" className="inputBox">
-                                <input className="email" name="email" placeholder="Email" type="email" />
-                                <label htmlFor="email">adress@domain.com</label><br />
+                                <input className="email" name="email" placeholder="Email Address" type="email" />
+                                <label htmlFor="email">address@domain.com</label><br />
                             </div>                            
                             <div id="address" className="inputBox">
                                 <Autocomplete
@@ -49,20 +49,19 @@ class EmailForm extends Component {
                                     style={{width: '100%'}}
                                     onPlaceSelected={(place) => {
                                         for (let c in place.address_components) {
-                                        console.log("component", c);
                                             for (let t in place.address_components[c].types) {
-                                            console.log("type", t);
                                                 if (t in this.state.addressFields) {
-                                                    this.setState({t: c.long_name});
+                                                    this.setState({ [place.address_components[c].types[t]] : place.address_components[c].long_name });
                                                 }
                                             }
                                         }
-                                        console.log("place", place);
-                                        console.log(this.state);
+
                                     }}
                                     types={['address']}
                                     componentRestrictions={{country: "us"}}
                                     className="address"
+                                    placeholder="Street Address"
+                                    name="address"
                                 />
                             </div>
                             <EmailFormCopy />
@@ -94,14 +93,6 @@ class EmailForm extends Component {
             return;
         }
 
-
-        const address = form.address;
-        if (!address.value.trim()) {
-            address.focus();
-            alert('Please enter your address.');
-            return;
-        }
-
         const email = form.querySelector('[name="email"]');
         if (!email.value.trim()) {
             email.focus();
@@ -113,18 +104,11 @@ class EmailForm extends Component {
             return;
         }
 
-        // const zip = form.querySelector('[name="zip"]');
-        // if (!zip.value.trim()) {
-        //     zip.focus();
-        //     alert('Please enter your zip.');
-        //     return;
-        // }
-
-        // try {
-        //     sessionStorage.zip = zip.value.trim();
-        // } catch (err) {
-        //     // Oh well
-        // }
+        if (!this.state['administrative_area_level_1']) {
+            form.address.focus();
+            alert("Please enter your address.");
+            return;
+        }
 
         const fields = {
             'action_user_agent': navigator.userAgent,
@@ -132,14 +116,19 @@ class EmailForm extends Component {
             'email': email.value.trim(),
             'form_name': 'act-petition',
             'js': 1,
-            'name': `${prefix.value} ${name.value.trim()}`,
-            'address1': address.value.trim(),
+            'prefix': prefix.value.trim(),
+            'name': name.value.trim(),
+            'address1': `${this.state['street_number']} ${this.state['route']}`,
+            'state': this.state['administrative_area_level_1'],
+            'city': this.state['locality'],
+            'zip': this.state['postal_code'],
             'opt_in': 1,
             'page': config.akPage,
             'source': getSource(),
-            'want_progress': 1,
-            // 'zip': zip.value.trim(),
+            'want_progress': 1
         };
+
+        sessionStorage.zip = this.state['postal_code'];
 
         sendFormToActionKit(fields);
 

@@ -471,7 +471,6 @@ a:hover {
 }
 
 #app .phone-script .suggestion {
-    color: #9a1606;
     margin: 10px auto;
     max-width: 480px;
     text-align: left;
@@ -874,6 +873,7 @@ a:hover {
     max-width: 960px;
     padding: 32px;
     text-align: center;
+    color: #666;
 }
 
 #app .creative-commons {
@@ -1003,7 +1003,7 @@ a:hover {
     background-color: #e10f6a;
 }
 #app .calling-wrapper #thanks {
-    background: #0199ff;
+    background: #f223a4;
     color: #f0f4f5;
     display: none;
     font-size: 20px;
@@ -1263,4 +1263,10 @@ ul#points li strong {
         font-size: .7em
     }
 
+}
+
+/* Styling for auto complete window */
+.pac-container, .pac-item {
+    width: inherit !important;
+    min-width: 300px;
 }

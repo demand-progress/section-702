@@ -50,7 +50,6 @@ class Counter extends Component {
     }
 
     onFetchSignatureCounts(data) {
-        console.log(data);
         this.setState({ signatures: numberWithCommas(data.total.actions) });
     }
 }
