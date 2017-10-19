@@ -24,6 +24,8 @@ const Organizations = () => (
                 <a title="Roots Action" href="" target="_blank"><img src="images/logos/RA-final-1.png" /></a>
                 <a title="18 Million Rising" href="http://18millionrising.org/" target="_blank"><img src="images/logos/18mr_logo_short.png" /></a>
                 <a title="Win Without War" href="" target="_blank"><img src="images/logos/win-without-war-logo-square.png" /></a>
+                <a title="Restore the Fourth" href="" target="_blank"><img src="images/logos/rtf_logo.png" /></a>
+                <a title="Sum Of Us" href="" target="_blank"><img src="images/logos/SumOfUs_lg_color.png" /></a>
              </div>
         </div>
     </div>

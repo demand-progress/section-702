@@ -6726,6 +6726,16 @@
 	                    "a",
 	                    { title: "Win Without War", href: "", target: "_blank" },
 	                    _react2.default.createElement("img", { src: "images/logos/win-without-war-logo-square.png" })
+	                ),
+	                _react2.default.createElement(
+	                    "a",
+	                    { title: "Restore the Fourth", href: "", target: "_blank" },
+	                    _react2.default.createElement("img", { src: "images/logos/rtf_logo.png" })
+	                ),
+	                _react2.default.createElement(
+	                    "a",
+	                    { title: "Sum Of Us", href: "", target: "_blank" },
+	                    _react2.default.createElement("img", { src: "images/logos/SumOfUs_lg_color.png" })
 	                )
 	            )
 	        )
