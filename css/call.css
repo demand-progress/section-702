@@ -538,6 +538,7 @@ a:hover {
 #app .email-form form input.name {
     box-shadow: none;
     border: none;
+    width: 135px;
 }
 
 #app .email-form form input::-webkit-input-placeholder,
@@ -1112,7 +1113,8 @@ a:hover {
 }
 
 #app #prefix {
-    margin: 10px;
+    display: inline-block;
+    margin-left: 10px;
     /* background-color: #ccc */
 }
 
@@ -1151,7 +1153,7 @@ a:hover {
 
 #app #form-grid {
     display: grid;
-    grid-template-columns: 180px 160px 160px 174px;
+    grid-template-columns: 190px 160px 160px 174px;
     grid-row-gap: 30px;    
     grid-template-areas: "myName myEmail myAddress myButton" "myText myText myText myText";
 }
@@ -1240,7 +1242,7 @@ ul#points li strong {
     #app .email-form form input.email, #app .email-form form input.address{
         border: 1px solid #bdbdbd;        
     }
-    
+
     .title .tell-congress {
         font-size: 1em;
     }
