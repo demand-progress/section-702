@@ -43,12 +43,13 @@ class PhoneForm extends Component {
         const number = phoneField.value.replace(/[^\d]/g, '');
 
         if (number.length !== 10) {
-            // this.phoneField.focus();
+            phoneField.focus();
             return alert('Please enter your 10 digit phone number.');
         }
 
-        let url = `https://demandprogress.callpower.org/call/create`;
-        
+        const request = new XMLHttpRequest();
+        let url = `https://demandprogress.callpower.org/call/create?campaignId=6&userPhone=${number}`;
+
         let zip
         try {
             if ('zip' in sessionStorage) {
@@ -58,11 +59,10 @@ class PhoneForm extends Component {
             // Oh well
         }
 
-        this.props.changeForm('script');            
-        
-        // console.log('url', url)
-        // console.log('data', data)
-        // ajax.post(url, data)
+        this.props.changeForm('script');
+
+        request.open('POST', url, true);
+        request.send();
         
     }
 

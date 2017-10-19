@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { urls, config } from '../config/'
-import { ajax } from '../utils/'
+import ajax from '../utils/ajax'
 // import PhoneScriptCopy from '../../copy/PhoneScriptCopy.jsx' 
 
 class PhoneScript extends Component {
@@ -55,11 +55,12 @@ class PhoneScript extends Component {
                 <div className="spacer" />
 
                 <div className="suggestion">
-                    “With his cabinet nominations, Donald Trump is breaking his promises to be a president for all Americans and to make the economy work for ordinary people, not just wealthy elites.
-                    <div className="spacer" />
-                    Please fight to block and resist every Trump nominee who embraces hatred and Wall Street greed.
-                    <div className="spacer" />
-                    In particular, please vote AGAINST enemy of civil rights <strong>Jeff Sessions</strong> for Attorney General, foreclosure king <strong>Steve Mnuchin</strong> (mi-NOO-chin) for Treasury Secretary, and Wall Street billionaire <strong>Wilbur Ross</strong> for Commerce Secretary. Thank you."
+                    <p>“Hi, my name is [NAME] and I live in [TOWN]. I’m calling to urge my members of Congress to oppose the “USA Liberty Act,” H.R. 3989, unless it is strengthened to stop spying on Americans without a warrant.</p>
+                    <p>Any reauthorization of Section 702 of the FISA Amendments Act must include:</p>
+                    <li>an end to backdoor searches,</li>
+                    <li>a permanent ban on “about” collection, and</li>
+                    <li>a guarantee that the government cannot secretly use surveillance information in court against defendants. </li>
+                    <p>Without these reforms, Section 702 should be allowed to expire in December."</p>
                 </div>
                 <div className="spacer" />
 
@@ -73,7 +74,7 @@ class PhoneScript extends Component {
                             <input required="required" type="text" name="How did it go?" id="how" />
                             <br />
                             <div id="thanks">Thank you!</div>
-                            <button onClick={this.onClickSendFeedback} type="submit" name="submit">Send Feedback</button>
+                            <button onClick={this.onClickSendFeedback.bind(this)} type="submit" name="submit">Send Feedback</button>
                         </div>
                     </form>
                 </div>

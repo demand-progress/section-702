@@ -47,8 +47,10 @@ class Social extends Component {
         if ('embeddedConfiguration' in window) {
             if (embeddedConfiguration.link) {
                 shareUrl = embeddedConfiguration.link;
+                console.log(embeddedConfiguration);
             }
         }
+
 
         let url = urls.facebook + encodeURIComponent(shareUrl + '?source=fb-share');
 
