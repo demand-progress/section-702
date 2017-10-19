@@ -6068,7 +6068,7 @@
 	                        _react2.default.createElement(
 	                            'button',
 	                            null,
-	                            'CALL THE SENATE',
+	                            'CALL CONGRESS',
 	                            _react2.default.createElement('img', { src: 'images/phone.svg' })
 	                        )
 	                    ),
