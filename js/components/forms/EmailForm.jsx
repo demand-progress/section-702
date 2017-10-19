@@ -22,13 +22,15 @@ class EmailForm extends Component {
                         <form id="form-grid" className="form" onSubmit={ this.onSubmit.bind(this) } ref="form">
                             <div id="name" className="inputBox">
                                 <div id="fullName">
-                                    <select id="nameTitle" name="title">
+                                    <select id="prefix" name="prefix">
+                                        <option value="mx">Mx.</option>
                                         <option value="mr">Mr.</option>
-                                        <option value="miss">Miss</option>
                                         <option value="mrs">Mrs.</option>
                                         <option value="ms">Ms.</option>
+                                        <option value="dr">Dr.</option>
+                                        <option value="rev">Rev.</option>
                                     </select>        
-                                    <input  className="name" name="name" placeholder="Your name" autoFocus="autoFocus" />
+                                    <input  className="name" name="name" placeholder="Your name" />
                                 </div>
                                 <label htmlFor="name">Your Full Name</label><br />
                             </div>
@@ -37,13 +39,13 @@ class EmailForm extends Component {
                                 <label htmlFor="email">adress@domain.com</label><br />
                             </div>                            
                             <div id="address" className="inputBox">
-                                <input className="address" name="address" placeholder="Street Address" type="address" />
+                                <input className="address" name="address1" placeholder="Street Address" type="address" />
                                 <label htmlFor="address">1234 Main St.</label><br />
                             </div>                            
-                            <div id="zip" className="inputBox">
+                            {/* <div id="zip" className="inputBox">
                                 <input className="zip" name="zip" placeholder="Zip code" type="tel" />
                                 <label htmlFor="zip">5 Digit ZIP Code</label><br />
-                            </div>
+                            </div> */}
                             <EmailFormCopy />
 
                             <button id="submit" ><img src="./images/document-white.svg"/>Sign</button>
@@ -64,7 +66,7 @@ class EmailForm extends Component {
         const form = e.target;
         const emailRegex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
 
-        const title = form.querySelector('[name="title"]');
+        const prefix = form.querySelector('[name="prefix"]');
 
         const name = form.querySelector('[name="name"]');
         if (!name.value.trim()) {
@@ -72,6 +74,7 @@ class EmailForm extends Component {
             alert('Please enter your name.');
             return;
         }
+
 
         const address = form.address;
         if (!address.value.trim()) {
@@ -91,18 +94,18 @@ class EmailForm extends Component {
             return;
         }
 
-        const zip = form.querySelector('[name="zip"]');
-        if (!zip.value.trim()) {
-            zip.focus();
-            alert('Please enter your zip.');
-            return;
-        }
+        // const zip = form.querySelector('[name="zip"]');
+        // if (!zip.value.trim()) {
+        //     zip.focus();
+        //     alert('Please enter your zip.');
+        //     return;
+        // }
 
-        try {
-            sessionStorage.zip = zip.value.trim();
-        } catch (err) {
-            // Oh well
-        }
+        // try {
+        //     sessionStorage.zip = zip.value.trim();
+        // } catch (err) {
+        //     // Oh well
+        // }
 
         const fields = {
             'action_user_agent': navigator.userAgent,
@@ -110,13 +113,13 @@ class EmailForm extends Component {
             'email': email.value.trim(),
             'form_name': 'act-petition',
             'js': 1,
-            'name': `${title.value} ${name.value.trim()}`,
+            'name': `${prefix.value} ${name.value.trim()}`,
             'address1': address.value.trim(),
             'opt_in': 1,
             'page': config.akPage,
             'source': getSource(),
             'want_progress': 1,
-            'zip': zip.value.trim(),
+            // 'zip': zip.value.trim(),
         };
 
         sendFormToActionKit(fields);

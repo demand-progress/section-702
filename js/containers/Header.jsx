@@ -30,11 +30,11 @@ class Header extends Component {
         return Math.floor(Math.random() * qty);
     }
     render() {
-        if (!this.state.title) {
-            this.state.title = ""
+        if (!('title' in this.state)) {
+            this.setState({title: ""})
         }
-        if (!this.state.subTitle) {
-            this.state.subTitle = ""
+        if (!('subTitle' in this.state)) {
+            this.setState({subTitle: ""})
         } 
         // console.log(this.state.origin);
         return (

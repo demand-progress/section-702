@@ -75,17 +75,16 @@
 	    ReactDOM.render(React.createElement(_CallPages2.default, null), document.querySelector('#app'));
 	}
 
-	render()
+	render();
 
-	// Google Analytics
-	(function (i, s, o, g, r, a, m) {
-	    i['GoogleAnalyticsObject'] = r;i[r] = i[r] || function () {
-	        (i[r].q = i[r].q || []).push(arguments);
-	    }, i[r].l = 1 * new Date();a = s.createElement(o), m = s.getElementsByTagName(o)[0];a.async = 1;a.src = g;m.parentNode.insertBefore(a, m);
-	})(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+	// // Google Analytics (Updated)
+	// (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	// (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	// m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	// })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-	ga('create', 'UA-74199344-9', 'auto');
-	ga('send', 'pageview');
+	// ga('create', 'UA-74199344-10', 'auto');
+	// ga('send', 'pageview');
 
 /***/ }),
 /* 1 */
@@ -4824,11 +4823,11 @@
 	    }, {
 	        key: 'render',
 	        value: function render() {
-	            if (!this.state.title) {
-	                this.state.title = "";
+	            if (!('title' in this.state)) {
+	                this.setState({ title: "" });
 	            }
-	            if (!this.state.subTitle) {
-	                this.state.subTitle = "";
+	            if (!('subTitle' in this.state)) {
+	                this.setState({ subTitle: "" });
 	            }
 	            // console.log(this.state.origin);
 	            return _react2.default.createElement(
@@ -4875,9 +4874,11 @@
 	    value: true
 	});
 	var articles = exports.articles = [{
-	    body: "(1) Congress Is Debating A Bill To Extend The Power To Spy On Americans – Without A Warrant – To Trump, The NSA, And The FBI. It Must Be Fundamentally Fixed Or Stopped Dead."
+	    body: "Congress Is Debating A Bill To Extend The Power To Spy On Americans – Without A Warrant – To Trump, The NSA, And The FBI. It Must Be Fundamentally Fixed Or Stopped Dead."
 	}, {
-	    body: "(2) Congress is debating a bill to extend the power to spy on Americans – without a warrant – to Trump, the NSA, and the FBI. It must be fundamentally fixed or stopped dead."
+	    body: "Congress is debating a bill to extend the power to spy on Americans – without a warrant – to Trump, the NSA, and the FBI. It must be fundamentally fixed or stopped dead."
+	}, {
+	    body: "Congress is debating a bill to extend the power to spy on Americans – without a warrant – to Trump, the NSA, and the FBI. It must be fundamentally fixed or stopped dead."
 	}];
 
 	var origin = exports.origin = {
@@ -5104,16 +5105,16 @@
 	                                    { id: 'fullName' },
 	                                    _react2.default.createElement(
 	                                        'select',
-	                                        { id: 'nameTitle', name: 'title' },
+	                                        { id: 'prefix', name: 'prefix' },
+	                                        _react2.default.createElement(
+	                                            'option',
+	                                            { value: 'mx' },
+	                                            'Mx.'
+	                                        ),
 	                                        _react2.default.createElement(
 	                                            'option',
 	                                            { value: 'mr' },
 	                                            'Mr.'
-	                                        ),
-	                                        _react2.default.createElement(
-	                                            'option',
-	                                            { value: 'miss' },
-	                                            'Miss'
 	                                        ),
 	                                        _react2.default.createElement(
 	                                            'option',
@@ -5124,9 +5125,19 @@
 	                                            'option',
 	                                            { value: 'ms' },
 	                                            'Ms.'
+	                                        ),
+	                                        _react2.default.createElement(
+	                                            'option',
+	                                            { value: 'dr' },
+	                                            'Dr.'
+	                                        ),
+	                                        _react2.default.createElement(
+	                                            'option',
+	                                            { value: 'rev' },
+	                                            'Rev.'
 	                                        )
 	                                    ),
-	                                    _react2.default.createElement('input', { className: 'name', name: 'name', placeholder: 'Your name', autoFocus: 'autoFocus' })
+	                                    _react2.default.createElement('input', { className: 'name', name: 'name', placeholder: 'Your name' })
 	                                ),
 	                                _react2.default.createElement(
 	                                    'label',
@@ -5149,22 +5160,11 @@
 	                            _react2.default.createElement(
 	                                'div',
 	                                { id: 'address', className: 'inputBox' },
-	                                _react2.default.createElement('input', { className: 'address', name: 'address', placeholder: 'Street Address', type: 'address' }),
+	                                _react2.default.createElement('input', { className: 'address', name: 'address1', placeholder: 'Street Address', type: 'address' }),
 	                                _react2.default.createElement(
 	                                    'label',
 	                                    { htmlFor: 'address' },
 	                                    '1234 Main St.'
-	                                ),
-	                                _react2.default.createElement('br', null)
-	                            ),
-	                            _react2.default.createElement(
-	                                'div',
-	                                { id: 'zip', className: 'inputBox' },
-	                                _react2.default.createElement('input', { className: 'zip', name: 'zip', placeholder: 'Zip code', type: 'tel' }),
-	                                _react2.default.createElement(
-	                                    'label',
-	                                    { htmlFor: 'zip' },
-	                                    '5 Digit ZIP Code'
 	                                ),
 	                                _react2.default.createElement('br', null)
 	                            ),
@@ -5194,7 +5194,7 @@
 	            var form = e.target;
 	            var emailRegex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
 
-	            var title = form.querySelector('[name="title"]');
+	            var prefix = form.querySelector('[name="prefix"]');
 
 	            var name = form.querySelector('[name="name"]');
 	            if (!name.value.trim()) {
@@ -5221,18 +5221,18 @@
 	                return;
 	            }
 
-	            var zip = form.querySelector('[name="zip"]');
-	            if (!zip.value.trim()) {
-	                zip.focus();
-	                alert('Please enter your zip.');
-	                return;
-	            }
+	            // const zip = form.querySelector('[name="zip"]');
+	            // if (!zip.value.trim()) {
+	            //     zip.focus();
+	            //     alert('Please enter your zip.');
+	            //     return;
+	            // }
 
-	            try {
-	                sessionStorage.zip = zip.value.trim();
-	            } catch (err) {
-	                // Oh well
-	            }
+	            // try {
+	            //     sessionStorage.zip = zip.value.trim();
+	            // } catch (err) {
+	            //     // Oh well
+	            // }
 
 	            var fields = {
 	                'action_user_agent': navigator.userAgent,
@@ -5240,13 +5240,13 @@
 	                'email': email.value.trim(),
 	                'form_name': 'act-petition',
 	                'js': 1,
-	                'name': title.value + ' ' + name.value.trim(),
+	                'name': prefix.value + ' ' + name.value.trim(),
 	                'address1': address.value.trim(),
 	                'opt_in': 1,
 	                'page': _config.config.akPage,
 	                'source': (0, _index.getSource)(),
-	                'want_progress': 1,
-	                'zip': zip.value.trim()
+	                'want_progress': 1
+	                // 'zip': zip.value.trim(),
 	            };
 
 	            (0, _actionKit.sendFormToActionKit)(fields);
@@ -5278,10 +5278,6 @@
 
 	var _utils = __webpack_require__(43);
 
-	var _state = __webpack_require__(44);
-
-	var _state2 = _interopRequireDefault(_state);
-
 	var _config = __webpack_require__(46);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
@@ -5291,6 +5287,8 @@
 	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	//import state from '../store/state'
+
 
 	var Counter = function (_Component) {
 	    _inherits(Counter, _Component);
@@ -5326,26 +5324,37 @@
 
 	            var className = 'counter';
 
-	            if (_state2.default.count > 0) {
+	            if (this.state.signatures > 0) {
 	                className += ' loaded';
 	            }
 
-	            var signatures = (0, _utils.numberWithCommas)(_state2.default.count);
+	            var signatures = (0, _utils.numberWithCommas)(this.state.signatures);
+
+	            var display = null;
+	            if (this.state.signatures > 1000) {
+	                display = _react2.default.createElement(
+	                    'div',
+	                    null,
+	                    _react2.default.createElement(
+	                        'div',
+	                        { className: 'number-of-signatures' },
+	                        this.state.signatures
+	                    ),
+	                    _react2.default.createElement(
+	                        'div',
+	                        { className: 'number-of-signatures-label' },
+	                        'signatures are in'
+	                    )
+	                );
+	            } else {
+	                display = _react2.default.createElement('div', null);
+	            }
 
 	            return _react2.default.createElement(
 	                'div',
 	                { className: className },
 	                _react2.default.createElement('hr', null),
-	                _react2.default.createElement(
-	                    'div',
-	                    { className: 'number-of-signatures' },
-	                    this.state.signatures
-	                ),
-	                _react2.default.createElement(
-	                    'div',
-	                    { className: 'number-of-signatures-label' },
-	                    'signatures are in'
-	                )
+	                display
 	            );
 	        }
 	    }, {
@@ -5459,7 +5468,7 @@
 	var _utils = __webpack_require__(43);
 
 	var state = {};
-	state.count = 0;
+	// state.count = 0
 	state.isMobile = /mobile/i.test(navigator.userAgent);
 	state.isIE = /trident/i.test(navigator.userAgent);
 	state.query = (0, _utils.getQueryVariables)();
@@ -5665,7 +5674,7 @@
 	        _react2.default.createElement(
 	            "p",
 	            null,
-	            "We urge Congress to reject the so-called \u201CUSA Liberty Act,\u201D H.R. 3989, unless it is significantly improved. As introduced, this bill would extend Section 702, enabling the Trump administration to continue spying on Americans without a warrant."
+	            "\"We urge Congress to reject the so-called \u201CUSA Liberty Act,\u201D H.R. 3989, unless it is significantly improved. As introduced, this bill would extend Section 702, enabling the Trump administration to continue spying on Americans without a warrant."
 	        ),
 	        _react2.default.createElement("br", null),
 	        _react2.default.createElement(
@@ -5674,7 +5683,7 @@
 	            _react2.default.createElement(
 	                "span",
 	                null,
-	                "Any reauthorization of Section 702 must end backdoor searches, permanently ban \u201Cabout\u201D collection, and guarantee that surveillance information cannot be secretly used in court against defendants. Unfortunately, the USA Liberty Act lacks all of these provisions. Without these reforms, Section 702 must expire."
+	                "Any reauthorization of Section 702 must end backdoor searches, permanently ban \u201Cabout\u201D collection, and guarantee that surveillance information cannot be secretly used in court against defendants. Unfortunately, the USA Liberty Act lacks all of these provisions. Without these reforms, Section 702 must expire.\""
 	            )
 	        )
 	    );
@@ -6323,7 +6332,80 @@
 	                null,
 	                "In partnership with"
 	            ),
-	            _react2.default.createElement("div", { className: "smaller" })
+	            _react2.default.createElement(
+	                "div",
+	                { className: "smaller" },
+	                _react2.default.createElement(
+	                    "a",
+	                    { title: "Common Cause", href: "", target: "_blank" },
+	                    _react2.default.createElement("img", { src: "images/logos/CC_Logo_RGBWeb.jpg" })
+	                ),
+	                _react2.default.createElement(
+	                    "a",
+	                    { title: "Color of Chanfe", href: "", target: "_blank" },
+	                    _react2.default.createElement("img", { src: "images/logos/COC-Full-Color.jpg" })
+	                ),
+	                _react2.default.createElement(
+	                    "a",
+	                    { title: "Daily Kos", href: "", target: "_blank" },
+	                    _react2.default.createElement("img", { src: "images/logos/DailyKosLogo.png" })
+	                ),
+	                _react2.default.createElement(
+	                    "a",
+	                    { title: "Democracy for America", href: "", target: "_blank" },
+	                    _react2.default.createElement("img", { src: "images/logos/DFA-Logo-bottom-transparent-full-size.png" })
+	                ),
+	                _react2.default.createElement(
+	                    "a",
+	                    { title: "Freepress Action Fund", href: "", target: "_blank" },
+	                    _react2.default.createElement("img", { src: "images/logos/fp-actionfund.png" })
+	                ),
+	                _react2.default.createElement(
+	                    "a",
+	                    { title: "Defending Rights \\& Dissent", href: "", target: "_blank" },
+	                    _react2.default.createElement("img", { src: "images/logos/logo 300x250px.png" })
+	                ),
+	                _react2.default.createElement(
+	                    "a",
+	                    { title: "ADC", href: "", target: "_blank" },
+	                    _react2.default.createElement("img", { src: "images/logos/ADCLogo.gif" })
+	                ),
+	                _react2.default.createElement(
+	                    "a",
+	                    { title: "MillionHoodies Movement for Justice", href: "", target: "_blank" },
+	                    _react2.default.createElement("img", { src: "images/logos/LogoType_LightBG.png" })
+	                ),
+	                _react2.default.createElement(
+	                    "a",
+	                    { title: "The Nation", href: "", target: "_blank" },
+	                    _react2.default.createElement("img", { src: "images/logos/NewNationLogo07.jpg" })
+	                ),
+	                _react2.default.createElement(
+	                    "a",
+	                    { title: "People's Action", href: "", target: "_blank" },
+	                    _react2.default.createElement("img", { src: "images/logos/PeoplesActionLogo600x600.png" })
+	                ),
+	                _react2.default.createElement(
+	                    "a",
+	                    { title: "Presente.org", href: "", target: "_blank" },
+	                    _react2.default.createElement("img", { src: "images/logos/PresenteLargeLogo.png" })
+	                ),
+	                _react2.default.createElement(
+	                    "a",
+	                    { title: "Roots Action", href: "", target: "_blank" },
+	                    _react2.default.createElement("img", { src: "images/logos/RA-final-1.png" })
+	                ),
+	                _react2.default.createElement(
+	                    "a",
+	                    { title: "18 Million Rising", href: "http://18millionrising.org/", target: "_blank" },
+	                    _react2.default.createElement("img", { src: "images/logos/18mr_logo_short.png" })
+	                ),
+	                _react2.default.createElement(
+	                    "a",
+	                    { title: "Win Without War", href: "", target: "_blank" },
+	                    _react2.default.createElement("img", { src: "images/logos/win-without-war-logo-square.png" })
+	                )
+	            )
 	        )
 	    );
 	};
@@ -6354,8 +6436,8 @@
 	        _react2.default.createElement("br", null),
 	        _react2.default.createElement(
 	            "a",
-	            { href: "mailto:press@rootstrikers.org" },
-	            "press@rootstrikers.org"
+	            { href: "mailto:press@demandprogress.org" },
+	            "press@demandprogress.org"
 	        )
 	    );
 	};
@@ -6379,73 +6461,7 @@
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	var CreativeCommons = function CreativeCommons() {
-	    return _react2.default.createElement(
-	        "div",
-	        { className: "creative-commons" },
-	        "Trump photo (edited) via ",
-	        _react2.default.createElement(
-	            "a",
-	            { href: "https://commons.wikimedia.org/wiki/File%3ADonald_Trump_(16493063167).jpg", target: "_blank" },
-	            "Michael Vadon"
-	        ),
-	        " under a ",
-	        _react2.default.createElement(
-	            "a",
-	            { href: "http://creativecommons.org/licenses/by-sa/2.0", target: "_blank" },
-	            "CC BY-SA 2.0"
-	        ),
-	        " license.",
-	        _react2.default.createElement("br", null),
-	        "Sessions photo (edited) via ",
-	        _react2.default.createElement(
-	            "a",
-	            { href: "https://commons.wikimedia.org/wiki/File%3AJeff_Sessions_by_Gage_Skidmore.jpg", target: "_blank" },
-	            "Gage Skidmore"
-	        ),
-	        " under a ",
-	        _react2.default.createElement(
-	            "a",
-	            { href: "http://creativecommons.org/licenses/by-sa/3.0", target: "_blank" },
-	            "CC BY-SA 3.0"
-	        ),
-	        " license.",
-	        _react2.default.createElement("br", null),
-	        "Tillerson photo (edited) via ",
-	        _react2.default.createElement(
-	            "a",
-	            { href: "https://www.flickr.com/photos/worldeconomicforum/3488866258/", target: "_blank" },
-	            "World Economic Forum"
-	        ),
-	        " under a ",
-	        _react2.default.createElement(
-	            "a",
-	            { href: "https://creativecommons.org/licenses/by-nc-sa/2.0/", target: "_blank" },
-	            "CC BY-NC-SA 2.0"
-	        ),
-	        " license.",
-	        _react2.default.createElement("br", null),
-	        "Ross photo (edited) via Cyprus Business Press under a ",
-	        _react2.default.createElement(
-	            "a",
-	            { href: "https://creativecommons.org/licenses/by-nc-nd/3.0/", target: "_blank" },
-	            "CC BY-NC-ND 3.0"
-	        ),
-	        " license.",
-	        _react2.default.createElement("br", null),
-	        "Pruitt photo (edited) via ",
-	        _react2.default.createElement(
-	            "a",
-	            { href: "https://www.flickr.com/photos/gageskidmore/16503867219/in/photolist-r9oCJP-rqQHPX-r9heYS-eac2U8-ERurNv-rqKgqb-E3i1cr-p1nWhb-nsVqj3-nbGwQY-nbGtUu-nbGqz2-nbGnqM-nteJif-nte9nu-r9g9xm-nbH1aX-qu4gpp-nbH3D4-nsV2gZ-qu49w6-2QuBHv-nbGEPe-9mXmBW-6LaCys-nsUuWa-nr9pGw-nbGtX2-nsVpdW-roxxSu-nbGWWL-nbGpWD-r7w9jM-roxzyL-9mXnoy-nsVe6S-ntbZYR-8sDtvi-r9hceU-9mUjLk-nbGZRS-nbGJ5d-nteqzj-nuY8Px-8vGwz2-nsUsTT-8sGwmo-nsVi6A-roxGE9-nr9QVs", target: "_blank" },
-	            "Gage Skidmore"
-	        ),
-	        " under a ",
-	        _react2.default.createElement(
-	            "a",
-	            { href: "https://creativecommons.org/licenses/by-sa/2.0/", target: "_blank" },
-	            "CC BY-SA 2.0"
-	        ),
-	        " license."
-	    );
+	    return _react2.default.createElement("div", { className: "creative-commons" });
 	};
 
 	exports.default = CreativeCommons;
