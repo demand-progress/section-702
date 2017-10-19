@@ -5,7 +5,7 @@ const Contact =() => {
         <div className="contact">
             For press inquiries, please contact us at:
             <br />
-            <a href="mailto:press@rootstrikers.org">press@rootstrikers.org</a>
+            <a href="mailto:press@demandprogress.org">press@demandprogress.org</a>
         </div>
     )
 }
