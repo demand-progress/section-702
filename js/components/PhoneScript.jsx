@@ -56,7 +56,8 @@ class PhoneScript extends Component {
                 <div className="spacer" />
 
                 <div className="suggestion">
-                    <p>“Hi, my name is [NAME] and I live in [TOWN]. I’m calling to urge my members of Congress to oppose the “USA Liberty Act,” H.R. 3989, unless it is strengthened to stop spying on Americans without a warrant.</p>
+                    <p>“Hi, my name is [NAME] and I live in [TOWN]. I’m calling to urge my members of Congress to support strong surveillance reform legislation that stops spying on
+                        Americans without a warrant. The proposed “USA Liberty Act,” H.R. 3989, needs wholesale improvements before you should consider supporting it.</p>
                     <p>Any reauthorization of Section 702 of the FISA Amendments Act must include:</p>
                     <ul>
                     <li>- an end to backdoor searches,</li>

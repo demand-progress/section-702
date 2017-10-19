@@ -6,7 +6,7 @@ export const articles = [
         body: "It’s The Most Effective Way To Have Your Voice Heard."
     },
     {
-        body: "Congress is debating a bill to extend the power to spy on Americans – without a warrant – to Trump, the NSA, and the FBI. It must be fundamentally fixed or stopped dead."
+        body: ""
     }
 ]
 
