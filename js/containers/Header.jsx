@@ -1,22 +1,26 @@
 import React, { Component } from 'react'
-import { articles, origin } from '../store/articles' 
+import { articles, origin } from '../store/articles'
+import getQueryVariables from '../utils/getQueryVariables'
 
 
 class Header extends Component {
     // title and random article
     constructor(props) {
-        super(props)
+        super(props);
 
-        var queryParams;
-        if(window.location.search){
-            queryParams = JSON.parse('{"' + decodeURI(window.location.search.replace("?","").replace(/&/g, "\",\"").replace(/=/g,"\":\"")) + '"}');            
-        }
-        if (!queryParams) {
-            location.replace(location.href + "?origin=default");
+        var queryParams = getQueryVariables(window.location.search.substr(1).split('&'));
+
+        if (Object.keys(queryParams).length === 0 && queryParams.constructor === Object) { // check for no query params
+            location.replace(location.href + "?origin=default&text=0");
             return;
         }
-        if (!queryParams['text']){
-            location.replace(location.href + "&text=" + this._copyPicker(articles.length));
+
+        if (!('origin' in queryParams)) {
+            queryParams['origin'] = 'default';
+        }
+
+        if (!queryParams['text']) {
+            location.replace(location.href + "&text=0");
         } else {
             this.state = {
                 title: origin[queryParams['origin']].title,
@@ -26,9 +30,6 @@ class Header extends Component {
         }
     }
 
-    _copyPicker(qty) {
-        return Math.floor(Math.random() * qty);
-    }
     render() {
         if (!('title' in this.state)) {
             this.setState({title: ""})
@@ -36,7 +37,6 @@ class Header extends Component {
         if (!('subTitle' in this.state)) {
             this.setState({subTitle: ""})
         } 
-        // console.log(this.state.origin);
         return (
             <header>
                 <div className="fixed-trump"></div>
@@ -45,9 +45,9 @@ class Header extends Component {
                     <br/>
                     <span className="dont-give-trump-unc">{ this.state.subTitle }</span>
                     <br/>
-                    <span className="congress-is-debating">
+                    <p className="congress-is-debating">
                         { this.state.text }
-                    </span>
+                    </p>
                 </div>
             </header>
         )

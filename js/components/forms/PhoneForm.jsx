@@ -5,13 +5,22 @@ import { getSource } from '../../utils/index'
 
 class PhoneForm extends Component {
 
+    constructor(props) {
+        super(props);
+        this.state = {
+            source: getSource()
+        }
+    }
+
     render() {
         return (
             <div className="phone-form-wrapper">
+                <div style={(getSource() == "signed") ? { display: 'none' } : {} }>
                 <h2>Thanks for signing. <br/> Now, could you make a call?</h2>
                 
                 <div className="paragraph">
                     It’s the single most effective thing you can do.
+                </div>
                 </div>
 
                 <div className="phone-form">
@@ -30,7 +39,7 @@ class PhoneForm extends Component {
                     Just enter your number and click “call”
                     <br/>
                     <br/>
-                    We’ll connect you with your senators and key party leaders, and give you a script of what you can say.
+                    We’ll connect you with your congress people and key party leaders, and give you a script of what you can say.
                 </div>
             </div>
         );

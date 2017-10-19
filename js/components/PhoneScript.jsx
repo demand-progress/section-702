@@ -48,7 +48,8 @@ class PhoneScript extends Component {
         return (
             // <PhoneScriptCopy onSubmit={this.onClickSendFeedback.bind(this)}/>
             <div className="phone-script">
-                <em>We’re calling you now. <br /> After the conversation, you can <strong>press *</strong> and we’ll connect you to the next office.</em>
+                <h2>We’re calling you now.</h2>
+                <h3>After the conversation, you can <strong>press *</strong> and we’ll connect you to the next office.</h3>
                 <div className="spacer" />
 
                 <em>Here’s what you can say:</em>
@@ -57,9 +58,11 @@ class PhoneScript extends Component {
                 <div className="suggestion">
                     <p>“Hi, my name is [NAME] and I live in [TOWN]. I’m calling to urge my members of Congress to oppose the “USA Liberty Act,” H.R. 3989, unless it is strengthened to stop spying on Americans without a warrant.</p>
                     <p>Any reauthorization of Section 702 of the FISA Amendments Act must include:</p>
-                    <li>an end to backdoor searches,</li>
-                    <li>a permanent ban on “about” collection, and</li>
-                    <li>a guarantee that the government cannot secretly use surveillance information in court against defendants. </li>
+                    <ul>
+                    <li>- an end to backdoor searches,</li>
+                    <li>- a permanent ban on “about” collection, and</li>
+                    <li>- a guarantee that the government cannot secretly use surveillance information in court against defendants. </li>
+                        </ul>
                     <p>Without these reforms, Section 702 should be allowed to expire in December."</p>
                 </div>
                 <div className="spacer" />
@@ -69,9 +72,9 @@ class PhoneScript extends Component {
                     <form action="#" method="get" className={this.state.sent ? 'sent' : false}>
                         <div className="wrapper">
                             <h4>Who did you speak with?</h4>
-                            <input required="required" type="text" name="Who did you speak with?" id="who" />
+                            <input required="required" type="text" name="Who did you speak with?" id="who" style={{'font-size': '24px', 'height': '50px'}} />
                             <h4>How did it go?</h4>
-                            <input required="required" type="text" name="How did it go?" id="how" />
+                            <textarea required="required" type="text" name="How did it go?" id="how" style={{'width': '100%'}} rows="4"></textarea>
                             <br />
                             <div id="thanks">Thank you!</div>
                             <button onClick={this.onClickSendFeedback.bind(this)} type="submit" name="submit">Send Feedback</button>

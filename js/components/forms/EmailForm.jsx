@@ -15,9 +15,14 @@ class EmailForm extends Component {
 
         this.state = {
             addressFields: ['street_number', 'route', 'locality', "administrative_area_level_1", 'postal_code']
-        }
+        };
 
+
+        if (getSource() == "signed") {
+            this.props.changeForm('phone');
+        }
     }
+
     render() {
         return (
             <div className="email-form">
@@ -28,13 +33,13 @@ class EmailForm extends Component {
                             <div id="name" className="inputBox">
                                 <div id="fullName">
                                     <select id="prefix" name="prefix">
-                                        <option value="mx">Mx.</option>
                                         <option value="mr">Mr.</option>
                                         <option value="mrs">Mrs.</option>
                                         <option value="ms">Ms.</option>
+                                        <option value="mx">Mx.</option>
                                         <option value="dr">Dr.</option>
                                         <option value="rev">Rev.</option>
-                                    </select>        
+                                    </select>
                                     <input  className="name" name="name" placeholder="Your Name" />
                                 </div>
                                 <label htmlFor="name">Your Full Name</label><br />
@@ -42,7 +47,7 @@ class EmailForm extends Component {
                             <div id="email" className="inputBox">
                                 <input className="email" name="email" placeholder="Email Address" type="email" />
                                 <label htmlFor="email">address@domain.com</label><br />
-                            </div>                            
+                            </div>
                             <div id="address" className="inputBox">
                                 <Autocomplete
                                     ref={ auto => this.autoComplete = auto }
@@ -60,9 +65,11 @@ class EmailForm extends Component {
                                     types={['address']}
                                     componentRestrictions={{country: "us"}}
                                     className="address"
-                                    placeholder="Street Address"
+                                    placeholder="Full Address"
                                     name="address"
+                                    id="address"
                                 />
+                                <label htmlFor="address">Your Full Address</label><br />
                             </div>
                             <EmailFormCopy />
 

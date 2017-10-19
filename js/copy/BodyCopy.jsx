@@ -2,7 +2,7 @@ import React from 'react'
 
 const BodyCopy = () => {
     return (
-        <div className="paragraph" style={{'background-color': '#ffffff'}}>
+        <div className="paragraph" style={{'backgroundColor': '#ffffff'}}>
             <h3>Section 702 Lets Spy Agencies Snoop on Americans – Without a Warrant.</h3>
             <p>In an end run around the Constitution, spy agencies have warped Section 702 of the FISA Amendments Act into a way to unconstitutionally snoop on Americans.</p>
             <br />
@@ -14,7 +14,7 @@ const BodyCopy = () => {
             <br />
 
             <h3>The So-Called “USA Liberty Act” Would Not Stop Trump From Spying on People in the U.S.</h3>
-            <p>The so-called “USA Liberty Act” (H.R. 3989), which was recently introduced in the House, must be rejected by Congress. Here’s why:</p>
+            <p>The so-called “USA Liberty Act” (H.R. 3989), which was recently introduced in the House, must be significantly improved or give way to a strong surveillance reform. Here’s why:</p>
             <ul id="points">
                 <br />
                 <li><strong>It doesn’t stop backdoor searches,</strong> which is when the government searches through the hundreds of millions of communications it collects yearly for information on Americans and people on U.S. soil – all without a warrant. Instead, the bill okays accessing and sharing this information for foreign intelligence purposes, a loophole big enough to drive a truck through.</li>
