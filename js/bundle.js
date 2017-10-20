@@ -5077,8 +5077,6 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
@@ -5109,8 +5107,6 @@
 	    _createClass(EmailForm, [{
 	        key: 'render',
 	        value: function render() {
-	            var _this2 = this;
-
 	            return _react2.default.createElement(
 	                'div',
 	                { className: 'email-form' },
@@ -5192,31 +5188,22 @@
 	                            _react2.default.createElement(
 	                                'div',
 	                                { id: 'address', className: 'inputBox' },
-	                                _react2.default.createElement(_reactGoogleAutocomplete2.default, {
-	                                    ref: function ref(auto) {
-	                                        return _this2.autoComplete = auto;
-	                                    },
-	                                    style: { width: '100%' },
-	                                    onPlaceSelected: function onPlaceSelected(place) {
-	                                        for (var c in place.address_components) {
-	                                            for (var t in place.address_components[c].types) {
-	                                                if (t in _this2.state.addressFields) {
-	                                                    _this2.setState(_defineProperty({}, place.address_components[c].types[t], place.address_components[c].long_name));
-	                                                }
-	                                            }
-	                                        }
-	                                    },
-	                                    types: ['address'],
-	                                    componentRestrictions: { country: "us" },
-	                                    className: 'address',
-	                                    placeholder: 'Full Address',
-	                                    name: 'address',
-	                                    id: 'address'
-	                                }),
+	                                _react2.default.createElement('input', { className: 'address1', name: 'address1', placeholder: 'Street Address' }),
 	                                _react2.default.createElement(
 	                                    'label',
-	                                    { htmlFor: 'address' },
+	                                    { htmlFor: 'address1' },
 	                                    'Your Full Address'
+	                                ),
+	                                _react2.default.createElement('br', null)
+	                            ),
+	                            _react2.default.createElement(
+	                                'div',
+	                                { id: 'zip', className: 'inputBox' },
+	                                _react2.default.createElement('input', { className: 'zip', name: 'zip', placeholder: 'Zip code' }),
+	                                _react2.default.createElement(
+	                                    'label',
+	                                    { htmlFor: 'zip' },
+	                                    '5 Digit ZIP Code'
 	                                ),
 	                                _react2.default.createElement('br', null)
 	                            ),
@@ -5266,12 +5253,31 @@
 	                return;
 	            }
 
-	            if (!this.state['administrative_area_level_1']) {
-	                form.address.focus();
+	            // if (!this.state['administrative_area_level_1']) {
+	            //     form.address.focus();
+	            //     alert("Please enter your address.");
+	            //     return;
+	            // }
+
+	            var address1 = form.querySelector('[name="address1"]');
+	            if (!address1.value.trim()) {
+	                address1.focus();
 	                alert("Please enter your address.");
 	                return;
 	            }
 
+	            var zip = form.querySelector('[name="zip"]');
+	            if (!zip.value.trim()) {
+	                zip.focus();
+	                alert('Please enter your zip.');
+	                return;
+	            }
+
+	            try {
+	                sessionStorage.zip = zip.value.trim();
+	            } catch (err) {
+	                // Oh well
+	            }
 	            var fields = {
 	                'action_user_agent': navigator.userAgent,
 	                'country': 'United States',
@@ -5280,17 +5286,19 @@
 	                'js': 1,
 	                'prefix': prefix.value.trim(),
 	                'name': name.value.trim(),
-	                'address1': this.state['street_number'] + ' ' + this.state['route'],
-	                'state': this.state['administrative_area_level_1'],
-	                'city': this.state['locality'],
-	                'zip': this.state['postal_code'],
+	                'address1': address1.value.trim(),
+	                'zip': zip.value.trim(),
+	                // 'address1': `${this.state['street_number']} ${this.state['route']}`,
+	                // 'state': this.state['administrative_area_level_1'],
+	                // 'city': this.state['locality'],
+	                // 'zip': this.state['postal_code'],
 	                'opt_in': 1,
 	                'page': _config.config.akPage,
 	                'source': (0, _index.getSource)(),
 	                'want_progress': 1
 	            };
 
-	            sessionStorage.zip = this.state['postal_code'];
+	            // sessionStorage.zip = this.state['postal_code'];
 
 	            (0, _actionKit.sendFormToActionKit)(fields);
 
