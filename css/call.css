@@ -559,7 +559,10 @@ a:hover {
 
 #app .email-form form input.email {
     border-bottom: 1px solid #ccc;
-    margin-left: 10px;
+}
+
+#email, #zip {
+    margin-left: 20px;    
 }
 
 #app .email-form form button {
