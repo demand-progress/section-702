@@ -5192,7 +5192,7 @@
 	                                _react2.default.createElement(
 	                                    'label',
 	                                    { htmlFor: 'address1' },
-	                                    'Your Full Address'
+	                                    '123 Main St.'
 	                                ),
 	                                _react2.default.createElement('br', null)
 	                            ),
