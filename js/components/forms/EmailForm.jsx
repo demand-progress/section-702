@@ -69,6 +69,8 @@ class EmailForm extends Component {
                         <p>One or more of the participating organizations may contact you about future campaigns.</p>
                     </div>
                     <Counter />
+
+                    <div id="roundBottom"><p></p></div>
                 </div>
             </div>
         )

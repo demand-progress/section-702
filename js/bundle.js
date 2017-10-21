@@ -4817,12 +4817,12 @@
 	    _createClass(Header, [{
 	        key: 'render',
 	        value: function render() {
-	            if (!('title' in this.state)) {
-	                this.setState({ title: "" });
-	            }
-	            if (!('subTitle' in this.state)) {
-	                this.setState({ subTitle: "" });
-	            }
+	            // if (!('title' in this.state)) {
+	            //     this.setState({title: ""})
+	            // }
+	            // if (!('subTitle' in this.state)) {
+	            //     this.setState({subTitle: ""})
+	            // } 
 	            return _react2.default.createElement(
 	                'header',
 	                null,
@@ -5225,7 +5225,12 @@
 	                            'One or more of the participating organizations may contact you about future campaigns.'
 	                        )
 	                    ),
-	                    _react2.default.createElement(_Counter2.default, null)
+	                    _react2.default.createElement(_Counter2.default, null),
+	                    _react2.default.createElement(
+	                        'div',
+	                        { id: 'roundBottom' },
+	                        _react2.default.createElement('p', null)
+	                    )
 	                )
 	            );
 	        }
@@ -5390,6 +5395,7 @@
 	                display = _react2.default.createElement(
 	                    'div',
 	                    null,
+	                    _react2.default.createElement('hr', null),
 	                    _react2.default.createElement(
 	                        'div',
 	                        { className: 'number-of-signatures' },
@@ -5408,7 +5414,6 @@
 	            return _react2.default.createElement(
 	                'div',
 	                { className: className },
-	                _react2.default.createElement('hr', null),
 	                display
 	            );
 	        }

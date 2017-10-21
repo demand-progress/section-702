@@ -132,7 +132,7 @@ a:hover {
   }
 
 .disclaimer, .counter {
-    background-color: #222;
+    background-color: #202020;
 }
 
 #app .hide-temporarily {
@@ -212,7 +212,7 @@ a:hover {
     margin: 0;
     padding: 10px;
     border-radius: 3px 3px 0 0;
-    text-shadow: 1px 1px 2px #000000;
+    text-shadow: 1px 1px 1px #000000;
     
 }
 
@@ -913,10 +913,11 @@ a:hover {
     border-top: 1px solid #eee;
     font-size: 18px;
     margin: 64px auto 0;
-    max-width: 960px;
+    /* max-width: 960px; */
     padding: 32px;
     text-align: center;
     color: #666;
+    background-color: #202020;
 }
 
 #app .creative-commons {
@@ -1230,6 +1231,18 @@ ul#points li strong {
 
 #app label {
     margin-left: 10px;
+}
+
+#roundBottom {
+    background-color: #202020;
+    border-radius: 0 0 5px 5px;
+    height: 10px;
+    max-width: 660px;
+    margin: 0 auto; 
+}
+
+#roundBottom p {
+    width: 100%;
 }
 
 @media screen and (max-width: 768px) {
