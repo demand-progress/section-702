@@ -5219,7 +5219,11 @@
 	                    _react2.default.createElement(
 	                        'div',
 	                        { className: 'disclaimer' },
-	                        'One or more of the participating organizations may contact you about future campaigns.'
+	                        _react2.default.createElement(
+	                            'p',
+	                            null,
+	                            'One or more of the participating organizations may contact you about future campaigns.'
+	                        )
 	                    ),
 	                    _react2.default.createElement(_Counter2.default, null)
 	                )
@@ -6722,7 +6726,7 @@
 	                ),
 	                _react2.default.createElement(
 	                    "a",
-	                    { title: "Color of Chanfe", href: "", target: "_blank" },
+	                    { title: "Color of Change", href: "", target: "_blank" },
 	                    _react2.default.createElement("img", { src: "images/logos/COC-Full-Color.jpg" })
 	                ),
 	                _react2.default.createElement(
@@ -6742,7 +6746,7 @@
 	                ),
 	                _react2.default.createElement(
 	                    "a",
-	                    { title: "Defending Rights \\& Dissent", href: "", target: "_blank" },
+	                    { title: "Defending Rights & Dissent", href: "", target: "_blank" },
 	                    _react2.default.createElement("img", { src: "images/logos/logo 300x250px.png" })
 	                ),
 	                _react2.default.createElement(

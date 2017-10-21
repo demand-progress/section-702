@@ -66,7 +66,7 @@ class EmailForm extends Component {
                         </form>
                     </div>
                     <div className="disclaimer">
-                        One or more of the participating organizations may contact you about future campaigns.
+                        <p>One or more of the participating organizations may contact you about future campaigns.</p>
                     </div>
                     <Counter />
                 </div>
