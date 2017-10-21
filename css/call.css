@@ -1193,6 +1193,7 @@ input{
 
 #app button img {
     margin-right: 5px;
+    vertical-align: middle;
 }
 
 ul#points {
