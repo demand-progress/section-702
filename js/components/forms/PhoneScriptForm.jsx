@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import { urls, config } from '../config/'
-import ajax from '../utils/ajax'
-// import PhoneScriptCopy from '../../copy/PhoneScriptCopy.jsx' 
+import { urls, config } from '../../config/'
+import ajax from '../../utils/ajax'
+import PhoneScriptCopy from '../../copy/PhoneScriptCopy.jsx' 
 
 class PhoneScript extends Component {
 
@@ -46,28 +46,9 @@ class PhoneScript extends Component {
     }
     render() {
         return (
-            // <PhoneScriptCopy onSubmit={this.onClickSendFeedback.bind(this)}/>
             <div className="phone-script">
-                <h2>We’re calling you now.</h2>
-                <h3>After the conversation, you can <strong>press *</strong> and we’ll connect you to the next office.</h3>
+                <PhoneScriptCopy />
                 <div className="spacer" />
-
-                <em>Here’s what you can say:</em>
-                <div className="spacer" />
-
-                <div className="suggestion">
-                    <p>“Hi, my name is [NAME] and I live in [TOWN]. I’m calling to urge my members of Congress to support strong surveillance reform legislation that stops spying on
-                        Americans without a warrant. The proposed “USA Liberty Act,” H.R. 3989, needs wholesale improvements before you should consider supporting it.</p>
-                    <p>Any reauthorization of Section 702 of the FISA Amendments Act must include:</p>
-                    <ul>
-                    <li>- an end to backdoor searches,</li>
-                    <li>- a permanent ban on “about” collection, and</li>
-                    <li>- a guarantee that the government cannot secretly use surveillance information in court against defendants. </li>
-                        </ul>
-                    <p>Without these reforms, Section 702 should be allowed to expire in December."</p>
-                </div>
-                <div className="spacer" />
-
                 <div className="calling-wrapper">
                     <h3>After your call(s), use the form to let us know how it went!</h3>
                     <form action="#" method="get" className={this.state.sent ? 'sent' : false}>
@@ -83,7 +64,6 @@ class PhoneScript extends Component {
                     </form>
                 </div>
             </div>
-            // end PhoneScriptCopy
         )
     }
 }

@@ -33,53 +33,44 @@ class EmailForm extends Component {
                             <div id="name" className="inputBox">
                                 <div id="fullName">
                                     <select id="prefix" name="prefix">
-                                        <option value="mr">Mr.</option>
-                                        <option value="mrs">Mrs.</option>
-                                        <option value="ms">Ms.</option>
-                                        <option value="mx">Mx.</option>
-                                        <option value="dr">Dr.</option>
-                                        <option value="rev">Rev.</option>
+                                        <option value="Mr">Mr.</option>
+                                        <option value="Mrs">Mrs.</option>
+                                        <option value="Ms">Ms.</option>
+                                        <option value="Mx">Mx.</option>
+                                        <option value="Dr">Dr.</option>
+                                        <option value="Rev">Rev.</option>
                                     </select>
                                     <input  className="name" name="name" placeholder="Your Name" />
                                 </div>
                                 <label htmlFor="name">Your Full Name</label><br />
                             </div>
+                            
                             <div id="email" className="inputBox">
                                 <input className="email" name="email" placeholder="Email Address" type="email" />
                                 <label htmlFor="email">address@domain.com</label><br />
                             </div>
-                            <div id="address" className="inputBox">
-                                <Autocomplete
-                                    ref={ auto => this.autoComplete = auto }
-                                    style={{width: '100%'}}
-                                    onPlaceSelected={(place) => {
-                                        for (let c in place.address_components) {
-                                            for (let t in place.address_components[c].types) {
-                                                if (t in this.state.addressFields) {
-                                                    this.setState({ [place.address_components[c].types[t]] : place.address_components[c].long_name });
-                                                }
-                                            }
-                                        }
 
-                                    }}
-                                    types={['address']}
-                                    componentRestrictions={{country: "us"}}
-                                    className="address"
-                                    placeholder="Full Address"
-                                    name="address"
-                                    id="address"
-                                />
-                                <label htmlFor="address">Your Full Address</label><br />
+                            <div id="address" className="inputBox">
+                                <input className="address1" name="address1" placeholder="Street Address" />
+                                <label htmlFor="address1">123 Main Way, ME</label><br />
                             </div>
+
+                            <div id="zip" className="inputBox">
+                                <input className="zip" name="zip" placeholder="Zip code" />
+                                <label htmlFor="zip">5 Digit ZIP Code</label><br />
+                            </div>
+
                             <EmailFormCopy />
 
                             <button id="submit" ><img src="./images/document-white.svg"/>Sign</button>
                         </form>
                     </div>
                     <div className="disclaimer">
-                        One or more of the participating organizations may contact you about future campaigns.
+                        <p>One or more of the participating organizations may contact you about future campaigns.</p>
                     </div>
                     <Counter />
+
+                    <div id="roundBottom"><p></p></div>
                 </div>
             </div>
         )
@@ -100,6 +91,7 @@ class EmailForm extends Component {
             return;
         }
 
+        
         const email = form.querySelector('[name="email"]');
         if (!email.value.trim()) {
             email.focus();
@@ -111,12 +103,31 @@ class EmailForm extends Component {
             return;
         }
 
-        if (!this.state['administrative_area_level_1']) {
-            form.address.focus();
+        // if (!this.state['administrative_area_level_1']) {
+        //     form.address.focus();
+        //     alert("Please enter your address.");
+        //     return;
+        // }
+
+        const address1 = form.querySelector('[name="address1"]');        
+        if (!address1.value.trim()) {
+            address1.focus();
             alert("Please enter your address.");
             return;
         }
 
+        const zip = form.querySelector('[name="zip"]');
+        if (!zip.value.trim()) {
+            zip.focus();
+            alert('Please enter your zip.');
+            return;
+        }
+
+        try {
+            sessionStorage.zip = zip.value.trim();
+        } catch (err) {
+            // Oh well
+        }
         const fields = {
             'action_user_agent': navigator.userAgent,
             'country': 'United States',
@@ -125,17 +136,19 @@ class EmailForm extends Component {
             'js': 1,
             'prefix': prefix.value.trim(),
             'name': name.value.trim(),
-            'address1': `${this.state['street_number']} ${this.state['route']}`,
-            'state': this.state['administrative_area_level_1'],
-            'city': this.state['locality'],
-            'zip': this.state['postal_code'],
+            'address1': address1.value.trim(),
+            'zip': zip.value.trim(),
+            // 'address1': `${this.state['street_number']} ${this.state['route']}`,
+            // 'state': this.state['administrative_area_level_1'],
+            // 'city': this.state['locality'],
+            // 'zip': this.state['postal_code'],
             'opt_in': 1,
             'page': config.akPage,
             'source': getSource(),
             'want_progress': 1
         };
 
-        sessionStorage.zip = this.state['postal_code'];
+        // sessionStorage.zip = this.state['postal_code'];
 
         sendFormToActionKit(fields);
 

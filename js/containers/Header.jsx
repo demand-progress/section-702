@@ -31,12 +31,12 @@ class Header extends Component {
     }
 
     render() {
-        if (!('title' in this.state)) {
-            this.setState({title: ""})
-        }
-        if (!('subTitle' in this.state)) {
-            this.setState({subTitle: ""})
-        } 
+        // if (!('title' in this.state)) {
+        //     this.setState({title: ""})
+        // }
+        // if (!('subTitle' in this.state)) {
+        //     this.setState({subTitle: ""})
+        // } 
         return (
             <header>
                 <div className="fixed-trump"></div>

@@ -11,11 +11,11 @@ const Organizations = () => (
             <h4>In partnership with</h4>
             <div className="smaller">
                 <a title="Common Cause" href="" target="_blank"><img src="images/logos/CC_Logo_RGBWeb.jpg" /></a>
-                <a title="Color of Chanfe" href="" target="_blank"><img src="images/logos/COC-Full-Color.jpg" /></a>
+                <a title="Color of Change" href="" target="_blank"><img src="images/logos/COC-Full-Color.jpg" /></a>
                 <a title="Daily Kos" href="" target="_blank"><img src="images/logos/DailyKosLogo.png" /></a>
                 <a title="Democracy for America" href="" target="_blank"><img src="images/logos/DFA-Logo-bottom-transparent-full-size.png" /></a>
                 <a title="Freepress Action Fund" href="" target="_blank"><img src="images/logos/fp-actionfund.png" /></a>
-                <a title="Defending Rights \& Dissent" href="" target="_blank"><img src="images/logos/logo 300x250px.png" /></a>
+                <a title="Defending Rights & Dissent" href="" target="_blank"><img src="images/logos/logo 300x250px.png" /></a>
                 <a title="ADC" href="" target="_blank"><img src="images/logos/ADCLogo.gif" /></a>
                 <a title="MillionHoodies Movement for Justice" href="" target="_blank"><img src="images/logos/LogoType_LightBG.png" /></a>
                 <a title="The Nation" href="" target="_blank"><img src="images/logos/NewNationLogo07.jpg" /></a>
