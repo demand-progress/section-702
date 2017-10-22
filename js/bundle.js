@@ -50,7 +50,7 @@
 
 	var _CallPages2 = _interopRequireDefault(_CallPages);
 
-	var _PhoneScriptForm = __webpack_require__(211);
+	var _PhoneScriptForm = __webpack_require__(210);
 
 	var _PhoneScriptForm2 = _interopRequireDefault(_PhoneScriptForm);
 
@@ -4943,7 +4943,7 @@
 
 	var _OptOutForm2 = _interopRequireDefault(_OptOutForm);
 
-	var _PhoneScriptForm = __webpack_require__(211);
+	var _PhoneScriptForm = __webpack_require__(210);
 
 	var _PhoneScriptForm2 = _interopRequireDefault(_PhoneScriptForm);
 
@@ -5140,32 +5140,32 @@
 	                                        { id: 'prefix', name: 'prefix' },
 	                                        _react2.default.createElement(
 	                                            'option',
-	                                            { value: 'mr' },
+	                                            { value: 'Mr' },
 	                                            'Mr.'
 	                                        ),
 	                                        _react2.default.createElement(
 	                                            'option',
-	                                            { value: 'mrs' },
+	                                            { value: 'Mrs' },
 	                                            'Mrs.'
 	                                        ),
 	                                        _react2.default.createElement(
 	                                            'option',
-	                                            { value: 'ms' },
+	                                            { value: 'Ms' },
 	                                            'Ms.'
 	                                        ),
 	                                        _react2.default.createElement(
 	                                            'option',
-	                                            { value: 'mx' },
+	                                            { value: 'Mx' },
 	                                            'Mx.'
 	                                        ),
 	                                        _react2.default.createElement(
 	                                            'option',
-	                                            { value: 'dr' },
+	                                            { value: 'Dr' },
 	                                            'Dr.'
 	                                        ),
 	                                        _react2.default.createElement(
 	                                            'option',
-	                                            { value: 'rev' },
+	                                            { value: 'Rev' },
 	                                            'Rev.'
 	                                        )
 	                                    ),
@@ -24082,101 +24082,6 @@
 /* 210 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	"use strict";
-
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
-
-	var _react = __webpack_require__(2);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	var PhoneScriptCopy = function PhoneScriptCopy(props) {
-	    return _react2.default.createElement(
-	        "div",
-	        null,
-	        _react2.default.createElement(
-	            "h2",
-	            null,
-	            "We\u2019re calling you now."
-	        ),
-	        _react2.default.createElement(
-	            "h3",
-	            null,
-	            "After the conversation, you can ",
-	            _react2.default.createElement(
-	                "strong",
-	                null,
-	                "press *"
-	            ),
-	            " and we\u2019ll connect you to the next office."
-	        ),
-	        _react2.default.createElement("div", { className: "spacer" }),
-	        _react2.default.createElement(
-	            "em",
-	            null,
-	            "Here's what you can say:"
-	        ),
-	        _react2.default.createElement(
-	            "p",
-	            null,
-	            "\u201CHi, my name is [NAME] and I live in [TOWN]. I\u2019m calling to urge my members of Congress to support strong surveillance reform to stop spy agencies from spying on Americans without a warrant."
-	        ),
-	        _react2.default.createElement("br", null),
-	        _react2.default.createElement(
-	            "p",
-	            null,
-	            "Tell your House Rep: The proposed \u201CUSA Liberty Act,\u201D H.R. 3989, needs wholesale improvements before you should consider supporting it."
-	        ),
-	        _react2.default.createElement("br", null),
-	        _react2.default.createElement(
-	            "p",
-	            null,
-	            "Tell your Senators: Please co-sponsor and support the USA RIGHTS Act from Senators Paul and Wyden, which would stop warrantless spying on Americans."
-	        ),
-	        _react2.default.createElement("br", null),
-	        _react2.default.createElement(
-	            "p",
-	            null,
-	            "Tell both: Any reauthorization of Section 702 of the FISA Amendments Act must include:"
-	        ),
-	        _react2.default.createElement(
-	            "ul",
-	            { id: "points" },
-	            _react2.default.createElement(
-	                "li",
-	                null,
-	                "an end to backdoor searches"
-	            ),
-	            _react2.default.createElement(
-	                "li",
-	                null,
-	                "a permanent ban on \u201Cabout\u201D collection"
-	            ),
-	            _react2.default.createElement(
-	                "li",
-	                null,
-	                "a guarantee that the government cannot secretly use surveillance information in court against defendants."
-	            )
-	        ),
-	        _react2.default.createElement("br", null),
-	        _react2.default.createElement(
-	            "p",
-	            null,
-	            "Without these reforms, Section 702 should be allowed to expire in December."
-	        )
-	    );
-	};
-
-	exports.default = PhoneScriptCopy;
-
-/***/ }),
-/* 211 */
-/***/ (function(module, exports, __webpack_require__) {
-
 	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
@@ -24195,7 +24100,7 @@
 
 	var _ajax2 = _interopRequireDefault(_ajax);
 
-	var _PhoneScriptCopy = __webpack_require__(210);
+	var _PhoneScriptCopy = __webpack_require__(211);
 
 	var _PhoneScriptCopy2 = _interopRequireDefault(_PhoneScriptCopy);
 
@@ -24309,6 +24214,101 @@
 	}(_react.Component);
 
 	exports.default = PhoneScript;
+
+/***/ }),
+/* 211 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _react = __webpack_require__(2);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var PhoneScriptCopy = function PhoneScriptCopy(props) {
+	    return _react2.default.createElement(
+	        "div",
+	        null,
+	        _react2.default.createElement(
+	            "h2",
+	            null,
+	            "We\u2019re calling you now."
+	        ),
+	        _react2.default.createElement(
+	            "h3",
+	            null,
+	            "After the conversation, you can ",
+	            _react2.default.createElement(
+	                "strong",
+	                null,
+	                "press *"
+	            ),
+	            " and we\u2019ll connect you to the next office."
+	        ),
+	        _react2.default.createElement("div", { className: "spacer" }),
+	        _react2.default.createElement(
+	            "em",
+	            null,
+	            "Here's what you can say:"
+	        ),
+	        _react2.default.createElement(
+	            "p",
+	            null,
+	            "\u201CHi, my name is [NAME] and I live in [TOWN]. I\u2019m calling to urge my members of Congress to support strong surveillance reform to stop spy agencies from spying on Americans without a warrant."
+	        ),
+	        _react2.default.createElement("br", null),
+	        _react2.default.createElement(
+	            "p",
+	            null,
+	            "Tell your House Rep: The proposed \u201CUSA Liberty Act,\u201D H.R. 3989, needs wholesale improvements before you should consider supporting it."
+	        ),
+	        _react2.default.createElement("br", null),
+	        _react2.default.createElement(
+	            "p",
+	            null,
+	            "Tell your Senators: Please co-sponsor and support the USA RIGHTS Act from Senators Paul and Wyden, which would stop warrantless spying on Americans."
+	        ),
+	        _react2.default.createElement("br", null),
+	        _react2.default.createElement(
+	            "p",
+	            null,
+	            "Tell both: Any reauthorization of Section 702 of the FISA Amendments Act must include:"
+	        ),
+	        _react2.default.createElement(
+	            "ul",
+	            { id: "points" },
+	            _react2.default.createElement(
+	                "li",
+	                null,
+	                "an end to backdoor searches"
+	            ),
+	            _react2.default.createElement(
+	                "li",
+	                null,
+	                "a permanent ban on \u201Cabout\u201D collection"
+	            ),
+	            _react2.default.createElement(
+	                "li",
+	                null,
+	                "a guarantee that the government cannot secretly use surveillance information in court against defendants."
+	            )
+	        ),
+	        _react2.default.createElement("br", null),
+	        _react2.default.createElement(
+	            "p",
+	            null,
+	            "Without these reforms, Section 702 should be allowed to expire in December."
+	        )
+	    );
+	};
+
+	exports.default = PhoneScriptCopy;
 
 /***/ })
 /******/ ]);

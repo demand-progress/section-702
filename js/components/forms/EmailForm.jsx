@@ -33,12 +33,12 @@ class EmailForm extends Component {
                             <div id="name" className="inputBox">
                                 <div id="fullName">
                                     <select id="prefix" name="prefix">
-                                        <option value="mr">Mr.</option>
-                                        <option value="mrs">Mrs.</option>
-                                        <option value="ms">Ms.</option>
-                                        <option value="mx">Mx.</option>
-                                        <option value="dr">Dr.</option>
-                                        <option value="rev">Rev.</option>
+                                        <option value="Mr">Mr.</option>
+                                        <option value="Mrs">Mrs.</option>
+                                        <option value="Ms">Ms.</option>
+                                        <option value="Mx">Mx.</option>
+                                        <option value="Dr">Dr.</option>
+                                        <option value="Rev">Rev.</option>
                                     </select>
                                     <input  className="name" name="name" placeholder="Your Name" />
                                 </div>
