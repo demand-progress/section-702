@@ -4875,7 +4875,7 @@
 	}, {
 	    body: "It’s The Most Effective Way To Have Your Voice Heard."
 	}, {
-	    body: "Congress is debating a bill to extend the power to spy on Americans – without a warrant – to Trump, the NSA, and the FBI. It must be fundamentally fixed or stopped dead."
+	    body: ""
 	}];
 
 	var origin = exports.origin = {
@@ -4884,6 +4884,10 @@
 	        subTitle: 'Now could you call your member of Congress?'
 	    },
 	    default: {
+	        title: 'Tell Congress:',
+	        subTitle: 'Don’t give Trump unconstitutional spying powers'
+	    },
+	    alt: {
 	        title: 'Tell Congress:',
 	        subTitle: 'Shut down unconstitutional spying on Americans'
 	    }
@@ -5624,7 +5628,7 @@
 
 	    // default email message
 	};var subjectText = "I just signed this:";
-	var bodyText = "Hi - I just took action against Donald Trump’s horrifying picks for cabinet-level roles in his administration.\n\nTrump’s nominees have promoted white nationalism, attacked climate science and used their power as Wall Street insiders to fleece working families.\n\nI just signed a petition urging the Senate to block and resist any Trump nominee embracing hatred and greed. Could you sign too?\n\nhttps://www.BlockTrumpsCabinet.com/?source=email-share";
+	var bodyText = "Hi - \n\n" + "Congress is seriously considering a bill that would extend the power to spy on Americans – without a warrant – to Donald Trump, the NSA, and the FBI.\n\n" + "I just signed a petition telling Congress to reject any bill giving Trump unconstitutional powers to spy on Americans.\n\n" + "Could you sign too?\n\n" + "https://www.DontLetTrumpSpyOnUs.com/?source=email-share";
 	var emailSubject = encodeURIComponent(subjectText.trim());
 	var emailBody = encodeURIComponent(bodyText.trim());
 	var hrefEmail = 'mailto:?subject=' + emailSubject + '&body=' + emailBody;
@@ -6168,7 +6172,7 @@
 	                    'Just enter your number and click \u201Ccall\u201D',
 	                    _react2.default.createElement('br', null),
 	                    _react2.default.createElement('br', null),
-	                    'We\u2019ll connect you with your congress people and key party leaders, and give you a script of what you can say.'
+	                    'We\u2019ll connect you with members of Congress and key party leaders, and give you a script of what you can say.'
 	                )
 	            );
 	        }
@@ -6608,6 +6612,11 @@
 	                    "a",
 	                    { title: "Sum Of Us", href: "", target: "_blank" },
 	                    _react2.default.createElement("img", { src: "images/logos/SumOfUs_lg_color.png" })
+	                ),
+	                _react2.default.createElement(
+	                    "a",
+	                    { title: "The Center for Media Justice", href: "", target: "_blank" },
+	                    _react2.default.createElement("img", { src: "images/logos/CMJlogohi-res (4).jpg" })
 	                )
 	            )
 	        )
