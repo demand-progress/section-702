@@ -5024,7 +5024,7 @@
 	                    break;
 
 	                case 'script':
-	                    form = _react2.default.createElement(PhoneScriptForm, null);
+	                    form = _react2.default.createElement(_PhoneScriptForm2.default, null);
 	                    break;
 
 	                case 'thanks':
