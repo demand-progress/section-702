@@ -50,6 +50,10 @@
 
 	var _CallPages2 = _interopRequireDefault(_CallPages);
 
+	var _PhoneScriptForm = __webpack_require__(211);
+
+	var _PhoneScriptForm2 = _interopRequireDefault(_PhoneScriptForm);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	// Modules
@@ -4939,9 +4943,9 @@
 
 	var _OptOutForm2 = _interopRequireDefault(_OptOutForm);
 
-	var _PhoneScript = __webpack_require__(57);
+	var _PhoneScriptForm = __webpack_require__(211);
 
-	var _PhoneScript2 = _interopRequireDefault(_PhoneScript);
+	var _PhoneScriptForm2 = _interopRequireDefault(_PhoneScriptForm);
 
 	var _utils = __webpack_require__(44);
 
@@ -5016,7 +5020,7 @@
 	                    break;
 
 	                case 'script':
-	                    form = _react2.default.createElement(_PhoneScript2.default, null);
+	                    form = _react2.default.createElement(PhoneScriptForm, null);
 	                    break;
 
 	                case 'thanks':
@@ -5192,7 +5196,7 @@
 	                                _react2.default.createElement(
 	                                    'label',
 	                                    { htmlFor: 'address1' },
-	                                    '123 Main St.'
+	                                    '123 Main Way, ME'
 	                                ),
 	                                _react2.default.createElement('br', null)
 	                            ),
@@ -5742,7 +5746,7 @@
 	            _react2.default.createElement(
 	                "span",
 	                null,
-	                "Any reauthorization of Section 702 must end backdoor searches, permanently ban \u201Cabout\u201D collection, and guarantee that surveillance information cannot be secretly used in court against defendants. Unfortunately, the USA Liberty Act lacks all of these provisions. Without these reforms, Section 702 must expire.\""
+	                "\"The strong language we support is contained in the USA RIGHTS Act, sponsored by Sens. Paul and Wyden, which ends backdoor searches, permanently bans \u201Cabout\u201D collection, and guarantees that surveillance information cannot be secretly used in court against defendants. Without these reforms to protect our privacy and civil liberties, Section 702 must expire.\""
 	            )
 	        )
 	    );
@@ -6361,206 +6365,7 @@
 	exports.default = OptOutForm;
 
 /***/ }),
-/* 57 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
-
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-	var _react = __webpack_require__(2);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	var _config = __webpack_require__(47);
-
-	var _ajax = __webpack_require__(46);
-
-	var _ajax2 = _interopRequireDefault(_ajax);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-	// import PhoneScriptCopy from '../../copy/PhoneScriptCopy.jsx' 
-
-	var PhoneScript = function (_Component) {
-	    _inherits(PhoneScript, _Component);
-
-	    function PhoneScript(props) {
-	        _classCallCheck(this, PhoneScript);
-
-	        var _this = _possibleConstructorReturn(this, (PhoneScript.__proto__ || Object.getPrototypeOf(PhoneScript)).call(this, props));
-
-	        _this.state = {
-	            sent: false
-	        };
-	        return _this;
-	    }
-
-	    _createClass(PhoneScript, [{
-	        key: 'onClickSendFeedback',
-	        value: function onClickSendFeedback(e) {
-	            e.preventDefault();
-
-	            var data = {
-	                campaign: _config.config.callCampaign,
-	                subject: 'Feedback from ' + (_config.config.prettyCampaignName || _config.config.callCampaign),
-	                text: ''
-	            };
-
-	            var fields = [document.querySelector('#who'), document.querySelector('#how')];
-
-	            fields.forEach(function (field) {
-	                data.text += field.name + ':\n' + field.value + '\n\n';
-	            });
-
-	            var url = _config.urls.feedback;
-
-	            for (var key in data) {
-	                url += key;
-	                url += '=';
-	                url += encodeURIComponent(data[key]);
-	                url += '&';
-	            }
-
-	            _ajax2.default.get(url);
-
-	            this.setState({
-	                sent: true
-	            });
-	        }
-	    }, {
-	        key: 'render',
-	        value: function render() {
-	            return (
-	                // <PhoneScriptCopy onSubmit={this.onClickSendFeedback.bind(this)}/>
-	                _react2.default.createElement(
-	                    'div',
-	                    { className: 'phone-script' },
-	                    _react2.default.createElement(
-	                        'h2',
-	                        null,
-	                        'We\u2019re calling you now.'
-	                    ),
-	                    _react2.default.createElement(
-	                        'h3',
-	                        null,
-	                        'After the conversation, you can ',
-	                        _react2.default.createElement(
-	                            'strong',
-	                            null,
-	                            'press *'
-	                        ),
-	                        ' and we\u2019ll connect you to the next office.'
-	                    ),
-	                    _react2.default.createElement('div', { className: 'spacer' }),
-	                    _react2.default.createElement(
-	                        'em',
-	                        null,
-	                        'Here\u2019s what you can say:'
-	                    ),
-	                    _react2.default.createElement('div', { className: 'spacer' }),
-	                    _react2.default.createElement(
-	                        'div',
-	                        { className: 'suggestion' },
-	                        _react2.default.createElement(
-	                            'p',
-	                            null,
-	                            '\u201CHi, my name is [NAME] and I live in [TOWN]. I\u2019m calling to urge my members of Congress to oppose the \u201CUSA Liberty Act,\u201D H.R. 3989, unless it is strengthened to stop spying on Americans without a warrant.'
-	                        ),
-	                        _react2.default.createElement(
-	                            'p',
-	                            null,
-	                            'Any reauthorization of Section 702 of the FISA Amendments Act must include:'
-	                        ),
-	                        _react2.default.createElement(
-	                            'ul',
-	                            null,
-	                            _react2.default.createElement(
-	                                'li',
-	                                null,
-	                                '- an end to backdoor searches,'
-	                            ),
-	                            _react2.default.createElement(
-	                                'li',
-	                                null,
-	                                '- a permanent ban on \u201Cabout\u201D collection, and'
-	                            ),
-	                            _react2.default.createElement(
-	                                'li',
-	                                null,
-	                                '- a guarantee that the government cannot secretly use surveillance information in court against defendants. '
-	                            )
-	                        ),
-	                        _react2.default.createElement(
-	                            'p',
-	                            null,
-	                            'Without these reforms, Section 702 should be allowed to expire in December."'
-	                        )
-	                    ),
-	                    _react2.default.createElement('div', { className: 'spacer' }),
-	                    _react2.default.createElement(
-	                        'div',
-	                        { className: 'calling-wrapper' },
-	                        _react2.default.createElement(
-	                            'h3',
-	                            null,
-	                            'After your call(s), use the form to let us know how it went!'
-	                        ),
-	                        _react2.default.createElement(
-	                            'form',
-	                            { action: '#', method: 'get', className: this.state.sent ? 'sent' : false },
-	                            _react2.default.createElement(
-	                                'div',
-	                                { className: 'wrapper' },
-	                                _react2.default.createElement(
-	                                    'h4',
-	                                    null,
-	                                    'Who did you speak with?'
-	                                ),
-	                                _react2.default.createElement('input', { required: 'required', type: 'text', name: 'Who did you speak with?', id: 'who', style: { 'font-size': '24px', 'height': '50px' } }),
-	                                _react2.default.createElement(
-	                                    'h4',
-	                                    null,
-	                                    'How did it go?'
-	                                ),
-	                                _react2.default.createElement('textarea', { required: 'required', type: 'text', name: 'How did it go?', id: 'how', style: { 'width': '100%' }, rows: '4' }),
-	                                _react2.default.createElement('br', null),
-	                                _react2.default.createElement(
-	                                    'div',
-	                                    { id: 'thanks' },
-	                                    'Thank you!'
-	                                ),
-	                                _react2.default.createElement(
-	                                    'button',
-	                                    { onClick: this.onClickSendFeedback.bind(this), type: 'submit', name: 'submit' },
-	                                    'Send Feedback'
-	                                )
-	                            )
-	                        )
-	                    )
-	                )
-	                // end PhoneScriptCopy
-
-	            );
-	        }
-	    }]);
-
-	    return PhoneScript;
-	}(_react.Component);
-
-	exports.default = PhoneScript;
-
-/***/ }),
+/* 57 */,
 /* 58 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -7012,6 +6817,23 @@
 	            null,
 	            'Surveillance powers have been turned against activists and people of color in the past, from the FBI\u2019s intimidation campaign against Martin Luther King, Jr. to recent infiltration of Muslim student associations on college campuses. With Trump\u2019s clear authoritarian impulses and tendency to target vulnerable populations, Congress extending these spying powers to Trump would be catastrophic.'
 	        ),
+	        _react2.default.createElement(
+	            'h3',
+	            null,
+	            'The USA RIGHTS Act Would Put the Right Limits on Spying Powers'
+	        ),
+	        _react2.default.createElement(
+	            'p',
+	            null,
+	            'The USA RIGHTS Act from Senators Rand Paul and Ron Wyden has important reforms to rein in Section 702 spying powers. It protects the privacy of Americans\' phone calls and emails and is markedly better than all other current legislative proposals.'
+	        ),
+	        _react2.default.createElement('br', null),
+	        _react2.default.createElement(
+	            'p',
+	            null,
+	            'The USA RIGHTS Act creates a search warrant requirement that closes the backdoor search loophole, permanently ends \u201Cabout\u201D collection, requires the government to tell defendants when it uses surveillance information against them in court, and much more. The Senate should pass the bill without delay.'
+	        ),
+	        _react2.default.createElement('div', { className: 'spacer' }),
 	        _react2.default.createElement('div', { className: 'spacer' }),
 	        _react2.default.createElement(
 	            'a',
@@ -24255,6 +24077,238 @@
 
 	module.exports = ReactDOMInvalidARIAHook;
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)))
+
+/***/ }),
+/* 210 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _react = __webpack_require__(2);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var PhoneScriptCopy = function PhoneScriptCopy(props) {
+	    return _react2.default.createElement(
+	        "div",
+	        null,
+	        _react2.default.createElement(
+	            "h2",
+	            null,
+	            "We\u2019re calling you now."
+	        ),
+	        _react2.default.createElement(
+	            "h3",
+	            null,
+	            "After the conversation, you can ",
+	            _react2.default.createElement(
+	                "strong",
+	                null,
+	                "press *"
+	            ),
+	            " and we\u2019ll connect you to the next office."
+	        ),
+	        _react2.default.createElement("div", { className: "spacer" }),
+	        _react2.default.createElement(
+	            "em",
+	            null,
+	            "Here's what you can say:"
+	        ),
+	        _react2.default.createElement(
+	            "p",
+	            null,
+	            "\u201CHi, my name is [NAME] and I live in [TOWN]. I\u2019m calling to urge my members of Congress to support strong surveillance reform to stop spy agencies from spying on Americans without a warrant."
+	        ),
+	        _react2.default.createElement("br", null),
+	        _react2.default.createElement(
+	            "p",
+	            null,
+	            "Tell your House Rep: The proposed \u201CUSA Liberty Act,\u201D H.R. 3989, needs wholesale improvements before you should consider supporting it."
+	        ),
+	        _react2.default.createElement("br", null),
+	        _react2.default.createElement(
+	            "p",
+	            null,
+	            "Tell your Senators: Please co-sponsor and support the USA RIGHTS Act from Senators Paul and Wyden, which would stop warrantless spying on Americans."
+	        ),
+	        _react2.default.createElement("br", null),
+	        _react2.default.createElement(
+	            "p",
+	            null,
+	            "Tell both: Any reauthorization of Section 702 of the FISA Amendments Act must include:"
+	        ),
+	        _react2.default.createElement(
+	            "ul",
+	            { id: "points" },
+	            _react2.default.createElement(
+	                "li",
+	                null,
+	                "an end to backdoor searches"
+	            ),
+	            _react2.default.createElement(
+	                "li",
+	                null,
+	                "a permanent ban on \u201Cabout\u201D collection"
+	            ),
+	            _react2.default.createElement(
+	                "li",
+	                null,
+	                "a guarantee that the government cannot secretly use surveillance information in court against defendants."
+	            )
+	        ),
+	        _react2.default.createElement("br", null),
+	        _react2.default.createElement(
+	            "p",
+	            null,
+	            "Without these reforms, Section 702 should be allowed to expire in December."
+	        )
+	    );
+	};
+
+	exports.default = PhoneScriptCopy;
+
+/***/ }),
+/* 211 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(2);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _config = __webpack_require__(47);
+
+	var _ajax = __webpack_require__(46);
+
+	var _ajax2 = _interopRequireDefault(_ajax);
+
+	var _PhoneScriptCopy = __webpack_require__(210);
+
+	var _PhoneScriptCopy2 = _interopRequireDefault(_PhoneScriptCopy);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var PhoneScript = function (_Component) {
+	    _inherits(PhoneScript, _Component);
+
+	    function PhoneScript(props) {
+	        _classCallCheck(this, PhoneScript);
+
+	        var _this = _possibleConstructorReturn(this, (PhoneScript.__proto__ || Object.getPrototypeOf(PhoneScript)).call(this, props));
+
+	        _this.state = {
+	            sent: false
+	        };
+	        return _this;
+	    }
+
+	    _createClass(PhoneScript, [{
+	        key: 'onClickSendFeedback',
+	        value: function onClickSendFeedback(e) {
+	            e.preventDefault();
+
+	            var data = {
+	                campaign: _config.config.callCampaign,
+	                subject: 'Feedback from ' + (_config.config.prettyCampaignName || _config.config.callCampaign),
+	                text: ''
+	            };
+
+	            var fields = [document.querySelector('#who'), document.querySelector('#how')];
+
+	            fields.forEach(function (field) {
+	                data.text += field.name + ':\n' + field.value + '\n\n';
+	            });
+
+	            var url = _config.urls.feedback;
+
+	            for (var key in data) {
+	                url += key;
+	                url += '=';
+	                url += encodeURIComponent(data[key]);
+	                url += '&';
+	            }
+
+	            _ajax2.default.get(url);
+
+	            this.setState({
+	                sent: true
+	            });
+	        }
+	    }, {
+	        key: 'render',
+	        value: function render() {
+	            return _react2.default.createElement(
+	                'div',
+	                { className: 'phone-script' },
+	                _react2.default.createElement(_PhoneScriptCopy2.default, null),
+	                _react2.default.createElement('div', { className: 'spacer' }),
+	                _react2.default.createElement(
+	                    'div',
+	                    { className: 'calling-wrapper' },
+	                    _react2.default.createElement(
+	                        'h3',
+	                        null,
+	                        'After your call(s), use the form to let us know how it went!'
+	                    ),
+	                    _react2.default.createElement(
+	                        'form',
+	                        { action: '#', method: 'get', className: this.state.sent ? 'sent' : false },
+	                        _react2.default.createElement(
+	                            'div',
+	                            { className: 'wrapper' },
+	                            _react2.default.createElement(
+	                                'h4',
+	                                null,
+	                                'Who did you speak with?'
+	                            ),
+	                            _react2.default.createElement('input', { required: 'required', type: 'text', name: 'Who did you speak with?', id: 'who', style: { 'font-size': '24px', 'height': '50px' } }),
+	                            _react2.default.createElement(
+	                                'h4',
+	                                null,
+	                                'How did it go?'
+	                            ),
+	                            _react2.default.createElement('textarea', { required: 'required', type: 'text', name: 'How did it go?', id: 'how', style: { 'width': '100%' }, rows: '4' }),
+	                            _react2.default.createElement('br', null),
+	                            _react2.default.createElement(
+	                                'div',
+	                                { id: 'thanks' },
+	                                'Thank you!'
+	                            ),
+	                            _react2.default.createElement(
+	                                'button',
+	                                { onClick: this.onClickSendFeedback.bind(this), type: 'submit', name: 'submit' },
+	                                'Send Feedback'
+	                            )
+	                        )
+	                    )
+	                )
+	            );
+	        }
+	    }]);
+
+	    return PhoneScript;
+	}(_react.Component);
+
+	exports.default = PhoneScript;
 
 /***/ })
 /******/ ]);

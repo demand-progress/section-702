@@ -17,6 +17,8 @@ import CallPages from './containers/CallPages.jsx'
     }
 })()
 
+import PhoneScriptForm from './components/forms/PhoneScriptForm.jsx'
+
 function render() {
     ReactDOM.render(
         <CallPages />,

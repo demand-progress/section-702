@@ -467,10 +467,14 @@ a:hover {
     margin: 0 auto 32px;
     max-width: 700px;
     padding: 32px;
-    text-align: center;
 
     -webkit-transition: box-shadow 0.3s;
             transition: box-shadow 0.3s;
+}
+
+#app .phone-script em {
+    display: block;
+    text-align: center;
 }
 
 #app .phone-script:hover {
@@ -482,6 +486,7 @@ a:hover {
     font-weight: 600;
     margin: 0 0 24px;
     text-transform: uppercase;
+    text-align: center;
 }
 
 #app .phone-script .suggestion {
@@ -590,8 +595,8 @@ a:hover {
     height: 80px;
     border-radius: 3px;
     /* margin-left: calc(50% - 125px); */
+    background-image: -webkit-linear-gradient(top, #f223a4, #e10f6a);
     background-image: linear-gradient(to bottom, #f223a4, #e10f6a);
-
     -webkit-transition: background-color 0.3s;
             transition: background-color 0.3s;
 }
@@ -1006,7 +1011,7 @@ a:hover {
     color: #eee;
     box-shadow: 1px 1px 7px rgba(0, 0, 0, 0.4);
     margin: 32px auto 0;
-    max-width: 300px;
+    /* max-width: 300px; */
     padding: 16px 32px 32px;
     position: relative;
 }
@@ -1029,6 +1034,8 @@ a:hover {
 #app .calling-wrapper form button {
     background: none;
     background-color: #f223a4;
+    background-image: -webkit-linear-gradient(top, #f223a4, #e10f6a);
+    background-image: linear-gradient(to bottom, #f223a4, #e10f6a);
     border-radius: 3px;
     border: none;
     color: #f0f4f5;
@@ -1187,7 +1194,7 @@ a:hover {
 #app #form-grid {
     display: grid;
     grid-template-columns: 190px 160px 160px 174px;
-    grid-row-gap: 30px;    
+    grid-row-gap: 15px;    
     grid-template-areas: "myName myName myEmail myEmail"
                          "myAddress myAddress myAddress myZip" 
                          "myButton myButton myButton myButton" 
@@ -1245,6 +1252,13 @@ ul#points li strong {
     width: 100%;
 }
 
+textarea {
+    border-radius: 3px;
+    border: 1px solid #bdbdbd;    
+    box-shadow: inset 1px 1px 3px rgba(0, 0, 0, 0.16);
+    padding: 8px;
+}
+
 @media screen and (max-width: 768px) {
     #form-container {
         display: grid;
@@ -1273,7 +1287,9 @@ ul#points li strong {
     }
 
     #app .email-form form input {
-        border-radius: 3px;        
+        border-radius: 3px; 
+        border: 1px solid #bdbdbd;        
+        
     }
 
     p, .title span{
@@ -1282,10 +1298,6 @@ ul#points li strong {
 
     input {
         width: 100% !important
-    }
-
-    #app .email-form form input {
-        border: 1px solid #bdbdbd;        
     }
 
     .title .tell-congress {

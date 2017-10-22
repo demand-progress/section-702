@@ -52,7 +52,7 @@ class EmailForm extends Component {
 
                             <div id="address" className="inputBox">
                                 <input className="address1" name="address1" placeholder="Street Address" />
-                                <label htmlFor="address1">123 Main St.</label><br />
+                                <label htmlFor="address1">123 Main Way, ME</label><br />
                             </div>
 
                             <div id="zip" className="inputBox">

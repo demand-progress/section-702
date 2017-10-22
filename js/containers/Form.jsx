@@ -3,7 +3,7 @@ import EmailForm from '../components/forms/EmailForm.jsx'
 import PhoneForm from '../components/forms/PhoneForm.jsx'
 import Thanks from '../components/Thanks.jsx'
 import OptOutForm from '../components/forms/OptOutForm.jsx'
-import PhoneScript from '../components/PhoneScript.jsx'
+import PhoneScript from '../components/forms/PhoneScriptForm.jsx'
 import { findPos, getSource } from '../utils/'
 import cur from '../store/state.js'
 
@@ -56,7 +56,7 @@ class Form extends Component {
             break
 
             case 'script':
-            form = <PhoneScript />
+            form = <PhoneScriptForm />
             break
 
             case 'thanks':
