@@ -6545,7 +6545,11 @@
 	        _react2.default.createElement(
 	            "em",
 	            null,
-	            "Here's what you can say:"
+	            _react2.default.createElement(
+	                "strong",
+	                null,
+	                "Here's what you can say:"
+	            )
 	        ),
 	        _react2.default.createElement(
 	            "p",
@@ -6556,19 +6560,34 @@
 	        _react2.default.createElement(
 	            "p",
 	            null,
-	            "Tell your House Rep: The proposed \u201CUSA Liberty Act,\u201D H.R. 3989, needs wholesale improvements before you should consider supporting it."
+	            _react2.default.createElement(
+	                "strong",
+	                null,
+	                "Tell your House Rep:"
+	            ),
+	            " The proposed \u201CUSA Liberty Act,\u201D H.R. 3989, needs wholesale improvements before you should consider supporting it."
 	        ),
 	        _react2.default.createElement("br", null),
 	        _react2.default.createElement(
 	            "p",
 	            null,
-	            "Tell your Senators: Please co-sponsor and support the USA RIGHTS Act from Senators Paul and Wyden, which would stop warrantless spying on Americans."
+	            _react2.default.createElement(
+	                "strong",
+	                null,
+	                "Tell your Senators:"
+	            ),
+	            " Please co-sponsor and support the USA RIGHTS Act from Senators Paul and Wyden, which would stop warrantless spying on Americans."
 	        ),
 	        _react2.default.createElement("br", null),
 	        _react2.default.createElement(
 	            "p",
 	            null,
-	            "Tell both: Any reauthorization of Section 702 of the FISA Amendments Act must include:"
+	            _react2.default.createElement(
+	                "strong",
+	                null,
+	                "Tell both:"
+	            ),
+	            " Any reauthorization of Section 702 of the FISA Amendments Act must include:"
 	        ),
 	        _react2.default.createElement(
 	            "ul",
