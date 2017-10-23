@@ -1278,8 +1278,8 @@ textarea {
         grid-template-rows: auto;
         grid-row-gap: 10px;            
         grid-template-areas: "myName myName" "myEmail myEmail" "myAddress myZip"
-        "myText myText"
-        "myButton myButton";
+        "myButton myButton"
+        "myText myText";
     }
 
     #app {
