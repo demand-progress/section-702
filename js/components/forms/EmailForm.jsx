@@ -59,10 +59,10 @@ class EmailForm extends Component {
                                 <input className="zip" name="zip" placeholder="Zip code" />
                                 <label htmlFor="zip">5 Digit ZIP Code</label><br />
                             </div>
+                            <button id="submit" ><img src="./images/document-white.svg"/>Sign</button>
 
                             <EmailFormCopy />
 
-                            <button id="submit" ><img src="./images/document-white.svg"/>Sign</button>
                         </form>
                     </div>
                     <div className="disclaimer">
