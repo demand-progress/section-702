@@ -6810,11 +6810,6 @@
 	                ),
 	                _react2.default.createElement(
 	                    "a",
-	                    { title: "Defending Rights & Dissent", href: "", target: "_blank" },
-	                    _react2.default.createElement("img", { src: "images/logos/logo 300x250px.png" })
-	                ),
-	                _react2.default.createElement(
-	                    "a",
 	                    { title: "ADC", href: "", target: "_blank" },
 	                    _react2.default.createElement("img", { src: "images/logos/ADCLogo.gif" })
 	                ),
