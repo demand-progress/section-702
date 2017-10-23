@@ -1304,7 +1304,7 @@ textarea {
         font-size: 1em;
     }
 
-    #email {
+    #email, #zip {
         margin-left: 0
     }
 }
