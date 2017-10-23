@@ -6,7 +6,7 @@ const PhoneScriptCopy = (props) => {
             <h2>We’re calling you now.</h2>
             <h3>After the conversation, you can <strong>press *</strong> and we’ll connect you to the next office.</h3>
             <div className="spacer" />           
-            <em><strong>Here's what you can say:</strong></em>
+            <p><strong>Here's what you can say:</strong></p>
             <p>“Hi, my name is [NAME] and I live in [TOWN]. I’m calling to urge my members of Congress to support strong surveillance reform to stop spy agencies from spying on Americans without a warrant.</p>
             <br />
             <p><strong>Tell your House Rep:</strong> The proposed “USA Liberty Act,” H.R. 3989, needs wholesale improvements before you should consider supporting it.</p>

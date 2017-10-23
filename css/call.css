@@ -622,7 +622,7 @@ a:hover {
 
 #app .email-form .counter {
     margin: 0 auto;
-    max-width: 413px;
+    max-width: 660px;
     position: relative;
     text-align: center;
     z-index: 9;
@@ -646,7 +646,7 @@ a:hover {
     background-color: #ddd;
     border: none;
     height: 1px;
-    margin: 24px auto 0;
+    margin: 0 auto;
     max-width: 200px;
     width: 100%;
 }
@@ -1138,17 +1138,25 @@ a:hover {
 
 #app #fullName{
     display: flex;
+    justify-content: space-between;
     align-items: center;
     background-color: #fff;
     border-bottom: 1px solid #ccc;
     border-radius: 3px;
     box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.076);   
     border: 1px solid #bdbdbd;
-    height: 80px; 
+    height: 80px;
 }
+
  input.name{
-     background-color: transparent
+     background-color: transparent;
  }
+
+ #app .email-form form input.name {
+    height: 78px;
+    margin-top: 1px;
+ }
+
 #app #title {
     grid-area: mytitle;
 }

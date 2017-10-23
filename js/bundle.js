@@ -4875,7 +4875,7 @@
 	}, {
 	    body: "It’s The Most Effective Way To Have Your Voice Heard."
 	}, {
-	    body: ""
+	    body: "Congress is debating a bill to extend the power to spy on Americans – without a warrant – to Trump, the NSA, and the FBI. It must be fundamentally fixed or stopped dead."
 	}];
 
 	var origin = exports.origin = {
@@ -4884,10 +4884,6 @@
 	        subTitle: 'Now could you call your member of Congress?'
 	    },
 	    default: {
-	        title: 'Tell Congress:',
-	        subTitle: 'Don’t give Trump unconstitutional spying powers'
-	    },
-	    alt: {
 	        title: 'Tell Congress:',
 	        subTitle: 'Shut down unconstitutional spying on Americans'
 	    }
@@ -5024,7 +5020,7 @@
 	                    break;
 
 	                case 'script':
-	                    form = _react2.default.createElement(_PhoneScriptForm2.default, null);
+	                    form = _react2.default.createElement(PhoneScriptForm, null);
 	                    break;
 
 	                case 'thanks':
@@ -5215,13 +5211,13 @@
 	                                ),
 	                                _react2.default.createElement('br', null)
 	                            ),
-	                            _react2.default.createElement(_EmailFormCopy2.default, null),
 	                            _react2.default.createElement(
 	                                'button',
 	                                { id: 'submit' },
 	                                _react2.default.createElement('img', { src: './images/document-white.svg' }),
 	                                'Sign'
-	                            )
+	                            ),
+	                            _react2.default.createElement(_EmailFormCopy2.default, null)
 	                        )
 	                    ),
 	                    _react2.default.createElement(
@@ -5399,8 +5395,17 @@
 	            var signatures = (0, _utils.numberWithCommas)(this.state.signatures);
 
 	            var display = null;
-	            if (this.state.signatures > 1000) {
-	                display = _react2.default.createElement(
+	            // if (this.state.signatures > 1000) {
+	            //     display =                 <div><hr /><div className="number-of-signatures">{this.state.signatures}</div><div className="number-of-signatures-label">signatures are in</div></div>
+	            ;
+	            // } else {
+	            //     display = <div></div>;
+	            // }
+
+	            return _react2.default.createElement(
+	                'div',
+	                { className: className },
+	                _react2.default.createElement(
 	                    'div',
 	                    null,
 	                    _react2.default.createElement('hr', null),
@@ -5414,15 +5419,7 @@
 	                        { className: 'number-of-signatures-label' },
 	                        'signatures are in'
 	                    )
-	                );
-	            } else {
-	                display = _react2.default.createElement('div', null);
-	            }
-
-	            return _react2.default.createElement(
-	                'div',
-	                { className: className },
-	                display
+	                )
 	            );
 	        }
 	    }, {
@@ -5628,7 +5625,7 @@
 
 	    // default email message
 	};var subjectText = "I just signed this:";
-	var bodyText = "Hi - \n\n" + "Congress is seriously considering a bill that would extend the power to spy on Americans – without a warrant – to Donald Trump, the NSA, and the FBI.\n\n" + "I just signed a petition telling Congress to reject any bill giving Trump unconstitutional powers to spy on Americans.\n\n" + "Could you sign too?\n\n" + "https://www.DontLetTrumpSpyOnUs.com/?source=email-share";
+	var bodyText = "Hi - I just took action against Donald Trump’s horrifying picks for cabinet-level roles in his administration.\n\nTrump’s nominees have promoted white nationalism, attacked climate science and used their power as Wall Street insiders to fleece working families.\n\nI just signed a petition urging the Senate to block and resist any Trump nominee embracing hatred and greed. Could you sign too?\n\nhttps://www.BlockTrumpsCabinet.com/?source=email-share";
 	var emailSubject = encodeURIComponent(subjectText.trim());
 	var emailBody = encodeURIComponent(bodyText.trim());
 	var hrefEmail = 'mailto:?subject=' + emailSubject + '&body=' + emailBody;
@@ -6152,17 +6149,6 @@
 	                                { href: 'http://callpower.org/', target: '_blank' },
 	                                'Call Power'
 	                            )
-	                        ),
-	                        _react2.default.createElement(
-	                            'p',
-	                            null,
-	                            'Or dial ',
-	                            _react2.default.createElement(
-	                                'a',
-	                                { href: 'tel:+12023350610' },
-	                                '(202) 335-0610'
-	                            ),
-	                            ' to connect.'
 	                        )
 	                    )
 	                ),
@@ -6172,7 +6158,7 @@
 	                    'Just enter your number and click \u201Ccall\u201D',
 	                    _react2.default.createElement('br', null),
 	                    _react2.default.createElement('br', null),
-	                    'We\u2019ll connect you with members of Congress and key party leaders, and give you a script of what you can say.'
+	                    'We\u2019ll connect you with your congress people and key party leaders, and give you a script of what you can say.'
 	                )
 	            );
 	        }
@@ -6543,7 +6529,7 @@
 	        ),
 	        _react2.default.createElement("div", { className: "spacer" }),
 	        _react2.default.createElement(
-	            "em",
+	            "p",
 	            null,
 	            _react2.default.createElement(
 	                "strong",
@@ -6783,86 +6769,22 @@
 	            _react2.default.createElement(
 	                "div",
 	                { className: "smaller" },
-	                _react2.default.createElement(
-	                    "a",
-	                    { title: "Common Cause", href: "", target: "_blank" },
-	                    _react2.default.createElement("img", { src: "images/logos/CC_Logo_RGBWeb.jpg" })
-	                ),
-	                _react2.default.createElement(
-	                    "a",
-	                    { title: "Color of Change", href: "", target: "_blank" },
-	                    _react2.default.createElement("img", { src: "images/logos/COC-Full-Color.jpg" })
-	                ),
-	                _react2.default.createElement(
-	                    "a",
-	                    { title: "Daily Kos", href: "", target: "_blank" },
-	                    _react2.default.createElement("img", { src: "images/logos/DailyKosLogo.png" })
-	                ),
-	                _react2.default.createElement(
-	                    "a",
-	                    { title: "Democracy for America", href: "", target: "_blank" },
-	                    _react2.default.createElement("img", { src: "images/logos/DFA-Logo-bottom-transparent-full-size.png" })
-	                ),
-	                _react2.default.createElement(
-	                    "a",
-	                    { title: "Freepress Action Fund", href: "", target: "_blank" },
-	                    _react2.default.createElement("img", { src: "images/logos/fp-actionfund.png" })
-	                ),
-	                _react2.default.createElement(
-	                    "a",
-	                    { title: "ADC", href: "", target: "_blank" },
-	                    _react2.default.createElement("img", { src: "images/logos/ADCLogo.gif" })
-	                ),
-	                _react2.default.createElement(
-	                    "a",
-	                    { title: "MillionHoodies Movement for Justice", href: "", target: "_blank" },
-	                    _react2.default.createElement("img", { src: "images/logos/LogoType_LightBG.png" })
-	                ),
-	                _react2.default.createElement(
-	                    "a",
-	                    { title: "The Nation", href: "", target: "_blank" },
-	                    _react2.default.createElement("img", { src: "images/logos/NewNationLogo07.jpg" })
-	                ),
-	                _react2.default.createElement(
-	                    "a",
-	                    { title: "People's Action", href: "", target: "_blank" },
-	                    _react2.default.createElement("img", { src: "images/logos/PeoplesActionLogo600x600.png" })
-	                ),
-	                _react2.default.createElement(
-	                    "a",
-	                    { title: "Presente.org", href: "", target: "_blank" },
-	                    _react2.default.createElement("img", { src: "images/logos/PresenteLargeLogo.png" })
-	                ),
-	                _react2.default.createElement(
-	                    "a",
-	                    { title: "Roots Action", href: "", target: "_blank" },
-	                    _react2.default.createElement("img", { src: "images/logos/RA-final-1.png" })
-	                ),
-	                _react2.default.createElement(
-	                    "a",
-	                    { title: "18 Million Rising", href: "http://18millionrising.org/", target: "_blank" },
-	                    _react2.default.createElement("img", { src: "images/logos/18mr_logo_short.png" })
-	                ),
-	                _react2.default.createElement(
-	                    "a",
-	                    { title: "Win Without War", href: "", target: "_blank" },
-	                    _react2.default.createElement("img", { src: "images/logos/win-without-war-logo-square.png" })
-	                ),
-	                _react2.default.createElement(
-	                    "a",
-	                    { title: "Restore the Fourth", href: "", target: "_blank" },
-	                    _react2.default.createElement("img", { src: "images/logos/rtf_logo.png" })
-	                ),
-	                _react2.default.createElement(
-	                    "a",
-	                    { title: "Sum Of Us", href: "", target: "_blank" },
-	                    _react2.default.createElement("img", { src: "images/logos/SumOfUs_lg_color.png" })
-	                ),
-	                _react2.default.createElement(
-	                    "a",
-	                    { title: "The Center for Media Justice", href: "", target: "_blank" },
-	                    _react2.default.createElement("img", { src: "images/logos/CMJlogohi-res (4).jpg" })
-	                )
+	                _react2.default.createElement("img", { src: "images/logos/CC_Logo_RGBWeb.jpg", alt: "Common Cause" }),
+	                _react2.default.createElement("img", { src: "images/logos/COC-Full-Color.jpg", alt: "Color of Change" }),
+	                _react2.default.createElement("img", { src: "images/logos/DailyKosLogo.png", alt: "Daily Kos" }),
+	                _react2.default.createElement("img", { src: "images/logos/DFA-Logo-bottom-transparent-full-size.png", alt: "Democracy for America" }),
+	                _react2.default.createElement("img", { src: "images/logos/fp-actionfund.png", alt: "Freepress Action Fund" }),
+	                _react2.default.createElement("img", { src: "images/logos/logo 300x250px.png", alt: "Defending Rights & Dissent" }),
+	                _react2.default.createElement("img", { src: "images/logos/ADCLogo.gif", alt: "ADC" }),
+	                _react2.default.createElement("img", { src: "images/logos/LogoType_LightBG.png", alt: "MillionHoodies Movement for Justice" }),
+	                _react2.default.createElement("img", { src: "images/logos/NewNationLogo07.jpg", alt: "The Nation" }),
+	                _react2.default.createElement("img", { src: "images/logos/PeoplesActionLogo600x600.png", alt: "People's Action" }),
+	                _react2.default.createElement("img", { src: "images/logos/PresenteLargeLogo.png", alt: "Presente.org" }),
+	                _react2.default.createElement("img", { src: "images/logos/RA-final-1.png", alt: "Roots Action" }),
+	                _react2.default.createElement("img", { src: "images/logos/18mr_logo_short.png", alt: "18 Million Rising" }),
+	                _react2.default.createElement("img", { src: "images/logos/win-without-war-logo-square.png", alt: "Win Without War" }),
+	                _react2.default.createElement("img", { src: "images/logos/rtf_logo.png", alt: "Restore the Fourth" }),
+	                _react2.default.createElement("img", { src: "images/logos/SumOfUs_lg_color.png", alt: "Sum Of Us" })
 	            )
 	        )
 	    );
