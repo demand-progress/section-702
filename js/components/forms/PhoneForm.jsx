@@ -35,7 +35,7 @@ class PhoneForm extends Component {
                     </form>
                     <div className="privacy">
                         <p>This tool uses <a href="http://callpower.org/" target="_blank">Call Power</a></p>
-                        <p>Or dial <a href="tel:+12023350610">(202) 335-0610</a> to connect.</p>
+                        {/* <p>Or dial <a href="tel:+12023350610">(202) 335-0610</a> to connect.</p> */}
                     </div>
                 </div>
                 <div className="paragraph">
