@@ -1,4 +1,5 @@
 import React from 'react'
+import { getSource } from '../utils/index'
 
 const BodyCopy = () => {
     return (

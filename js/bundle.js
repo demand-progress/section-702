@@ -6862,6 +6862,8 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
+	var _index = __webpack_require__(44);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	var BodyCopy = function BodyCopy() {
@@ -7015,12 +7017,12 @@
 	        _react2.default.createElement('div', { className: 'spacer' }),
 	        _react2.default.createElement(
 	            'a',
-	            { href: '#petition', className: 'sign-the-petition', style: getSource() == "directcall" ? { display: 'none' } : {} },
+	            { href: '#petition', className: 'sign-the-petition', style: (0, _index.getSource)() == "directcall" ? { display: 'none' } : {} },
 	            'Sign the petition if you agree.'
 	        ),
 	        _react2.default.createElement(
 	            'a',
-	            { href: '#petition', className: 'sign-the-petition', style: getSource() == "directcall" ? {} : { display: 'none' } },
+	            { href: '#petition', className: 'sign-the-petition', style: (0, _index.getSource)() == "directcall" ? {} : { display: 'none' } },
 	            'Call congress if you agree'
 	        )
 	    );
