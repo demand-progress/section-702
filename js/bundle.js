@@ -5375,7 +5375,7 @@
 	    _createClass(Counter, [{
 	        key: 'componentDidMount',
 	        value: function componentDidMount() {
-	            window.onFetchSignatureCounts = this.onFetchSignatureCounts;
+	            window.onFetchSignatureCounts = this.onFetchSignatureCounts.bind(this);
 	            this.fetchSignatureCounts();
 	        }
 	    }, {
@@ -5428,7 +5428,7 @@
 	    }, {
 	        key: 'onFetchSignatureCounts',
 	        value: function onFetchSignatureCounts(data) {
-	            this.setState({ signatures: (0, _utils.numberWithCommas)(data.total.actions) });
+	            this.setState({ signatures: data.total.actions });
 	        }
 	    }]);
 

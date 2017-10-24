@@ -13,7 +13,7 @@ class Counter extends Component {
     }
 
     componentDidMount() {
-        window.onFetchSignatureCounts = this.onFetchSignatureCounts;
+        window.onFetchSignatureCounts = this.onFetchSignatureCounts.bind(this);
         this.fetchSignatureCounts();
     }
 
@@ -49,7 +49,7 @@ class Counter extends Component {
     }
 
     onFetchSignatureCounts(data) {
-        this.setState({ signatures: numberWithCommas(data.total.actions) });
+        this.setState({ signatures: data.total.actions });
     }
 }
 
