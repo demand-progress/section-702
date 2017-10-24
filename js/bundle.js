@@ -6786,7 +6786,8 @@
 	                _react2.default.createElement("img", { src: "images/logos/18mr_logo_short.png", alt: "18 Million Rising" }),
 	                _react2.default.createElement("img", { src: "images/logos/win-without-war-logo-square.png", alt: "Win Without War" }),
 	                _react2.default.createElement("img", { src: "images/logos/rtf_logo.png", alt: "Restore the Fourth" }),
-	                _react2.default.createElement("img", { src: "images/logos/SumOfUs_lg_color.png", alt: "Sum Of Us" })
+	                _react2.default.createElement("img", { src: "images/logos/SumOfUs_lg_color.png", alt: "Sum Of Us" }),
+	                _react2.default.createElement("img", { src: "images/logos/OurRev_3Color.png", alt: "Our Revolution" })
 	            )
 	        )
 	    );

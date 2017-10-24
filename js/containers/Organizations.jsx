@@ -25,6 +25,7 @@ const Organizations = () => (
                 <img src="images/logos/win-without-war-logo-square.png" alt="Win Without War"/>
                 <img src="images/logos/rtf_logo.png" alt="Restore the Fourth"/>
                 <img src="images/logos/SumOfUs_lg_color.png" alt="Sum Of Us"/>
+                <img src="images/logos/OurRev_3Color.png" alt="Our Revolution"/>
              </div>
         </div>
     </div>
