@@ -13,7 +13,7 @@ class Counter extends Component {
     }
 
     componentDidMount() {
-        window.onFetchSignatureCounts = this.onFetchSignatureCounts.bind(this);
+        window.onFetchSignatureCounts = this.onFetchSignatureCounts;
         this.fetchSignatureCounts();
     }
 
@@ -32,20 +32,10 @@ class Counter extends Component {
             className += ' loaded';
         }
 
-        const signatures = numberWithCommas(this.state.signatures);
-
-        let display = null;
-        // if (this.state.signatures > 1000) {
-        //     display =                 <div><hr /><div className="number-of-signatures">{this.state.signatures}</div><div className="number-of-signatures-label">signatures are in</div></div>
-;
-        // } else {
-        //     display = <div></div>;
-        // }
-
         return (
             <div className={className}>
-                
-                <div><hr /><div className="number-of-signatures">{this.state.signatures}</div><div className="number-of-signatures-label">signatures are in</div></div>
+                <hr />
+                <div className="number-of-signatures">{this.state.signatures}</div><div className="number-of-signatures-label">signatures are in</div>
             </div>
         );
     }

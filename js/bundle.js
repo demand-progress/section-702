@@ -5371,7 +5371,7 @@
 	    _createClass(Counter, [{
 	        key: 'componentDidMount',
 	        value: function componentDidMount() {
-	            window.onFetchSignatureCounts = this.onFetchSignatureCounts.bind(this);
+	            window.onFetchSignatureCounts = this.onFetchSignatureCounts;
 	            this.fetchSignatureCounts();
 	        }
 	    }, {
@@ -5392,33 +5392,19 @@
 	                className += ' loaded';
 	            }
 
-	            var signatures = (0, _utils.numberWithCommas)(this.state.signatures);
-
-	            var display = null;
-	            // if (this.state.signatures > 1000) {
-	            //     display =                 <div><hr /><div className="number-of-signatures">{this.state.signatures}</div><div className="number-of-signatures-label">signatures are in</div></div>
-	            ;
-	            // } else {
-	            //     display = <div></div>;
-	            // }
-
 	            return _react2.default.createElement(
 	                'div',
 	                { className: className },
+	                _react2.default.createElement('hr', null),
 	                _react2.default.createElement(
 	                    'div',
-	                    null,
-	                    _react2.default.createElement('hr', null),
-	                    _react2.default.createElement(
-	                        'div',
-	                        { className: 'number-of-signatures' },
-	                        this.state.signatures
-	                    ),
-	                    _react2.default.createElement(
-	                        'div',
-	                        { className: 'number-of-signatures-label' },
-	                        'signatures are in'
-	                    )
+	                    { className: 'number-of-signatures' },
+	                    this.state.signatures
+	                ),
+	                _react2.default.createElement(
+	                    'div',
+	                    { className: 'number-of-signatures-label' },
+	                    'signatures are in'
 	                )
 	            );
 	        }
