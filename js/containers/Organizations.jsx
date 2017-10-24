@@ -15,7 +15,6 @@ const Organizations = () => (
                 <img src="images/logos/DailyKosLogo.png" alt="Daily Kos"/>
                 <img src="images/logos/DFA-Logo-bottom-transparent-full-size.png" alt="Democracy for America"/>
                 <img src="images/logos/fp-actionfund.png" alt="Freepress Action Fund"/>
-                <img src="images/logos/logo 300x250px.png" alt="Defending Rights & Dissent"/>
                 <img src="images/logos/ADCLogo.gif" alt="ADC"/>
                 <img src="images/logos/LogoType_LightBG.png" alt="MillionHoodies Movement for Justice"/>
                 <img src="images/logos/NewNationLogo07.jpg" alt="The Nation"/>

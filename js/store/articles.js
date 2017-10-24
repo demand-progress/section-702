@@ -6,7 +6,7 @@ export const articles = [
         body: "It’s The Most Effective Way To Have Your Voice Heard."
     },
     {
-        body: "Congress is debating a bill to extend the power to spy on Americans – without a warrant – to Trump, the NSA, and the FBI. It must be fundamentally fixed or stopped dead."
+        body: ""
     }
 ]
 
@@ -16,6 +16,10 @@ export const origin = {
         subTitle:'Now could you call your member of Congress?'
     },
     default: {
+        title: 'Tell Congress:',
+        subTitle:'Don’t give Trump unconstitutional spying powers'
+    },
+    alt: {
         title: 'Tell Congress:',
         subTitle:'Shut down unconstitutional spying on Americans'
     }

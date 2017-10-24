@@ -18,7 +18,7 @@ class Header extends Component {
         if (!('origin' in queryParams)) {
             queryParams['origin'] = 'default';
         }
-
+        
         if (!queryParams['text']) {
             location.replace(location.href + "&text=0");
         } else {
