@@ -5392,20 +5392,33 @@
 	                className += ' loaded';
 	            }
 
+	            var signatures = (0, _utils.numberWithCommas)(this.state.signatures);
+
+	            var display = null;
+	            if (this.state.signatures > 1000) {
+	                display = _react2.default.createElement(
+	                    'div',
+	                    null,
+	                    _react2.default.createElement('hr', null),
+	                    _react2.default.createElement(
+	                        'div',
+	                        { className: 'number-of-signatures' },
+	                        signatures
+	                    ),
+	                    _react2.default.createElement(
+	                        'div',
+	                        { className: 'number-of-signatures-label' },
+	                        'signatures are in'
+	                    )
+	                );
+	            } else {
+	                display = _react2.default.createElement('div', null);
+	            }
+
 	            return _react2.default.createElement(
 	                'div',
 	                { className: className },
-	                _react2.default.createElement('hr', null),
-	                _react2.default.createElement(
-	                    'div',
-	                    { className: 'number-of-signatures' },
-	                    this.state.signatures
-	                ),
-	                _react2.default.createElement(
-	                    'div',
-	                    { className: 'number-of-signatures-label' },
-	                    'signatures are in'
-	                )
+	                display
 	            );
 	        }
 	    }, {
