@@ -6100,7 +6100,7 @@
 	        value: function render() {
 	            return _react2.default.createElement(
 	                'div',
-	                { className: 'phone-form-wrapper' },
+	                { id: 'petition', className: 'phone-form-wrapper' },
 	                _react2.default.createElement(
 	                    'div',
 	                    { style: (0, _index.getSource)() == "directcall" ? { display: 'none' } : {} },
@@ -7015,8 +7015,13 @@
 	        _react2.default.createElement('div', { className: 'spacer' }),
 	        _react2.default.createElement(
 	            'a',
-	            { href: '#petition', className: 'sign-the-petition' },
+	            { href: '#petition', className: 'sign-the-petition', style: getSource() == "directcall" ? { display: 'none' } : {} },
 	            'Sign the petition if you agree.'
+	        ),
+	        _react2.default.createElement(
+	            'a',
+	            { href: '#petition', className: 'sign-the-petition', style: getSource() == "directcall" ? {} : { display: 'none' } },
+	            'Call congress if you agree'
 	        )
 	    );
 	};

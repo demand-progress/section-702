@@ -44,7 +44,8 @@ const BodyCopy = () => {
             <div className="spacer"></div>
             <div className="spacer"></div>
             
-            <a href="#petition" className="sign-the-petition">Sign the petition if you agree.</a>
+            <a href="#petition" className="sign-the-petition" style={(getSource() == "directcall") ? { display: 'none' } : {} }>Sign the petition if you agree.</a>
+            <a href="#petition" className="sign-the-petition" style={(getSource() == "directcall") ? { } : { display: 'none' } }>Call congress if you agree</a>
         </div>
     )
 

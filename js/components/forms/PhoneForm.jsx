@@ -14,7 +14,7 @@ class PhoneForm extends Component {
 
     render() {
         return (
-            <div className="phone-form-wrapper">
+            <div id="petition" className="phone-form-wrapper">
                 <div style={(getSource() == "directcall") ? { display: 'none' } : {} }>
                 <h2>Thanks for signing. <br/> Now, could you make a call?</h2>
                 
