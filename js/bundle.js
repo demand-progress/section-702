@@ -5200,7 +5200,29 @@
 	                                _react2.default.createElement(
 	                                    'label',
 	                                    { htmlFor: 'address1' },
-	                                    '123 Main Way, ME'
+	                                    '123 Main St'
+	                                ),
+	                                _react2.default.createElement('br', null)
+	                            ),
+	                            _react2.default.createElement(
+	                                'div',
+	                                { id: 'city', className: 'inputBox' },
+	                                _react2.default.createElement('input', { className: 'city', name: 'city', placeholder: 'City' }),
+	                                _react2.default.createElement(
+	                                    'label',
+	                                    { htmlFor: 'city' },
+	                                    'Anywhere'
+	                                ),
+	                                _react2.default.createElement('br', null)
+	                            ),
+	                            _react2.default.createElement(
+	                                'div',
+	                                { id: 'state', className: 'state' },
+	                                _react2.default.createElement('input', { className: 'state', name: 'state', placeholder: 'State' }),
+	                                _react2.default.createElement(
+	                                    'label',
+	                                    { htmlFor: 'state' },
+	                                    'ME'
 	                                ),
 	                                _react2.default.createElement('br', null)
 	                            ),
@@ -5270,16 +5292,24 @@
 	                return;
 	            }
 
-	            // if (!this.state['administrative_area_level_1']) {
-	            //     form.address.focus();
-	            //     alert("Please enter your address.");
-	            //     return;
-	            // }
-
 	            var address1 = form.querySelector('[name="address1"]');
 	            if (!address1.value.trim()) {
 	                address1.focus();
 	                alert("Please enter your address.");
+	                return;
+	            }
+	            var city = form.querySelector('[name="city"]');
+
+	            if (!city.value.trim()) {
+	                zip.focus();
+	                alert('Please enter your city.');
+	                return;
+	            }
+
+	            var state = form.querySelector('[name="state"]');
+	            if (!state.value.trim()) {
+	                state.focus();
+	                alert('Please enter your state.');
 	                return;
 	            }
 
@@ -5304,18 +5334,14 @@
 	                'prefix': prefix.value.trim(),
 	                'name': name.value.trim(),
 	                'address1': address1.value.trim(),
+	                'city': city.value.trim(),
+	                'state': state.value.trim(),
 	                'zip': zip.value.trim(),
-	                // 'address1': `${this.state['street_number']} ${this.state['route']}`,
-	                // 'state': this.state['administrative_area_level_1'],
-	                // 'city': this.state['locality'],
-	                // 'zip': this.state['postal_code'],
 	                'opt_in': 1,
 	                'page': _config.config.akPage,
 	                'source': (0, _index.getSource)(),
 	                'want_progress': 1
 	            };
-
-	            // sessionStorage.zip = this.state['postal_code'];
 
 	            (0, _actionKit.sendFormToActionKit)(fields);
 

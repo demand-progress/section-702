@@ -52,9 +52,17 @@ class EmailForm extends Component {
 
                             <div id="address" className="inputBox">
                                 <input className="address1" name="address1" placeholder="Street Address" />
-                                <label htmlFor="address1">123 Main Way, ME</label><br />
+                                <label htmlFor="address1">123 Main St</label><br />
                             </div>
 
+                            <div id="city" className="inputBox">
+                                <input className="city" name="city" placeholder="City" />
+                                <label htmlFor="city">Anywhere</label><br />
+                            </div>                            
+                            <div id="state" className="state">
+                                <input className="state" name="state" placeholder="State" />
+                                <label htmlFor="state">ME</label><br />
+                            </div>
                             <div id="zip" className="inputBox">
                                 <input className="zip" name="zip" placeholder="Zip code" />
                                 <label htmlFor="zip">5 Digit ZIP Code</label><br />
@@ -103,16 +111,24 @@ class EmailForm extends Component {
             return;
         }
 
-        // if (!this.state['administrative_area_level_1']) {
-        //     form.address.focus();
-        //     alert("Please enter your address.");
-        //     return;
-        // }
-
         const address1 = form.querySelector('[name="address1"]');        
         if (!address1.value.trim()) {
             address1.focus();
             alert("Please enter your address.");
+            return;
+        }
+        const city = form.querySelector('[name="city"]');
+        
+        if (!city.value.trim()) {
+            zip.focus();
+            alert('Please enter your city.');
+            return;
+        }
+
+        const state = form.querySelector('[name="state"]');
+        if (!state.value.trim()) {
+            state.focus();
+            alert('Please enter your state.');
             return;
         }
 
@@ -137,18 +153,14 @@ class EmailForm extends Component {
             'prefix': prefix.value.trim(),
             'name': name.value.trim(),
             'address1': address1.value.trim(),
+            'city': city.value.trim(),
+            'state': state.value.trim(),
             'zip': zip.value.trim(),
-            // 'address1': `${this.state['street_number']} ${this.state['route']}`,
-            // 'state': this.state['administrative_area_level_1'],
-            // 'city': this.state['locality'],
-            // 'zip': this.state['postal_code'],
             'opt_in': 1,
             'page': config.akPage,
             'source': getSource(),
             'want_progress': 1
         };
-
-        // sessionStorage.zip = this.state['postal_code'];
 
         sendFormToActionKit(fields);
 
