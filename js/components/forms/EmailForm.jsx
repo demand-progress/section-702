@@ -33,7 +33,7 @@ class EmailForm extends Component {
                         <form id="form-grid" className="form" onSubmit={ this.onSubmit.bind(this) } ref="form">
                             <div id="name" className="inputBox">
                                 <div id="fullName">
-                                    <select id="prefix" name="prefix">
+                                    <select id="prefix" name="prefix" tabIndex="1" >
                                         <option value="Mr">Mr.</option>
                                         <option value="Mrs">Mrs.</option>
                                         <option value="Ms">Ms.</option>
@@ -41,34 +41,34 @@ class EmailForm extends Component {
                                         <option value="Dr">Dr.</option>
                                         <option value="Rev">Rev.</option>
                                     </select>
-                                    <input  className="name" name="name" placeholder="Your Name" />
+                                    <input className="name" name="name" placeholder="Your Name" tabIndex="2" />
                                 </div>
                                 <label htmlFor="name">Your Full Name</label><br />
                             </div>
                             
                             <div id="email" className="inputBox">
-                                <input className="email" name="email" placeholder="Email Address" type="email" />
+                                <input className="email" name="email" placeholder="Email Address" type="email" tabIndex="3"/>
                                 <label htmlFor="email">address@domain.com</label><br />
                             </div>
 
                             <div id="address" className="inputBox">
-                                <input className="address1" name="address1" placeholder="Street Address" />
+                                <input className="address1" name="address1" placeholder="Street Address" tabIndex="4"/>
                                 <label htmlFor="address1">123 Main St</label><br />
                             </div>
 
                             <div id="city" className="inputBox">
-                                <input className="city" name="city" placeholder="City" />
+                                <input className="city" name="city" placeholder="City" tabIndex="6"/>
                                 <label htmlFor="city">Anytown</label><br />
                             </div>                            
                             <div id="state" className="state">
-                                <input className="state" name="state" placeholder="State" />
+                                <input className="state" name="state" placeholder="State" tabIndex="7"/>
                                 <label htmlFor="state">ME</label><br />
                             </div>
                             <div id="zip" className="inputBox">
-                                <input className="zip" name="zip" placeholder="Zip code" />
+                                <input className="zip" name="zip" placeholder="Zip code" tabIndex="5"/>
                                 <label htmlFor="zip">5 Digit ZIP Code</label><br />
                             </div>
-                            <button id="submit" ><img src="./images/document-white.svg"/>Sign</button>
+                            <button id="submit" tabIndex="8" ><img src="./images/document-white.svg"/>Sign</button>
 
                             <EmailFormCopy />
 
