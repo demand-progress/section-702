@@ -550,7 +550,7 @@ a:hover {
     -webkit-transition: box-shadow 0.3s;
             transition: box-shadow 0.3s;
 
-    height:80px;
+    height:60px;
     font-family: 'Roboto Slab', serif;
     vertical-align: bottom;
 }
@@ -1145,7 +1145,7 @@ a:hover {
     border-radius: 3px;
     box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.076);   
     border: 1px solid #bdbdbd;
-    height: 80px;
+    height: 60px;
 }
 
  input.name{
