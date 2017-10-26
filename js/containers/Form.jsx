@@ -16,7 +16,7 @@ class Form extends Component {
             form = 'phone'
         }
 
-        if (getSource() === 'mpower') {
+        if (getSource() === 'directcall') {
             form = 'phone'
         }
 

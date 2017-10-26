@@ -4979,7 +4979,7 @@
 	            form = 'phone';
 	        }
 
-	        if ((0, _utils.getSource)() === 'mpower') {
+	        if ((0, _utils.getSource)() === 'directcall') {
 	            form = 'phone';
 	        }
 
@@ -5211,7 +5211,7 @@
 	                                _react2.default.createElement(
 	                                    'label',
 	                                    { htmlFor: 'city' },
-	                                    'Anywhere'
+	                                    'Anytown'
 	                                ),
 	                                _react2.default.createElement('br', null)
 	                            ),
@@ -6122,6 +6122,16 @@
 	    }
 
 	    _createClass(PhoneForm, [{
+	        key: 'componentDidMount',
+	        value: function componentDidMount() {
+	            console.log("WTF?");
+	            if (this.state.source == "directcall") {
+	                var petition = document.getElementById("petition");
+	                console.log(petition);
+	                petition.scrollIntoView();
+	            }
+	        }
+	    }, {
 	        key: 'render',
 	        value: function render() {
 	            return _react2.default.createElement(
