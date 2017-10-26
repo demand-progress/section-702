@@ -13,7 +13,6 @@ class PhoneForm extends Component {
     }
 
     componentDidMount() {
-        console.log("WTF?");
         if (this.state.source == "directcall") {
             let petition = document.getElementById("petition");
             console.log(petition);

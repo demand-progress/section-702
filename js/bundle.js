@@ -5335,7 +5335,7 @@
 	                'name': name.value.trim(),
 	                'address1': address1.value.trim(),
 	                'city': city.value.trim(),
-	                'state': state.value.trim(),
+	                'state': state.value.trim().toUpperCase(),
 	                'zip': zip.value.trim(),
 	                'opt_in': 1,
 	                'page': _config.config.akPage,
@@ -6124,7 +6124,6 @@
 	    _createClass(PhoneForm, [{
 	        key: 'componentDidMount',
 	        value: function componentDidMount() {
-	            console.log("WTF?");
 	            if (this.state.source == "directcall") {
 	                var petition = document.getElementById("petition");
 	                console.log(petition);
