@@ -5211,7 +5211,7 @@
 	                                _react2.default.createElement(
 	                                    'label',
 	                                    { htmlFor: 'city' },
-	                                    'Anywhere'
+	                                    'Anytown'
 	                                ),
 	                                _react2.default.createElement('br', null)
 	                            ),

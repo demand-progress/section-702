@@ -58,7 +58,7 @@ class EmailForm extends Component {
 
                             <div id="city" className="inputBox">
                                 <input className="city" name="city" placeholder="City" />
-                                <label htmlFor="city">Anywhere</label><br />
+                                <label htmlFor="city">Anytown</label><br />
                             </div>                            
                             <div id="state" className="state">
                                 <input className="state" name="state" placeholder="State" />
