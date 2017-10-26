@@ -5141,7 +5141,7 @@
 	                                    { id: 'fullName' },
 	                                    _react2.default.createElement(
 	                                        'select',
-	                                        { id: 'prefix', name: 'prefix' },
+	                                        { id: 'prefix', name: 'prefix', tabIndex: '1' },
 	                                        _react2.default.createElement(
 	                                            'option',
 	                                            { value: 'Mr' },
@@ -5173,7 +5173,7 @@
 	                                            'Rev.'
 	                                        )
 	                                    ),
-	                                    _react2.default.createElement('input', { className: 'name', name: 'name', placeholder: 'Your Name' })
+	                                    _react2.default.createElement('input', { className: 'name', name: 'name', placeholder: 'Your Name', tabIndex: '2' })
 	                                ),
 	                                _react2.default.createElement(
 	                                    'label',
@@ -5185,7 +5185,7 @@
 	                            _react2.default.createElement(
 	                                'div',
 	                                { id: 'email', className: 'inputBox' },
-	                                _react2.default.createElement('input', { className: 'email', name: 'email', placeholder: 'Email Address', type: 'email' }),
+	                                _react2.default.createElement('input', { className: 'email', name: 'email', placeholder: 'Email Address', type: 'email', tabIndex: '3' }),
 	                                _react2.default.createElement(
 	                                    'label',
 	                                    { htmlFor: 'email' },
@@ -5196,7 +5196,7 @@
 	                            _react2.default.createElement(
 	                                'div',
 	                                { id: 'address', className: 'inputBox' },
-	                                _react2.default.createElement('input', { className: 'address1', name: 'address1', placeholder: 'Street Address' }),
+	                                _react2.default.createElement('input', { className: 'address1', name: 'address1', placeholder: 'Street Address', tabIndex: '4' }),
 	                                _react2.default.createElement(
 	                                    'label',
 	                                    { htmlFor: 'address1' },
@@ -5207,7 +5207,7 @@
 	                            _react2.default.createElement(
 	                                'div',
 	                                { id: 'city', className: 'inputBox' },
-	                                _react2.default.createElement('input', { className: 'city', name: 'city', placeholder: 'City' }),
+	                                _react2.default.createElement('input', { className: 'city', name: 'city', placeholder: 'City', tabIndex: '6' }),
 	                                _react2.default.createElement(
 	                                    'label',
 	                                    { htmlFor: 'city' },
@@ -5218,7 +5218,7 @@
 	                            _react2.default.createElement(
 	                                'div',
 	                                { id: 'state', className: 'state' },
-	                                _react2.default.createElement('input', { className: 'state', name: 'state', placeholder: 'State' }),
+	                                _react2.default.createElement('input', { className: 'state', name: 'state', placeholder: 'State', tabIndex: '7' }),
 	                                _react2.default.createElement(
 	                                    'label',
 	                                    { htmlFor: 'state' },
@@ -5229,7 +5229,7 @@
 	                            _react2.default.createElement(
 	                                'div',
 	                                { id: 'zip', className: 'inputBox' },
-	                                _react2.default.createElement('input', { className: 'zip', name: 'zip', placeholder: 'Zip code' }),
+	                                _react2.default.createElement('input', { className: 'zip', name: 'zip', placeholder: 'Zip code', tabIndex: '5' }),
 	                                _react2.default.createElement(
 	                                    'label',
 	                                    { htmlFor: 'zip' },
@@ -5239,7 +5239,7 @@
 	                            ),
 	                            _react2.default.createElement(
 	                                'button',
-	                                { id: 'submit' },
+	                                { id: 'submit', tabIndex: '8' },
 	                                _react2.default.createElement('img', { src: './images/document-white.svg' }),
 	                                'Sign'
 	                            ),
