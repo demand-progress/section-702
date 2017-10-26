@@ -20,6 +20,7 @@ class EmailForm extends Component {
 
         if (getSource() == "directcall") {
             this.props.changeForm('phone');
+
         }
     }
 
