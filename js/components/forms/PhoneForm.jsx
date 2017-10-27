@@ -13,7 +13,7 @@ class PhoneForm extends Component {
     }
 
     componentDidMount() {
-        if (this.state.source == "directcall") {
+        if (this.state.source != "directcall") {
             let petition = document.getElementById("petition");
             console.log(petition);
             petition.scrollIntoView();

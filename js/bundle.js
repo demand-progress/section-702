@@ -6124,7 +6124,7 @@
 	    _createClass(PhoneForm, [{
 	        key: 'componentDidMount',
 	        value: function componentDidMount() {
-	            if (this.state.source == "directcall") {
+	            if (this.state.source != "directcall") {
 	                var petition = document.getElementById("petition");
 	                console.log(petition);
 	                petition.scrollIntoView();
