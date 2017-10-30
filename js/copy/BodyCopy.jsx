@@ -39,7 +39,7 @@ const BodyCopy = () => {
             <p>Surveillance powers have been turned against activists and people of color in the past, from the FBI’s intimidation campaign against Martin Luther King, Jr. to recent infiltration of Muslim student associations on college campuses. With Trump’s clear authoritarian impulses and tendency to target vulnerable populations, Congress extending these spying powers to Trump would be catastrophic.</p>
 
             <h3>The USA RIGHTS Act Would Put the Right Limits on Spying Powers</h3>
-            <p>The USA RIGHTS Act from Senators Rand Paul and Ron Wyden has important reforms to rein in Section 702 spying powers. It protects the privacy of Americans' phone calls and emails and is markedly better than all other current legislative proposals.</p>
+            <p>The USA RIGHTS Act (S. 1997 / H.R. 4124) from Senators Rand Paul and Ron Wyden has important reforms to rein in Section 702 spying powers. It protects the privacy of Americans' phone calls and emails and is markedly better than all other current legislative proposals.</p>
             <br />
             <p>The USA RIGHTS Act creates a search warrant requirement that closes the backdoor search loophole, permanently ends “about” collection, requires the government to tell defendants when it uses surveillance information against them in court, and much more. The Senate should pass the bill without delay.</p>
             <div className="spacer"></div>

@@ -11,7 +11,7 @@ const PhoneScriptCopy = (props) => {
             <br />
             <p><strong>Tell your House Rep:</strong> The proposed “USA Liberty Act,” H.R. 3989, needs wholesale improvements before you should consider supporting it.</p>
             <br />
-            <p><strong>Tell your Senators:</strong> Please co-sponsor and support the USA RIGHTS Act from Senators Paul and Wyden, which would stop warrantless spying on Americans.</p>
+            <p><strong>Tell your Senators:</strong>Please co-sponsor and support the USA RIGHTS Act, S. 1997, from Senators Paul and Wyden, which would stop warrantless spying on Americans.</p>
             <br />
             <p><strong>Tell both:</strong> Any reauthorization of Section 702 of the FISA Amendments Act must include:</p>
             <ul id="points">

@@ -5767,7 +5767,7 @@
 	        _react2.default.createElement(
 	            "p",
 	            null,
-	            "\"We urge Congress to significantly improve the so-called \u201CUSA Liberty Act,\u201D H.R. 3989, or support strong surveillance reform legislation if wholesale improvements are not forthcoming. As introduced, this bill would extend Section 702, enabling the Trump administration to continue spying on Americans without a warrant."
+	            "\"We urge Congress to significantly improve the so-called \u201CUSA Liberty Act\u201D (H.R. 3989) or support strong surveillance reform legislation if wholesale improvements are not forthcoming. As introduced, this bill would extend Section 702, enabling the Trump administration to continue spying on Americans without a warrant."
 	        ),
 	        _react2.default.createElement("br", null),
 	        _react2.default.createElement(
@@ -5776,7 +5776,7 @@
 	            _react2.default.createElement(
 	                "span",
 	                null,
-	                "\"The strong language we support is contained in the USA RIGHTS Act, sponsored by Sens. Paul and Wyden, which ends backdoor searches, permanently bans \u201Cabout\u201D collection, and guarantees that surveillance information cannot be secretly used in court against defendants. Without these reforms to protect our privacy and civil liberties, Section 702 must expire.\""
+	                "\"The strong language we support is contained in the USA RIGHTS Act (S. 1997 / H.R. 4124), sponsored by Sens. Paul and Wyden, which ends backdoor searches, permanently bans \u201Cabout\u201D collection, and guarantees that surveillance information cannot be secretly used in court against defendants. Without these reforms to protect our privacy and civil liberties, Section 702 must expire.\""
 	            )
 	        )
 	    );
@@ -6187,6 +6187,17 @@
 	                                { href: 'http://callpower.org/', target: '_blank' },
 	                                'Call Power'
 	                            )
+	                        ),
+	                        _react2.default.createElement(
+	                            'p',
+	                            null,
+	                            'Or dial ',
+	                            _react2.default.createElement(
+	                                'a',
+	                                { href: 'tel:+12028998938' },
+	                                '202-899-8938'
+	                            ),
+	                            ' to connect.'
 	                        )
 	                    )
 	                ),
@@ -6600,7 +6611,7 @@
 	                null,
 	                "Tell your Senators:"
 	            ),
-	            " Please co-sponsor and support the USA RIGHTS Act from Senators Paul and Wyden, which would stop warrantless spying on Americans."
+	            "Please co-sponsor and support the USA RIGHTS Act, S. 1997, from Senators Paul and Wyden, which would stop warrantless spying on Americans."
 	        ),
 	        _react2.default.createElement("br", null),
 	        _react2.default.createElement(
@@ -7041,7 +7052,7 @@
 	        _react2.default.createElement(
 	            'p',
 	            null,
-	            'The USA RIGHTS Act from Senators Rand Paul and Ron Wyden has important reforms to rein in Section 702 spying powers. It protects the privacy of Americans\' phone calls and emails and is markedly better than all other current legislative proposals.'
+	            'The USA RIGHTS Act (S. 1997 / H.R. 4124) from Senators Rand Paul and Ron Wyden has important reforms to rein in Section 702 spying powers. It protects the privacy of Americans\' phone calls and emails and is markedly better than all other current legislative proposals.'
 	        ),
 	        _react2.default.createElement('br', null),
 	        _react2.default.createElement(
