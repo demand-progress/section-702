@@ -6867,6 +6867,13 @@
 	            "a",
 	            { href: "mailto:press@demandprogress.org" },
 	            "press@demandprogress.org"
+	        ),
+	        _react2.default.createElement("br", null),
+	        _react2.default.createElement("br", null),
+	        _react2.default.createElement(
+	            "a",
+	            { href: "https://demandprogress.org/privacy-policy/", target: "_blank" },
+	            "Our privacy policy"
 	        )
 	    );
 	};
