@@ -75,7 +75,7 @@ class EmailForm extends Component {
                         </form>
                     </div>
                     <div className="disclaimer">
-                        <p>One or more of the participating organizations may contact you about future campaigns.</p>
+                        <p>Demand Progress may contact you about future campaigns.</p>
                     </div>
                     <Counter />
 
@@ -157,7 +157,7 @@ class EmailForm extends Component {
             'city': city.value.trim(),
             'state': state.value.trim().toUpperCase(),
             'zip': zip.value.trim(),
-            'opt_in': 1,
+            'opt_in': false,
             'page': config.akPage,
             'source': getSource(),
             'want_progress': 1

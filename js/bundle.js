@@ -5252,7 +5252,7 @@
 	                        _react2.default.createElement(
 	                            'p',
 	                            null,
-	                            'One or more of the participating organizations may contact you about future campaigns.'
+	                            'Demand Progress may contact you about future campaigns.'
 	                        )
 	                    ),
 	                    _react2.default.createElement(_Counter2.default, null),
@@ -5337,7 +5337,7 @@
 	                'city': city.value.trim(),
 	                'state': state.value.trim().toUpperCase(),
 	                'zip': zip.value.trim(),
-	                'opt_in': 1,
+	                'opt_in': false,
 	                'page': _config.config.akPage,
 	                'source': (0, _index.getSource)(),
 	                'want_progress': 1
