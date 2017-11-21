@@ -157,7 +157,6 @@ class EmailForm extends Component {
             'city': city.value.trim(),
             'state': state.value.trim().toUpperCase(),
             'zip': zip.value.trim(),
-            'opt_in': false,
             'page': config.akPage,
             'source': getSource(),
             'want_progress': 1

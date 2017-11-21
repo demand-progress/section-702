@@ -5337,7 +5337,6 @@
 	                'city': city.value.trim(),
 	                'state': state.value.trim().toUpperCase(),
 	                'zip': zip.value.trim(),
-	                'opt_in': false,
 	                'page': _config.config.akPage,
 	                'source': (0, _index.getSource)(),
 	                'want_progress': 1
